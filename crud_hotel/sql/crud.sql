@@ -32,7 +32,7 @@ CREATE TABLE tb_member (
 	member_pride 	varchar2(20)	DEFAULT '브론즈'	NOT NULL
 );
 
- drop table tb_member;
+select * from tb_member;
 
 
 CREATE TABLE "tb_manager" (
@@ -44,3 +44,4 @@ CREATE TABLE "tb_manager" (
 	"manager_email"	varchar2(100)		
 );
 
+select * from tb_manager;'
