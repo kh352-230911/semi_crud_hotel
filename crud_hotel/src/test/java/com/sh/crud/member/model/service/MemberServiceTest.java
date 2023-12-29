@@ -1,7 +1,7 @@
 package com.sh.crud.member.model.service;
 
-import junit.framework.TestCase;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class MemberServiceTest extends TestCase {
+class MemberServiceTest {
 
 }
