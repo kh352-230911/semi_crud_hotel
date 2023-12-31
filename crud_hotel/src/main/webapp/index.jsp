@@ -40,33 +40,114 @@
         width: 20px;
         box-shadow: 3px 0 10px rgba(0, 0, 0, .75);
     }
+/*  예약폼 */
+    div.elem-group {
+        margin: 20px 0;
+    }
+
+    div.elem-group.inlined {
+        width: 49%;
+        display: inline-block;
+        float: left;
+        margin-left: 1%;
+    }
+
+    label {
+        display: block;
+        font-family: "Lato", sans-serif;
+        padding-bottom: 10px;
+        font-size: medium;
+    }
+
+    input {
+        border: 2px solid #777;
+        box-sizing: border-box;
+        font-size: small;
+        /*font-family: 'Nanum Gothic';*/
+        /*width: 150%;*/
+    }
+
+    div.elem-group.inlined input {
+        width: 95%;
+        display: inline-block;
+    }
+
+    hr {
+        border: 1px dotted #ccc;
+    }
+    h1{
+        text-align: center;
+    }
+
+    button {
+        height: 30px;
+        width: 60px;
+        background: orange;
+        border: 2px solid white;
+        color: white;
+        font-size: small;
+        font-family: 'Nanum Gothic';
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        border: 2px solid black;
+    }
 
 </style>
 
-<%-- 예약폼 날짜 영역 --%>
+<%-- 예약폼 영역 --%>
 <section class="top-banner">
     <div class="top-banner-overlay">
         <h1 class="text-white">예약하기</h1>
-        <p class="text-white">check-in</p>
-        <div class="relative max-w-sm">
-            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
-                </svg>
+
+        <form class="form-proup" action="reservation.php" method="post">
+
+
+            <div class="elem-group inlined">
+                <label class="text-white" for="checkin-date">Check-in Date</label>
+                <input type="date" id="checkin-date" name="checkin" placeholder="Select date" required>
             </div>
-            <input datepicker datepicker-orientation="bottom right" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date">
-        </div>
-        <p class="text-white">check-out</p>
-        <div class="relative max-w-sm">
-            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
-                </svg>
+            <div class="elem-group inlined">
+                <label class="text-white" for="checkout-date">Check-out Date</label>
+                <input type="date" id="checkout-date" name="checkout" placeholder="Select date" required>
             </div>
-            <input datepicker datepicker-orientation="bottom right" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date">
+                <hr>
+                <div class="elem-group inlined">
+                    <label class="text-white" for="adult">Adults</label>
+                    <input type="number" id="adult" name="total_adults" placeholder="2" min="1" required>
+                </div>
+        </form>
+        <div class="elem-group inlined">
+            <button class="text-white" type="submit">검색</button>
         </div>
     </div>
 </section>
+
+<script>
+    var currentDateTime = new Date();
+    var year = currentDateTime.getFullYear();
+    var month = (currentDateTime.getMonth() + 1);
+    var date = (currentDateTime.getDate() + 1);
+
+    if(date < 10) {
+        date = '0' + date;
+    }
+    if(month < 10) {
+        month = '0' + month;
+    }
+
+    var dateTomorrow = year + "-" + month + "-" + date;
+    var checkinElem = document.querySelector("#checkin-date");
+    var checkoutElem = document.querySelector("#checkout-date");
+
+    checkinElem.setAttribute("min", dateTomorrow);
+
+    checkinElem.onchange = function () {
+        checkoutElem.setAttribute("min", this.value);
+    }
+</script>
 
 
 
