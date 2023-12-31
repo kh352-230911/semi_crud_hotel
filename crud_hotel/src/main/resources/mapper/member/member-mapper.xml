@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member">
+  <select id="findById" resultType="member">
+    select
+        *
+    from
+        tb_member
+    where
+        member_id=#{memberId}
+
+  </select>
+
+
+    <select id="findAll" resultType="member">
+        select
+            *
+        from
+            tb_member
+
+    </select>
+    <select id="registerMember">
+        insert into
+            tb_member
+        values (
+            #{memberId},#{memberPassword},#{memberName},#{memberPhone},#{memberEmail},#{memberAddress},#{memberLoginDate},#{memberPride}
+        )
+
+    </select>
+    <select id="updateMember" >
+        update
+            tb_member
+        set
+            member_name=#{memberName},
+            member_phone=#{memberPhone},
+            member_email=#{memberEmail},
+            member_address=#{memberAddress}
+        where
+            member_id=#{memberId}
+    </select>
+    <select id="updateMemberPassword">
+        update
+            tb_member
+        set
+            member_password=#{memberPassword}
+        where
+            member_id=#{memberId}
+    </select>
+    <delete id="deleteMember">
+        delete from
+            tb_member
+        where
+            member_id = #{memberId}
+    </delete>
+</mapper>
