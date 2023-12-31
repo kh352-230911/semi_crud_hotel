@@ -44,4 +44,4 @@ CREATE TABLE "tb_manager" (
 	"manager_email"	varchar2(100)		
 );
 
-select * from tb_manager;'
+select * from tb_manager;
