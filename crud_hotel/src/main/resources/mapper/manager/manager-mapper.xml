@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="manager">
+
+    <select id="findAll" resultType="manager">
+        select
+            *
+        from
+            tb_manager
+    </select>
+
+    <select id="findById" resultType="manager">
+        select
+            *
+        from
+            tb_manager
+        where
+            manager_id = #{managerId}
+    </select>
+
+    <select id="findByName" resultType="manager">
+        select
+            *
+        from
+            tb_manager
+        where
+            manager_name = #{managerName}
+    </select>
+
+    <insert id="insertManager">
+        insert into
+            tb_manager
+        values (#{managerNum}, #{managerId}, #{managerPwd}, #{managerName}, #{managerPhone}, null)
+    </insert>
+
+    <update id="updateManager">
+        update
+            tb_manager
+        set
+            manager_pwd = #{managerPwd}
+        where
+            manager_id = #{managerId}
+    </update>
+
+    <delete id="deleteManager">
+        delete from
+                tb_manager
+        where
+            manager_id = #{managerId}
+
+    </delete>
+</mapper>
