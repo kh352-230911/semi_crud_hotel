@@ -43,7 +43,6 @@ public class ManagerServiceTest {
             assertThat(manager.getManagerPwd()).isNotNull();
             assertThat(manager.getManagerPhone()).isNotNull();
             assertThat(manager.getManagerName()).isNotNull();
-
         });
     }
     @DisplayName("존재하는 매니저 정상적으로 조회")
