@@ -50,6 +50,10 @@
 
   <mappers>
     <mapper resource="mapper/manager/manager-mapper.xml"/>
+
     <mapper resource="mapper/review/review-mapper.xml"/>
+
+    <mapper resource="mapper/member/member-mapper.xml"/>
+
   </mappers>
 </configuration>
