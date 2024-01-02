@@ -45,3 +45,7 @@ CREATE TABLE "tb_manager" (
 );
 
 select * from tb_manager;
+select * from tb_ask_answer;
+select * from tb_ask;
+
+alter table tb_ask add constraints ck_tb_ask_ask_case check(ask_case in('객실문의', '예약문의', '결제문의', '기타문의'));
