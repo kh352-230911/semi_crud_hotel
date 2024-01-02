@@ -23,7 +23,6 @@
         width: 100%;
         overflow-x: hidden; /* 수평 스크롤을 제거합니다. */
     }
-
     .top-banner-overlay.is-moved {
         transform: translateX(350px);
     }
@@ -179,9 +178,6 @@
         </span>
 <%--    </button>--%>
 </div>
-
-
-
 
 
 <script>

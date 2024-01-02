@@ -20,10 +20,12 @@
             rev_id = #{id}
     </select>
 
-    <insert id="insertReview">
-        insert into
+    <select id="getTotalCount" resultType="_int">
+        select
+            count(*)
+        from
             tb_review
-        values
-            (#{revNum}, #{revId}, #{revRoomNum}, #{revTitle}, #{revContent}, #{revScore}, #{revDate})
-    </insert>
+    </select>
+
+
 </mapper>
