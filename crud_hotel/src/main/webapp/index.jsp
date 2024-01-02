@@ -23,8 +23,6 @@
         width: 100%;
         overflow-x: hidden; /* 수평 스크롤을 제거합니다. */
     }
-
-
     .top-banner-overlay.is-moved {
         transform: translateX(350px);
     }
@@ -81,8 +79,6 @@
         border: 2px solid #777;
         box-sizing: border-box;
         font-size: small;
-        /*font-family: 'Nanum Gothic';*/
-        /*width: 150%;*/
     }
 
     div.elem-group.inlined input {
@@ -119,11 +115,9 @@
 <section class="top-banner">
     <div class="top-banner-overlay">
         <h1 class="text-white">예약하기</h1>
+         <form class="form-proup" action="reservation.php" method="post">
 
-        <form class="form-proup" action="reservation.php" method="post">
-
-
-            <div class="elem-group inlined">
+        <div class="elem-group inlined">
                 <label class="text-white" for="checkin-date">Check-in Date</label>
                 <input type="date" id="checkin-date" name="checkin" placeholder="Select date" required>
             </div>
