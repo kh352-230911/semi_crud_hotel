@@ -25,7 +25,6 @@
     }
 
 
-
     .top-banner-overlay.is-moved {
         transform: translateX(350px);
     }
@@ -185,9 +184,6 @@
         </span>
 <%--    </button>--%>
 </div>
-
-
-
 
 
 <script>
