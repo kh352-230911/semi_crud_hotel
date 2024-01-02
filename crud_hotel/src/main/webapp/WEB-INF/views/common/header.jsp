@@ -13,18 +13,31 @@
 </head>
 <body>
     <header>
-        <div class="w-[1280px] h-[182px] relative bg-white">
-            <div class="w-[1280px] h-[108px] left-0 top-0 absolute bg-yellow-50"></div>
-            <div class="w-[1280px] h-[74px] left-0 top-[108px] absolute bg-orange-100"></div>
-            <div class="left-[539px] top-[34px] absolute text-black text-4xl font-normal font-['Inter']">CRUD Hotel</div>
-            <div class="left-[1081px] top-[44px] absolute text-black text-xl font-normal font-['Inter']">Login</div>
-            <div class="left-[1170px] top-[44px] absolute text-black text-xl font-normal font-['Inter']">Register</div>
-            <div class="left-[888px] top-[133px] absolute text-black text-xl font-normal font-['Inter']">예약하기</div>
-            <div class="left-[1170px] top-[133px] absolute text-black text-xl font-normal font-['Inter']">문의하기</div>
-            <div class="left-[594px] top-[133px] absolute text-black text-xl font-normal font-['Inter']">즐길거리</div>
-            <div class="left-[60px] top-[133px] absolute text-black text-xl font-normal font-['Inter']">호텔소개</div>
-            <div class="left-[336px] top-[133px] absolute text-black text-xl font-normal font-['Inter']">객실</div>
+        <!-- 상단 옐로우 배경 -->
+        <div class="w-full h-32 bg-yellow-50 flex items-center justify-between px-4">
+            <!-- 빈 div를 추가하여 왼쪽 공간을 맞춤 -->
+            <div></div>
 
+            <!-- CRUD Hotel을 중앙에 배치 -->
+            <div class="text-4xl font-normal">
+                CRUD Hotel
+            </div>
+
+            <!-- Login과 Register를 오른쪽에 배치 -->
+            <div>
+                <a href="${pageContext.request.contextPath}/login" class="text-xl font-normal pr-4">Login</a>
+                <a href="${pageContext.request.contextPath}/register" class="text-xl font-normal">Register</a>
+            </div>
+        </div>
+
+        <!-- 오렌지 배경 with 나머지 메뉴 -->
+        <div class="w-full h-20 bg-orange-100 flex items-center justify-around">
+            <a href="${pageContext.request.contextPath}/hotelinfo/info" class="text-xl font-normal">호텔소개</a>
+            <a href="${pageContext.request.contextPath}/rooms" class="text-xl font-normal">객실</a>
+            <a href="${pageContext.request.contextPath}/activities" class="text-xl font-normal">즐길거리</a>
+            <a href="${pageContext.request.contextPath}/reserve" class="text-xl font-normal">예약하기</a>
+            <a href="${pageContext.request.contextPath}/activities" class="text-xl font-normal">리뷰</a>
+            <a href="${pageContext.request.contextPath}/contact" class="text-xl font-normal">문의하기</a>
         </div>
     </header>
 <main>

@@ -98,6 +98,9 @@
 </style>
 
 <%-- 예약폼 영역 --%>
+
+<section class="top-banner">
+
 <%--<section class="top-banner">--%>
 
 
@@ -144,9 +147,10 @@
     </button>
 </div>
 
+
     <div class="top-banner-overlay">
         <h1 class="text-white">예약하기</h1>
-C
+
         <form class="form-proup" action="reservation.php" method="post">
 
             <div class="elem-group inlined">
@@ -167,7 +171,7 @@ C
             <button class="text-white" type="submit">검색</button>
         </div>
     </div>
-<%--</section>--%>
+</section>
 
 <script>
     var currentDateTime = new Date();
