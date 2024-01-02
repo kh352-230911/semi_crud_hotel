@@ -75,7 +75,7 @@
         <ul>
             <li><a href="${pageContext.request.contextPath}/hotelintroduce/introduce">호텔 소개</a></li>
             <li><a href="${pageContext.request.contextPath}/hotelinfo/info">호텔 정보</a></li>
-            <li><a href="location.html">호텔 위치</a></li>
+            <li><a href="${pageContext.request.contextPath}/hotellocation/location">호텔 위치</a></li>
         </ul>
     </div>
 
