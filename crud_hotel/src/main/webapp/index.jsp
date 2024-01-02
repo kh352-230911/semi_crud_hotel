@@ -10,36 +10,51 @@
     /*    box-sizing: border-box;*/
     /*}*/
 
-    .top-banner {
-        position: relative;
-        display: flex;
-        width: 100vw;
-        height: 100vh;
-        /*background: url(https://cdn.pixabay.com/photo/2017/03/09/06/30/pool-2128578_640.jpg) no-repeat center / cover;*/
-    }
+    /*.top-banner {*/
+    /*    position: relative;*/
+    /*    display: flex;*/
+    /*    width: 100vw;*/
+    /*    height: 100vh;*/
+    /*    background: url(https://cdn.pixabay.com/photo/2017/03/09/06/30/pool-2128578_640.jpg) no-repeat center / cover;*/
+    /*}*/
 
-    .top-banner-overlay {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 350px;
-        padding: 20px;
-        transition: all 0.7s;
-        background: rgba(0, 0, 0, 0.6);
+
+    html, body {
+        width: 100%;
+        overflow-x: hidden; /* 수평 스크롤을 제거합니다. */
     }
 
     .top-banner-overlay.is-moved {
         transform: translateX(350px);
     }
 
-    .top-banner-overlay.is-moved::before {
-        content: "";
+    .top-banner {
+        position: relative;
+        width: 100%; /* vw 대신 %를 사용합니다. */
+        height: 100vh;
+    }
+
+    .top-banner-overlay {
         position: absolute;
         top: 0;
-        bottom: 0;
-        right: 100%;
-        width: 20px;
-        box-shadow: 3px 0 10px rgba(0, 0, 0, .75);
+        left: 0;
+        z-index: 10; /* 이 값을 적절히 높게 설정 */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 350px;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.6);
+        height: 100%;
+    }
+
+    #gallery {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1; /* 낮은 z-index 값으로 설정 */
+        width: 100%;
+        height: 100%;
     }
 
     /*  예약폼 */
@@ -99,44 +114,6 @@
 
 <%-- 예약폼 영역 --%>
 <section class="top-banner">
-    <div id="gallery" class="relative w-full" data-carousel="slide">
-        <!-- Carousel wrapper -->
-        <div class="relative w-full h-full overflow-hidden rounded-lg md:h-96">
-            <!-- Item 1 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="https://cdn.pixabay.com/photo/2020/02/16/16/28/bar-4854100_1280.jpg"
-                     class="absolute block w-auto h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
-            </div>
-            <!-- Item 2 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="${pageContext.request.contextPath}/images/2.jpg"
-                     class="absolute block w-auto h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
-            </div>
-            <!-- Item 3 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="${pageContext.request.contextPath}/images/1.jpg"
-                     class="absolute block w-auto h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
-            </div>
-        </div>
-</section>
-
-
-<!-- Slider controls -->
-        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-            </svg>
-            <span class="sr-only">Previous</span>
-        </span>
-        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-            </svg>
-            <span class="sr-only">Next</span>
-        </span>
-</div>
-
-
     <div class="top-banner-overlay">
         <h1 class="text-white">예약하기</h1>
          <form class="form-proup" action="reservation.php" method="post">
@@ -159,6 +136,52 @@
             <button class="text-white" type="submit">검색</button>
         </div>
     </div>
+    <div id="gallery" class="relative w-full h-full" data-carousel="slide">
+        <!-- Carousel wrapper -->
+        <div class="relative w-full h-full overflow-hidden">
+            <!-- Item 1 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="${pageContext.request.contextPath}/images/main_image.jpg"
+                     class="absolute inset-0 w-full h-full object-cover" alt="Main Image">
+            </div>
+            <!-- Item 2 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                <img src="${pageContext.request.contextPath}/images/a-restaurant-4857484_1920.jpg"
+                     class="absolute inset-0 w-full h-full object-cover" alt="Image 2">
+            </div>
+            <!-- Item 3 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="${pageContext.request.contextPath}/images/bar-4854100_1920.jpg"
+                     class="absolute inset-0 w-full h-full object-cover" alt="Image 1">
+            </div>
+            <!-- More items... -->
+        </div>
+    </div>
+
+</section>
+
+<!-- Slider controls -->
+<span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M5 1 1 5l4 4"/>
+            </svg>
+            <span class="sr-only">Previous</span>
+        </span>
+<span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="m1 9 4-4-4-4"/>
+            </svg>
+            <span class="sr-only">Next</span>
+        </span>
+<%--    </button>--%>
+</div>
+
+
+
 
 
 <script>
