@@ -99,6 +99,7 @@
 
 <%-- 예약폼 영역 --%>
 <section class="top-banner">
+
     <div class="top-banner-overlay">
         <h1 class="text-white">예약하기</h1>
 
