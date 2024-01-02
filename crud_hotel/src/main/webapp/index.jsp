@@ -199,13 +199,3 @@
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
-
-<html>
-<head>
-	<title>CRUD Hotel</title>
-</head>
-<body>
-	<h1>CRUD Hotel</h1>
-</body>
-</html>
-

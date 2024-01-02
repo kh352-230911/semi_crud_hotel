@@ -16,15 +16,15 @@
         <!-- 상단 옐로우 배경 -->
         <div class="w-full h-32 bg-yellow-50 flex items-center justify-between px-4">
             <!-- 빈 div를 추가하여 왼쪽 공간을 맞춤 -->
-            <div></div>
+            <div class="flex-1"></div>
 
             <!-- CRUD Hotel을 중앙에 배치 -->
-            <div class="text-4xl font-normal">
+            <div class=" flex-1 text-4xl text-center font-normal">
                 CRUD Hotel
             </div>
 
             <!-- Login과 Register를 오른쪽에 배치 -->
-            <div>
+            <div class="flex-1 flex justify-end">
                 <a href="${pageContext.request.contextPath}/login" class="text-xl font-normal pr-4">Login</a>
                 <a href="${pageContext.request.contextPath}/register" class="text-xl font-normal">Register</a>
             </div>
@@ -32,7 +32,7 @@
 
         <!-- 오렌지 배경 with 나머지 메뉴 -->
         <div class="w-full h-20 bg-orange-100 flex items-center justify-around">
-            <a href="${pageContext.request.contextPath}/hotelinfo/info" class="text-xl font-normal">호텔소개</a>
+            <a href="${pageContext.request.contextPath}/hotelintroduce/introduce" class="text-xl font-normal">호텔소개</a>
             <a href="${pageContext.request.contextPath}/rooms" class="text-xl font-normal">객실</a>
             <a href="${pageContext.request.contextPath}/activities" class="text-xl font-normal">즐길거리</a>
             <a href="${pageContext.request.contextPath}/reserve" class="text-xl font-normal">예약하기</a>
