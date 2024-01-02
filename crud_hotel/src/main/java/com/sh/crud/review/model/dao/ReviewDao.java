@@ -1,9 +1,12 @@
 package com.sh.crud.review.model.dao;
 
 import com.sh.crud.review.model.entity.Review;
+import com.sh.crud.review.model.vo.ReviewVo;
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.List;
+import java.util.Map;
 
 public class ReviewDao {
 
@@ -15,8 +18,14 @@ public class ReviewDao {
         return session.selectOne("review.findById", id);
     }
 
+    public List<ReviewVo> findAll(SqlSession session, Map<String, Object> param) {
+        int page = (int) param.get("page");
+        int limit = (int) param.get("limit");
+        int offset = (page - 1) * limit;
+        return session.selectList("review.findAll", null, new RowBounds(offset, limit));
+    }
 
-    public int insertReview(SqlSession session, Review review) {
-        return session.insert("review.insertReview", review);
+    public int getTotalCount(SqlSession session) {
+        return session.selectOne("review.getTotalCount");
     }
 }
