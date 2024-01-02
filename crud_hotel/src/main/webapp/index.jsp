@@ -132,6 +132,7 @@
         </div>
 </section>
 
+
 <!-- Slider controls -->
 <%--    <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>--%>
         <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
@@ -151,30 +152,32 @@
 <%--    </button>--%>
 </div>
 
-<div class="top-banner-overlay">
-    <h1 class="text-white">예약하기</h1>
 
-    <form class="form-proup" action="reservation.php" method="post">
+    <div class="top-banner-overlay">
+        <h1 class="text-white">예약하기</h1>
 
+        <form class="form-proup" action="reservation.php" method="post">
+
+
+            <div class="elem-group inlined">
+                <label class="text-white" for="checkin-date">Check-in Date</label>
+                <input type="date" id="checkin-date" name="checkin" placeholder="Select date" required>
+            </div>
+            <div class="elem-group inlined">
+                <label class="text-white" for="checkout-date">Check-out Date</label>
+                <input type="date" id="checkout-date" name="checkout" placeholder="Select date" required>
+            </div>
+            <hr>
+            <div class="elem-group inlined">
+                <label class="text-white" for="adult">Adults</label>
+                <input type="number" id="adult" name="total_adults" placeholder="2" min="1" required>
+            </div>
+        </form>
         <div class="elem-group inlined">
-            <label class="text-white" for="checkin-date">Check-in Date</label>
-            <input type="date" id="checkin-date" name="checkin" placeholder="Select date" required>
+            <button class="text-white" type="submit">검색</button>
         </div>
-        <div class="elem-group inlined">
-            <label class="text-white" for="checkout-date">Check-out Date</label>
-            <input type="date" id="checkout-date" name="checkout" placeholder="Select date" required>
-        </div>
-        <hr>
-        <div class="elem-group inlined">
-            <label class="text-white" for="adult">Adults</label>
-            <input type="number" id="adult" name="total_adults" placeholder="2" min="1" required>
-        </div>
-    </form>
-    <div class="elem-group inlined">
-        <button class="text-white" type="submit">검색</button>
     </div>
-</div>
-</section>
+
 
 <script>
     var currentDateTime = new Date();
