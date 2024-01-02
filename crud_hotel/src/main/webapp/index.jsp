@@ -171,7 +171,7 @@
             <button class="text-white" type="submit">검색</button>
         </div>
     </div>
-<%--</section>--%>
+</section>
 
 <script>
     var currentDateTime = new Date();
