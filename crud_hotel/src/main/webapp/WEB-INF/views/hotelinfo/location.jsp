@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: user1
   Date: 2024-01-02
-  Time: 오후 12:25
+  Time: 오후 4:34
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -54,17 +54,29 @@
     .content > section {
         /*margin: 0 auto;*/
         max-width: 800px; /* 섹션의 최대 너비를 설정할 수 있습니다 */
+        max-height: 700px;
         background-color: white; /* 배경색을 흰색으로 설정 */
         padding: 20px; /* 내부 여백을 설정 */
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 효과를 추가 */
         margin-bottom: 20px; /* 섹션과 섹션 사이의 간격 */
 
     }
-</style>
+    section {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-<body class="bg-white text-gray-800">
-<div class="layout">
-    <!-- 사이드바 메뉴 -->
+    #map {
+        width: 95%;
+        height: 95%;
+    }
+
+</style>
+<body>
+<div class="layout ">
     <div class="sidebar">
         <ul>
             <li><a href="${pageContext.request.contextPath}/hotelintroduce/introduce">호텔 소개</a></li>
@@ -72,47 +84,40 @@
             <li><a href="${pageContext.request.contextPath}/hotellocation/location">호텔 위치</a></li>
         </ul>
     </div>
-
     <div class="content max-w-5xl mx-auto p-8">
         <section>
-            <div class="border-b-2 pb-4 mb-4">
-                <h1 class="text-3xl font-semibold">호텔 정보</h1>
-            </div>
-            <div class="grid md:grid-cols-2 gap-4">
-            </div>
-            <section>
-                <div>
-                    <h2 class="text-xl font-semibold mb-2">개관일</h2>
-                    <p class="pb-1">1990년 7월 1일(최종 리뉴얼 개관: 1998.7.1)</p>
-                    <hr>
-
-                    <!-- ... 나머지 정보 ... -->
-
-                    <h2 class="text-xl font-semibold mb-2 ">주소</h2>
-                    <p class="pb-1">제주특별자치도 서귀포시 중문관광로 72번길 75</p>
-                    <hr>
-
-                    <!-- ... 나머지 정보 ... -->
-
-                    <h2 class="text-xl font-semibold mb-2">대표전화</h2>
-                    <p class="pb-1">064-735-5114, 팩스 : 064-735-5414</p>
-                    <hr>
-
-                    <h2 class="text-xl font-semibold mb-2">객실수</h2>
-                    <p class="pb-1">30실</p>
-                    <hr>
-                    <!-- ... 나머지 정보 ... -->
-
-                    <h2 class="text-xl font-semibold mb-2 mt-4">홈페이지</h2>
-                    <a href="http://www.shilla.net/jeju"
-                       class="pb-1 text-blue-600 hover:underline">http://www.shilla.net/jeju</a>
-                    <hr>
-                    <!-- ... 나머지 정보 ... -->
-                </div>
-            </section>
+            <div id="map"></div>
         </section>
     </div>
 </div>
+
+
+
+
+
 </body>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4d27601849c9209286843d85554892ed"></script>
+
+
+<script type="text/javascript">
+    var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+    var options = { //지도를 생성할 때 필요한 기본 옵션
+        center: new kakao.maps.LatLng(37.498993, 127.032909), //지도의 중심좌표.
+        level: 3 //지도의 레벨(확대, 축소 정도)
+    };
+    var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+
+    var markerPosition = new kakao.maps.LatLng(37.498993, 127.032909);
+
+    // 마커를 생성합니다
+    var marker = new kakao.maps.Marker({
+        position: markerPosition
+    });
+
+    // 마커가 지도 위에 표시되도록 설정합니다
+    marker.setMap(map);
+</script>
+
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
