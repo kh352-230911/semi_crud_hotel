@@ -11,45 +11,18 @@
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 <style>
     .layout {
-        
+        display: flex; /* flexbox 레이아웃 사용 */
         margin-left: 100px; /* 기존 사이드바의 너비만큼 여백 설정 */
         margin-top: 100px;
-
     }
 
-    html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .main-container {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* 수직 중앙 정렬 */
-        justify-content: center; /* 수평 중앙 정렬 */
-        padding: 50px 0; /* 상하 여백 */
-        width: 50vw;
-        margin: 0 auto; /* 좌우 자동 마진으로 중앙 정렬 */
-    }
-
-    #map {
-        width: 500px;
-        height: 400px;
-
-    }
-
-
+    /* 사이드바 스타일링 */
     .sidebar {
         width: 200px; /* 사이드바 너비 설정 */
         height: 200px;
         background-color: #f9f9f9; /* 배경색 설정 */
         padding: 20px;
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
-
     }
 
     .sidebar ul {
@@ -71,6 +44,36 @@
         background-color: #e0e0e0;
     }
 
+    .content {
+        flex-grow: 1; /* 나머지 공간을 채우도록 설정 */
+        box-sizing: border-box;
+        padding-left: 40px;
+        padding-bottom: 100px;
+    }
+
+    .content > section {
+        /*margin: 0 auto;*/
+        max-width: 800px; /* 섹션의 최대 너비를 설정할 수 있습니다 */
+        max-height: 700px;
+        background-color: white; /* 배경색을 흰색으로 설정 */
+        padding: 20px; /* 내부 여백을 설정 */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 효과를 추가 */
+        margin-bottom: 20px; /* 섹션과 섹션 사이의 간격 */
+
+    }
+    section {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #map {
+        width: 95%;
+        height: 95%;
+    }
+
 </style>
 <body>
 <div class="layout ">
@@ -81,13 +84,16 @@
             <li><a href="${pageContext.request.contextPath}/hotellocation/location">호텔 위치</a></li>
         </ul>
     </div>
-
-
+    <div class="content max-w-5xl mx-auto p-8">
+        <section>
+            <div id="map"></div>
+        </section>
+    </div>
 </div>
-<div class="main-container">
 
-    <div id="map"></div>
-</div>
+
+
+
 
 </body>
 
