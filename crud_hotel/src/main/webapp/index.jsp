@@ -95,7 +95,6 @@
     button:hover {
         border: 2px solid black;
     }
-
 </style>
 
 <%-- 예약폼 영역 --%>
@@ -104,7 +103,6 @@
         <h1 class="text-white">예약하기</h1>
 
         <form class="form-proup" action="reservation.php" method="post">
-
 
             <div class="elem-group inlined">
                 <label class="text-white" for="checkin-date">Check-in Date</label>
@@ -150,13 +148,9 @@
     }
 </script>
 
-
-
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
 
-
-			pageEncoding="UTF-8" %>
 <html>
 <head>
 	<title>CRUD Hotel</title>

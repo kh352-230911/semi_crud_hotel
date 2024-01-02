@@ -59,5 +59,10 @@
 
     <mapper resource="mapper/booking/booking-mapper.xml"/>
 
+    <mapper resource="mapper/ask/ask-mapper.xml"/>
+
+    <mapper resource="mapper/ask/askAnswer-mapper.xml"/>
+
+
   </mappers>
 </configuration>
