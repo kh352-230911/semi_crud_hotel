@@ -65,8 +65,6 @@
         border: 2px solid #777;
         box-sizing: border-box;
         font-size: small;
-        /*font-family: 'Nanum Gothic';*/
-        /*width: 150%;*/
     }
 
     div.elem-group.inlined input {
@@ -110,7 +108,7 @@
                      class="absolute block w-auto h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
             </div>
             <!-- Item 2 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
                 <img src="${pageContext.request.contextPath}/images/2.jpg"
                      class="absolute block w-auto h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
             </div>
@@ -155,11 +153,9 @@
 
     <div class="top-banner-overlay">
         <h1 class="text-white">예약하기</h1>
+         <form class="form-proup" action="reservation.php" method="post">
 
-        <form class="form-proup" action="reservation.php" method="post">
-
-
-            <div class="elem-group inlined">
+        <div class="elem-group inlined">
                 <label class="text-white" for="checkin-date">Check-in Date</label>
                 <input type="date" id="checkin-date" name="checkin" placeholder="Select date" required>
             </div>
