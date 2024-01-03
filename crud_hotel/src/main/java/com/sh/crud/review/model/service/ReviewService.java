@@ -41,4 +41,27 @@ public class ReviewService {
         session.close();
         return totalCount;
     }
+
+    public int insertReview(ReviewVo review) {
+        int result = 0;
+        SqlSession session = getSqlSession();
+        try{
+            result = reviewDao.insertReview(session, review);
+            System.out.println("ReviewService#insertReview : review#id = " + review.getRevId());
+            session.commit();
+        } catch (Exception e) {
+            session.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
+        return result;
+    }
+
+    public Review findByNum(int num) {
+        SqlSession session = getSqlSession();
+        Review review = reviewDao.findByNum(session, num);
+        session.close();
+        return review;
+    }
 }

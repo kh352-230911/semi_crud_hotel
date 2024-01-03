@@ -74,11 +74,7 @@
             </div>
         </div>
     </nav>
-<<<<<<< HEAD
-    </div>
-=======
 
->>>>>>> 1d14491ea36b9b00522e115d375c94bfc292537b
 </header>
 
 <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>

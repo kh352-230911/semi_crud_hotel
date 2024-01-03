@@ -9,6 +9,8 @@
             *
         from
             tb_review
+        order by
+            rev_num
     </select>
 
     <select id="findById" resultType="review">
@@ -20,12 +22,35 @@
             rev_id = #{id}
     </select>
 
+    <select id="findByNum" resultType="review">
+        select
+            *
+        from
+            tb_review
+        where
+            rev_num = #{num}
+    </select>
+
     <select id="getTotalCount" resultType="_int">
         select
             count(*)
         from
             tb_review
     </select>
+
+    <insert id="insertReview">
+        insert into
+            tb_review (rev_num, rev_id, rev_room_num, rev_title, rev_content, rev_score, rev_date)
+        values(
+               seq_rev_num.nextval,
+               #{revId},
+               #{revRoomNum},
+               #{revTitle},
+               #{revContent},
+               #{revScore},
+               #{revDate}
+              )
+    </insert>
 
 
 </mapper>
