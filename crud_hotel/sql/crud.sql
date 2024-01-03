@@ -57,7 +57,6 @@ CREATE TABLE tb_manager (
     constraint pk_manager_num primary key(manager_num)
 );
 
-<<<<<<< HEAD
 --drop table tb_manager;
 
 select * from tb_manager;
@@ -197,13 +196,15 @@ create sequence seq_booking_num;
 select * from tb_booking;
 
 
-
-
-
-=======
 select * from tb_manager;
 select * from tb_ask_answer;
 select * from tb_ask;
 
 alter table tb_ask add constraints ck_tb_ask_ask_case check(ask_case in('객실문의', '예약문의', '결제문의', '기타문의'));
->>>>>>> cefdeb5b641dd2ed9a717483a836efa50278b2e5
+
+update 
+    tb_member
+set
+    member_password = 'DrXk6Hf+b7FpHqZRnQT9o1GiMOOBN+ky/tgiZtZfnAdUwPmZcZ3kFwbY1BVLJBqd/SGoFmqmTqfKK4UVl4+CCA=='
+where
+    member_id = 'honggd';

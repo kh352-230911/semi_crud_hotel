@@ -116,12 +116,6 @@
         flex: 1;
     }
 </style>
-<%--    <footer>--%>
-<%--        <div class="w-[1280px] h-[720px] relative bg-white">--%>
-<%--            <div class="w-[1280px] h-[95px] left-0 top-[625px] absolute bg-stone-300"></div>--%>
-<%--            <div class="left-[60px] top-[654px] absolute text-black text-3xl font-normal font-['Italianno']">CRUD Hotel</div>--%>
-<%--        </div>--%>
-<%--    </footer>--%>
 
 <!-- component -->
 <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
@@ -133,7 +127,7 @@
             <div class="w-full lg:w-6/12 px-4">
                 <h4 class="text-3xl fonat-semibold text-blueGray-700">CRUD Hotel</h4>
                 <h5 class="text-lg mt-0 mb-2 text-blueGray-600">
-                    Find us on any of these platforms, we respond 1-2 business days.
+                    CRUD SEOUL is the first luxury landmark hotel representing Korea and is operated by the tallest landmark in Korea, All  hotel guest rooms offer panoramic views of Seoul, that will offer the ultimate experience for customers from all over the world and relax at the most prestigious refreshing zone  CRUD Hotel.
                 </h5>
                 <div class="mt-6 lg:mb-0 mb-6">
                     <button class="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
@@ -187,7 +181,7 @@
             <div class="w-full md:w-4/12 px-4 mx-auto text-center">
                 <div class="text-sm text-blueGray-500 font-semibold py-1">
                     <span id="get-current-year">CRUD Hotel</span><a href="https://www.creative-tim.com/product/notus-js" class="text-blueGray-500 hover:text-gray-800" target="_blank">
-                    <a href="https://www.creative-tim.com?ref=njs-profile" class="text-blueGray-500 hover:text-blueGray-800">서울 강남구 테헤란로 14길</a>.
+                    <a href="https://www.creative-tim.com?ref=njs-profile" class="text-blueGray-500 hover:text-blueGray-800">48, Teheran-ro 14-gil, Gangnam-gu, Seoul, Republic of Korea</a>.
                 </div>
             </div>
         </div>
