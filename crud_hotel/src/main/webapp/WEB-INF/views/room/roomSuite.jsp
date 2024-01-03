@@ -15,7 +15,7 @@
 <div class="flex h-screen">
     <!-- 사이드바 -->
     <div class="w-64 bg-yellow-50 p-5 space-y-4">
-        <div><p class="text-2xl font-bold text-orange-100 dark:text-orange-300">객실 유형</p></div>
+        <div><p class="text-2xl font-bold text-orange-300 dark:text-orange-300">객실 유형</p></div>
         <div><a href="${pageContext.request.contextPath}/room/roomStandard">스탠다드</a></div>
         <div><a href="${pageContext.request.contextPath}/room/roomPremier">프리미어</a></div>
         <div><a href="${pageContext.request.contextPath}/room/roomSuite">스위트룸</a></div>
@@ -26,7 +26,7 @@
 
         <!-- 상단 메뉴 -->
         <div class="flex justify-between items-center p-10">
-            <div><p class="text-2xl font-bold text-orange-100 dark:text-orange-300">스위트룸</p></div>
+            <div><p class="text-2xl font-bold text-orange-300 dark:text-orange-300">스위트룸</p></div>
             <div>
                 <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-black bg-orange-300 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-yellow-200 dark:hover:bg-yellow-700 dark:focus:ring-orange-800" type="button">객실목록<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
@@ -35,50 +35,50 @@
 
                 <!-- Dropdown menu -->
                 <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-700" aria-labelledby="dropdownDefaultButton">
                         <li>
-                            <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-200 dark:hover:text-black">Q601
-                                <span class="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
+                            <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">Q601
+                                <span class="inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
                                     <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
                                     예약가능
                                 </span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-200 dark:hover:text-black">Q602
-                                <span class="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
+                            <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">Q602
+                                <span class="inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
                                     <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
                                     예약가능
                                 </span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-200 dark:hover:text-black">Q603
-                                <span class="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
+                            <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">Q603
+                                <span class="inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
                                     <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
                                     예약가능
                                 </span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-200 dark:hover:text-black">Q604
-                                <span class="inline-flex items-center bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">
+                            <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">Q604
+                                <span class="inline-flex items-center bg-red-900 text-red-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">
                                     <span class="w-2 h-2 me-1 bg-red-500 rounded-full"></span>
                                     예약불가
                                 </span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-200 dark:hover:text-black">Q605
-                                <span class="inline-flex items-center bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">
+                            <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">Q605
+                                <span class="inline-flex items-center bg-red-900 text-red-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">
                                     <span class="w-2 h-2 me-1 bg-red-500 rounded-full"></span>
                                     예약불가
                                 </span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-200 dark:hover:text-black">Q606
-                                <span class="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
+                            <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">Q606
+                                <span class="inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
                                     <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
                                     예약가능
                                 </span>
