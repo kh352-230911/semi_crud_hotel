@@ -28,7 +28,7 @@
         margin: 0 auto; /* 중앙 정렬 */
         max-width: 45%; /* 최대 너비를 90%로 설정 (양쪽에 5%씩 마진) */
     }
-    
+
 
 </style>
 <div id="default-carousel" class="relative w-full" data-carousel="slide">
