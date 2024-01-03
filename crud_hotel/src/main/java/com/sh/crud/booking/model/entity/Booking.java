@@ -12,10 +12,12 @@ public class Booking {
     private LocalDateTime checkOutDate;
     private int bookingTourNum;
 
+
+
     public Booking() {
     }
 
-    public Booking(int bookingNum, String bookingMemberId, String bookingRoomNum, String bookingName, LocalDateTime checkInDate, LocalDateTime checkOutDate, int bookingTourNum) {
+    public Booking(int bookingNum, String bookingMemberId, String bookingRoomNum, String bookingName, LocalDateTime checkInDate, LocalDateTime checkOutDate, int bookingTourNum, String availability) {
         this.bookingNum = bookingNum;
         this.bookingMemberId = bookingMemberId;
         this.bookingRoomNum = bookingRoomNum;
