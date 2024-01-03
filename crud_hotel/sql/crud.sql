@@ -57,9 +57,6 @@ CREATE TABLE tb_manager (
     constraint pk_manager_num primary key(manager_num)
 );
 
-<<<<<<< HEAD
---drop table tb_manager;
-
 select * from tb_manager;
 
 
@@ -196,14 +193,67 @@ create sequence seq_booking_num;
 
 select * from tb_booking;
 
+commit;
+
+CREATE TABLE tb_review_picture (
+	rev_picture_num	number		NOT NULL,
+	rev_picture	varchar2(3000)		NULL,
+	rev_pic_num	number		NULL,
+    
+    constraint pk_rev_picture_num primary key(rev_picture_num),
+    constraint fk_rev_pic_num foreign key(rev_pic_num) references tb_review(rev_num) on delete cascade
+);
+
+create sequence seq_rev_picture_num;
+
+select * from tb_review_picture;
+
+CREATE TABLE tb_manager_picture (
+	manager_pic_num	number		NOT NULL,
+	manager_picture	varchar2(3000)		NULL,
+	manager_tour_num	number		NULL,
+	manager_room_num 	varchar2(30)		NULL,
+    
+    constraint pk_manager_pic_num primary key(manager_pic_num),
+    constraint fk_manager_tour_num foreign key(manager_tour_num) references tb_tour(tour_num) on delete cascade,
+    constraint fk_manager_room_num foreign key(manager_room_num) references tb_room(room_num) on delete cascade
+);
+
+create sequence seq_manager_pic_num;
+
+select * from tb_manager_picture;
+
+commit;
+
+CREATE TABLE tb_pay (
+	pay_num	number		NOT NULL,
+	pay_choice	number	DEFAULT 0	NULL,
+	pay_discount	number	DEFAULT 0	NULL,
+	pay_all_price	number	DEFAULT 0	NULL,
+	pay_booking_num	number		NOT NULL,
+    
+    constraint pk_pay_num primary key(pay_num),
+    constraint fk_pay_booking_num foreign key(pay_booking_num) references tb_booking(booking_num) on delete cascade
+);
+
+create sequence seq_pay_num;
+
+select * from tb_pay;
+
+commit;
 
 
 
-
-=======
 select * from tb_manager;
 select * from tb_ask_answer;
 select * from tb_ask;
 
 alter table tb_ask add constraints ck_tb_ask_ask_case check(ask_case in('객실문의', '예약문의', '결제문의', '기타문의'));
->>>>>>> cefdeb5b641dd2ed9a717483a836efa50278b2e5
+
+update 
+    tb_member
+set
+    member_password = 'DrXk6Hf+b7FpHqZRnQT9o1GiMOOBN+ky/tgiZtZfnAdUwPmZcZ3kFwbY1BVLJBqd/SGoFmqmTqfKK4UVl4+CCA=='
+where
+    member_id = 'honggd';
+
