@@ -135,29 +135,38 @@
             <button class="text-white" type="submit">검색</button>
         </div>
     </div>
+
+<%-- 이미지 영역 --%>
     <div id="gallery" class="relative w-full h-full" data-carousel="slide">
         <!-- Carousel wrapper -->
         <div class="relative w-full h-full overflow-hidden">
             <!-- Item 1 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="${pageContext.request.contextPath}/images/main_image.jpg"
+                <img src="${pageContext.request.contextPath}/images/elba-3715707_1920.jpg"
                      class="absolute inset-0 w-full h-full object-cover" alt="Main Image">
             </div>
             <!-- Item 2 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                <img src="${pageContext.request.contextPath}/images/a-restaurant-4857484_1920.jpg"
+                <img src="${pageContext.request.contextPath}/images/pool-1268868.jpg"
                      class="absolute inset-0 w-full h-full object-cover" alt="Image 2">
             </div>
             <!-- Item 3 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="${pageContext.request.contextPath}/images/gdgdd.jpg"
+                     class="absolute inset-0 w-full h-full object-cover" alt="Image 1">
+            </div>
+            <!-- Item 4 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
                 <img src="${pageContext.request.contextPath}/images/bar-4854100_1920.jpg"
                      class="absolute inset-0 w-full h-full object-cover" alt="Image 1">
             </div>
-            <!-- More items... -->
+            <!-- Item 5 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="${pageContext.request.contextPath}/images/hotel-00.jpg"
+                     class="absolute inset-0 w-full h-full object-cover" alt="Image 1">
+            </div>
         </div>
     </div>
-
-</section>
 
 <!-- Slider controls -->
 <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
@@ -176,9 +185,7 @@
             </svg>
             <span class="sr-only">Next</span>
         </span>
-<%--    </button>--%>
-</div>
-
+</section>
 
 <script>
     var currentDateTime = new Date();

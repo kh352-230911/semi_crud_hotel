@@ -244,3 +244,16 @@ commit;
 
 
 
+select * from tb_manager;
+select * from tb_ask_answer;
+select * from tb_ask;
+
+alter table tb_ask add constraints ck_tb_ask_ask_case check(ask_case in('객실문의', '예약문의', '결제문의', '기타문의'));
+
+update 
+    tb_member
+set
+    member_password = 'DrXk6Hf+b7FpHqZRnQT9o1GiMOOBN+ky/tgiZtZfnAdUwPmZcZ3kFwbY1BVLJBqd/SGoFmqmTqfKK4UVl4+CCA=='
+where
+    member_id = 'honggd';
+
