@@ -28,4 +28,12 @@ public class ReviewDao {
     public int getTotalCount(SqlSession session) {
         return session.selectOne("review.getTotalCount");
     }
+
+    public int insertReview(SqlSession session, ReviewVo review) {
+        return session.insert("review.insertReview", review);
+    }
+
+    public Review findByNum(SqlSession session, int num) {
+        return session.selectOne("review.findByNum", num);
+    }
 }

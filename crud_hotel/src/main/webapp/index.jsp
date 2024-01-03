@@ -142,28 +142,28 @@
         <div class="relative w-full h-full overflow-hidden">
             <!-- Item 1 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="${pageContext.request.contextPath}/images/elba-3715707_1920.jpg"
+                <img src="${pageContext.request.contextPath}/images/pool-1268868.jpg"
                      class="absolute inset-0 w-full h-full object-cover" alt="Main Image">
             </div>
             <!-- Item 2 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                <img src="${pageContext.request.contextPath}/images/pool-1268868.jpg"
-                     class="absolute inset-0 w-full h-full object-cover" alt="Image 2">
+                <img src="${pageContext.request.contextPath}/images/elba-3715707_1920.jpg"
+                     class="absolute inset-0 w-full h-full object-cover" alt="">
             </div>
             <!-- Item 3 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
                 <img src="${pageContext.request.contextPath}/images/gdgdd.jpg"
-                     class="absolute inset-0 w-full h-full object-cover" alt="Image 1">
+                     class="absolute inset-0 w-full h-full object-cover" alt="">
             </div>
             <!-- Item 4 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
                 <img src="${pageContext.request.contextPath}/images/bar-4854100_1920.jpg"
-                     class="absolute inset-0 w-full h-full object-cover" alt="Image 1">
+                     class="absolute inset-0 w-full h-full object-cover" alt="">
             </div>
             <!-- Item 5 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
                 <img src="${pageContext.request.contextPath}/images/hotel-00.jpg"
-                     class="absolute inset-0 w-full h-full object-cover" alt="Image 1">
+                     class="absolute inset-0 w-full h-full object-cover" alt="">
             </div>
         </div>
     </div>
