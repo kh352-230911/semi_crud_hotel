@@ -33,9 +33,14 @@
                     <a href="#" class="text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none">Register</a>
                 </c:if>
                 <c:if test="${loginMember != null}">
+                    <%-- 종아이콘 --%>
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 21">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9.046 3.59-.435-2.324m.435 2.324a5.338 5.338 0 0 1 6.033 4.333l.331 1.77c.439 2.344 2.383 2.587 2.599 3.76.11.586.22 1.171-.309 1.271L5 17.101c-.529.1-.639-.488-.749-1.074-.219-1.172 1.506-2.102 1.067-4.447l-.331-1.769a5.338 5.338 0 0 1 4.059-6.22Zm-7.13 4.602a8.472 8.472 0 0 1 2.17-5.048m2.646 13.633A3.472 3.472 0 0 0 13.46 16l.089-.5-6.817 1.277Z"/>
+                    </svg>
 
                     <div class="flex justify-center">
                         <div class="relative inline-block mb-20">
+
                             <!-- Dropdown toggle button -->
                             <button id="dropdownDefault" data-dropdown-toggle="dropdown" type="button"
                                     class="relative z-10 flex items-center p-2 text-sm text-gray-600 bg-white border border-transparent rounded-md focus:border-blue-500 focus:ring-opacity-40 dark:focus:ring-opacity-40 focus:ring-blue-300 dark:focus:ring-blue-400 focus:ring dark:text-white dark:bg-gray-800 focus:outline-none">
@@ -66,7 +71,7 @@
                                 </a>
 
                                 <a href="#" class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
-                                    문의내역보기
+                                    문의조회
                                 </a>
 
                                 <hr class="border-gray-200 dark:border-gray-700 ">
@@ -74,30 +79,11 @@
                                 <a href="#" class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
                                     회원탈퇴
                                 </a>
-                                </div>
                             </div>
                         </div>
-
-                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton">
-                            <li>
-                                <a href="${pageContext.request.contextPath}/member/memberDetail" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">내정보수정</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">예약조회</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">문의내역보기</a>
-                            </li>
-                        </ul>
-                        <div class="py-2">
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">회원탈퇴</a>
-                        </div>
                     </div>
-                    <a href="${pageContext.request.contextPath}/member/memberLogout" class="text-md text-gray-500 hover:underline">Log out</a>
-
                     <a href="${pageContext.request.contextPath}/member/memberLogout" class="mx-1 block">Log out</a>
                 </c:if>
-
             </div>
         </div>
     </nav>
