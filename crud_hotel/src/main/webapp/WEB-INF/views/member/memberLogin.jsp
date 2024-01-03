@@ -19,7 +19,7 @@
             </div>
             <div class="w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-indigo-500">
                 <input type="password" id="password" name="password"
-                       placeholder="Password" autocomplete="password" value="1234a@"
+                       placeholder="Password" autocomplete="password"
                        class="w-full border-none bg-transparent outline-none placeholder:italic focus:outline-none text-black"/>
             </div>
             <div class="flex items-center">
@@ -33,6 +33,6 @@
     </main>
 </form>
 
-<script src="${pageContext.request.contextPath}/js/member/membrLogin.js"></script>
+<script src="${pageContext.request.contextPath}/js/member/memberLogin.js"></script>
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
