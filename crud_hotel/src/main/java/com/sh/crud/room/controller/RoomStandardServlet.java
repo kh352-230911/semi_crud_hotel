@@ -1,4 +1,4 @@
-package com.sh.crud.room.model.controller;
+package com.sh.crud.room.controller;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
