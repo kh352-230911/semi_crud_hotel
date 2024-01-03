@@ -10,7 +10,12 @@
          pageEncoding="UTF-8" %>
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 <style>
-
+    h2 {
+        font-size: 2em; /* 글자 크기 */
+        color: black; /* 글자 색상 */
+        font-weight: bold; /* 글자 굵기 */
+        /* 필요한 추가 스타일링 */
+    }
     .carousel-item {
         display: none; /* 기본적으로 모든 항목을 숨깁니다. */
     }
@@ -23,33 +28,39 @@
         margin: 0 auto; /* 중앙 정렬 */
         max-width: 45%; /* 최대 너비를 90%로 설정 (양쪽에 5%씩 마진) */
     }
+    
+
 </style>
 <div id="default-carousel" class="relative w-full" data-carousel="slide">
     <!-- Carousel wrapper -->
     <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
         <!-- Item 1 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="${pageContext.request.contextPath}/images/main_image.jpg"
+            <img src="${pageContext.request.contextPath}/images/panda.jpg"
                  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 2 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="${pageContext.request.contextPath}/images/a-restaurant-4857484_1920.jpg"
+            <img src="${pageContext.request.contextPath}/images/aqua.jpg"
                  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 3 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="${pageContext.request.contextPath}/images/main_image.jpg"
+            <img src="${pageContext.request.contextPath}/images/figure2.jpg"
                  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 4 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="${pageContext.request.contextPath}/images/a-restaurant-4857484_1920.jpg"
+            <img src="${pageContext.request.contextPath}/images/road2.jpg"
                  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 5 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="${pageContext.request.contextPath}/images/a-restaurant-4857484_1920.jpg"
+            <img src="${pageContext.request.contextPath}/images/musical.jpg"
+                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="${pageContext.request.contextPath}/images/world3.jpg"
                  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <button type="button"
@@ -83,23 +94,27 @@
     <div id="text-carousel" class="relative w-full mt-4" data-carousel="text">
         <div class="relative">
             <div class="carousel-item active">
-                <h2>Slide Title 1</h2>
+                <h2>동물원</h2>
                 <p>Description for Slide 1</p>
             </div>
             <div class="carousel-item">
-                <h2>Slide Title 2</h2>
+                <h2>아쿠아리움</h2>
                 <p>Description for Slide 2</p>
             </div>
             <div class="carousel-item">
-                <h2>Slide Title 3</h2>
+                <h2>피규어 뮤지엄</h2>
                 <p>Description for Slide 2</p>
             </div>
             <div class="carousel-item">
-                <h2>Slide Title 4</h2>
+                <h2>가로수길</h2>
                 <p>Description for Slide 2</p>
             </div>
             <div class="carousel-item">
-                <h2>Slide Title 5</h2>
+                <h2>뮤지컬 겨울나그네</h2>
+                <p>Description for Slide 2</p>
+            </div>
+            <div class="carousel-item">
+                <h2>강남 롯데월드</h2>
                 <p>Description for Slide 2</p>
             </div>
         </div>
