@@ -76,7 +76,6 @@
                         </div>
                     </div>
                     <a href="${pageContext.request.contextPath}/member/memberLogout" class="text-md text-gray-500 hover:underline">Log out</a>
-                </c:if>
             </div>
         </div>
     </nav>
