@@ -33,33 +33,51 @@
                     <a href="#" class="text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none">Register</a>
                 </c:if>
                 <c:if test="${loginMember != null}">
-                    <a href="${pageContext.request.contextPath}/member/memberDetail" class="text-md text-gray-600 hover:underline">
-                        <svg class="w-6 h-6 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 18">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm-2 3h4a4 4 0 0 1 4 4v2H1v-2a4 4 0 0 1 4-4Z"/>${loginMember.memberId}
-                        </svg>
-                    </a>${loginMember.memberId}님, 안녕하세요🧡
-                    <a href="${pageContext.request.contextPath}/member/memberLogout" class="text-md text-gray-500 hover:underline">Log out</a>
-                </c:if>
-                <!-- Mobile menu button -->
-                <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="mobile-menu-2" aria-expanded="false">
-                    <!-- Icon placeholders -->
-                </button>
 
-                    <!-- Dropdown menu -->
-                    <button id="dropdownAvatarNameButton" data-dropdown-toggle="dropdownAvatarName" class="flex items-center text-sm pe-1 font-medium text-gray-900 rounded-full hover:text-blue-600 dark:hover:text-blue-500 md:me-0 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-white" type="button">
-                        <span class="sr-only">Open user menu</span>
-                        <img class="w-8 h-8 me-2 rounded-full" src="/images/1.jpg" alt="user photo">
-                            ${loginMember.memberId}
-                        <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                        </svg>
-                    </button>
+                    <div class="flex justify-center">
+                        <div class="relative inline-block mb-20">
+                            <!-- Dropdown toggle button -->
+                            <button id="dropdownDefault" data-dropdown-toggle="dropdown" type="button"
+                                    class="relative z-10 flex items-center p-2 text-sm text-gray-600 bg-white border border-transparent rounded-md focus:border-blue-500 focus:ring-opacity-40 dark:focus:ring-opacity-40 focus:ring-blue-300 dark:focus:ring-blue-400 focus:ring dark:text-white dark:bg-gray-800 focus:outline-none">
+                                <span class="mx-1 text-base leading-6">🔸${loginMember.memberId}🔸</span> <!-- text-base for font size, leading-6 for line height -->
+                                <svg class="w-5 h-5 mx-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 15.713L18.01 9.70299L16.597 8.28799L12 12.888L7.40399 8.28799L5.98999 9.70199L12 15.713Z" fill="currentColor"></path>
+                                </svg>
+                            </button>
 
-                    <div id="dropdownAvatarName" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                        <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
-                            <div class="font-medium ">${loginMember.memberId}</div>
-                            <div class="truncate">🔸${loginMember.memberName}님🔸</div>
+                            <!-- Dropdown menu -->
+                            <div id="dropdown" class=" hidden absolute right-0 z-20 w-56 py-2 mt-2 overflow-hidden bg-white rounded-md shadow-xl dark:bg-gray-800">
+                                <a href="#" class="flex items-center p-3 -mt-2 text-sm text-gray-600 transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+                                    <img class="flex-shrink-0 object-cover mx-1 rounded-full w-9 h-9" src="${pageContext.request.contextPath}/images/1.jpg" alt="">
+                                    <div class="mx-1">
+                                        <h1 class="text-sm font-semibold text-gray-700 dark:text-gray-200">${loginMember.memberId}</h1>
+                                        <p class="text-sm text-gray-500 dark:text-gray-400">🔸${loginMember.memberName}님🔸</p>
+                                    </div>
+                                </a>
+
+                                <hr class="border-gray-200 dark:border-gray-700 ">
+
+                                <a href="${pageContext.request.contextPath}/member/memberDetail" class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+                                    내정보수정
+                                </a>
+
+                                <a href="#" class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+                                    예약조회
+                                </a>
+
+                                <a href="#" class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+                                    문의내역보기
+                                </a>
+
+                                <hr class="border-gray-200 dark:border-gray-700 ">
+
+                                <a href="#" class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+                                    회원탈퇴
+                                </a>
+                                </div>
+                            </div>
                         </div>
+
                         <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton">
                             <li>
                                 <a href="${pageContext.request.contextPath}/member/memberDetail" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">내정보수정</a>
@@ -76,6 +94,10 @@
                         </div>
                     </div>
                     <a href="${pageContext.request.contextPath}/member/memberLogout" class="text-md text-gray-500 hover:underline">Log out</a>
+
+                    <a href="${pageContext.request.contextPath}/member/memberLogout" class="mx-1 block">Log out</a>
+                </c:if>
+
             </div>
         </div>
     </nav>
