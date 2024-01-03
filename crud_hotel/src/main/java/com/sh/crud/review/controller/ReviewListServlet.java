@@ -26,13 +26,13 @@ public class ReviewListServlet extends HttpServlet {
             page = Integer.parseInt(req.getParameter("page"));
         } catch (NumberFormatException ignore) {}
         Map<String, Object> param = Map.of("page", page, "limit", limit);
-        System.out.println(param);
+//        System.out.println(param);
 
         // 로직
         // content
         List<ReviewVo> reviews = reviewService.findAll(param);
         req.setAttribute("reviews", reviews);
-        System.out.println(reviews);
+//        System.out.println(reviews);
 
         // pagebar
         int totalCount = reviewService.getTotalCount();
