@@ -47,6 +47,7 @@ public class BookingService {
             session.close();
         }
         return result;
+    }
 
     public List<Booking> findAll(Map<String, Object> param) {
         SqlSession session=getSqlSession();
