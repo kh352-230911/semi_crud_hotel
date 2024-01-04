@@ -11,8 +11,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
-
-<div class="w-full h-full relative overflow-hidden bg-white">
+<div class="w-[1280px] h-[720px] relative overflow-hidden bg-white">
     <p class="absolute left-[570px] top-[180px] text-base text-left text-[#715b3f]">
         객실, 날짜, 인원 선택
     </p>
@@ -82,17 +81,19 @@
         <path d="M0.582031 1H922.888" stroke="#715B3F" stroke-linecap="round"></path>
     </svg>
     <p class="absolute left-[489px] top-[227px] text-[13px] text-left text-black">
-        객실 유형을 선택해주세요
+        방 타입을 선택해주세요
     </p>
-    <p class="absolute left-[488px] top-72 text-[13px] text-left text-black">날짜를 선택해주세요</p>
+    <p class="absolute left-[488px] top-72 text-[13px] text-left text-black">
+        날짜를 선택해주세요
+    </p>
     <p class="absolute left-[489px] top-[409px] text-[13px] text-left text-black">
         객실을 선택해주세요.
     </p>
     <p class="absolute left-[487px] top-[348px] text-[13px] text-left text-black">
-        인원 수를 선택해주세요. [최대 4명]
+        인원 수를 선택해주세요.
     </p>
     <p class="absolute left-[488px] top-[472px] text-[13px] text-left text-black">
-        침대 종류를 선택해주세요.
+        침대 수를 선택해주세요.
     </p>
     <div class="w-[87px] h-6 absolute left-[488px] top-[249px] bg-white border border-black/20"></div>
     <div
@@ -107,7 +108,8 @@
     <div class="w-[304px] h-11 absolute left-[488px] top-[562px] bg-[#715b3f]"></div>
     <p class="absolute left-[675px] top-[315px] text-[13px] text-left text-[#715b3f]">체크아웃</p>
     <p class="absolute left-[496px] top-[315px] text-[13px] text-left text-[#715b3f]">체크인</p>
-    <p class="absolute left-[619px] top-[571px] text-2xl text-left text-white">검색</p>
+    <p class="absolute left-[619px] top-[571px] text-2xl text-left text-white">
+        <a href="${pageContext.request.contextPath}/booking/bookingTour">검색</a></p>
 </div>
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>

@@ -201,7 +201,7 @@
                         <a href="${pageContext.request.contextPath}/tour/tourList" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-black-700 lg:p-0 ">즐길거리</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}/booking/bookingList" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-black-700 lg:p-0">예약하기</a>
+                        <a href="${pageContext.request.contextPath}/booking/bookingChoice" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-black-700 lg:p-0">예약하기</a>
                     </li>
                     <li>
                         <a href="${pageContext.request.contextPath}/ask/ask" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-black-700 lg:p-0">문의하기</a>

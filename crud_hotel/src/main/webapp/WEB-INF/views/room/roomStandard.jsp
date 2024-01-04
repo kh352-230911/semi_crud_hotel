@@ -30,7 +30,7 @@
                     <button id="dropdownDefaultButton1"
                             data-dropdown-toggle="dropdown1"
                             class="text-black bg-orange-300 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-yellow-200 dark:hover:bg-yellow-700 dark:focus:ring-orange-800" type="button">
-                                객실목록
+                                객실 예약 현황
                         <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
 
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
@@ -184,19 +184,29 @@
                             <!-- 썸네일 이미지들 -->
                             <%-- 썸네일 이미지들에 onclick 이벤트를 추가하여 updateMainImage 함수를 호출 --%>
                             <div>
-                                <img class="h-auto max-w-full rounded-lg cursor-pointer" src="${pageContext.request.contextPath}/images/hotelRoom1_up_last.jpg" alt="Thumbnail" onclick="updateMainImage(this.src);">
+                                <img class="h-auto max-w-full rounded-lg cursor-pointer"
+                                     src="${pageContext.request.contextPath}/images/hotelRoom1_up_last.jpg" alt="Thumbnail"
+                                     onclick="updateMainImage(this.src);">
                             </div>
                             <div>
-                                <img class="h-auto max-w-full rounded-lg cursor-pointer" src="${pageContext.request.contextPath}/images/hotelRoom2_up_last.jpg" alt="Thumbnail" onclick="updateMainImage(this.src);">
+                                <img class="h-auto max-w-full rounded-lg cursor-pointer"
+                                     src="${pageContext.request.contextPath}/images/hotelRoom2_up_last.jpg" alt="Thumbnail"
+                                     onclick="updateMainImage(this.src);">
                             </div>
                             <div>
-                                <img class="h-auto max-w-full rounded-lg cursor-pointer" src="${pageContext.request.contextPath}/images/hotelRoom3_up_last.jpg" alt="Thumbnail" onclick="updateMainImage(this.src);">
+                                <img class="h-auto max-w-full rounded-lg cursor-pointer"
+                                     src="${pageContext.request.contextPath}/images/hotelRoom3_up_last.jpg" alt="Thumbnail"
+                                     onclick="updateMainImage(this.src);">
                             </div>
                             <div>
-                                <img class="h-auto max-w-full rounded-lg cursor-pointer" src="${pageContext.request.contextPath}/images/hotelRoom4_up_last.jpg" alt="Thumbnail" onclick="updateMainImage(this.src);">
+                                <img class="h-auto max-w-full rounded-lg cursor-pointer"
+                                     src="${pageContext.request.contextPath}/images/hotelRoom4_up_last.jpg" alt="Thumbnail"
+                                     onclick="updateMainImage(this.src);">
                             </div>
                             <div>
-                                <img class="h-auto max-w-full rounded-lg cursor-pointer" src="${pageContext.request.contextPath}/images/hotelRoom5_up_last.jpg" alt="Thumbnail" onclick="updateMainImage(this.src);">
+                                <img class="h-auto max-w-full rounded-lg cursor-pointer"
+                                     src="${pageContext.request.contextPath}/images/hotelRoom5_up_last.jpg" alt="Thumbnail"
+                                     onclick="updateMainImage(this.src);">
                             </div>
                         </div>
                     </div>
@@ -204,6 +214,7 @@
             </div>
         </div>
     </div>
+
 <script src="${pageContext.request.contextPath}/js/room/roomStandard.js"></script>
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
