@@ -33,7 +33,15 @@ public class ReviewDao {
         return session.insert("review.insertReview", review);
     }
 
-    public Review findByNum(SqlSession session, int num) {
+    public Review findByNum(SqlSession session, long num) {
         return session.selectOne("review.findByNum", num);
+    }
+
+    public int deleteReview(SqlSession session, long num) {
+        return session.delete("review.deleteReview", num);
+    }
+
+    public int updateReview(SqlSession session, Review review) {
+        return session.update("review.updateReview", review);
     }
 }
