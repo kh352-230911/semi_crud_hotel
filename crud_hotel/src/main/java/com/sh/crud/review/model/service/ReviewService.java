@@ -1,6 +1,7 @@
 package com.sh.crud.review.model.service;
 
 import com.sh.crud.review.model.dao.ReviewDao;
+import com.sh.crud.review.model.entity.RevPicture;
 import com.sh.crud.review.model.entity.Review;
 import com.sh.crud.review.model.vo.ReviewVo;
 import org.apache.ibatis.session.SqlSession;
@@ -42,21 +43,7 @@ public class ReviewService {
         return totalCount;
     }
 
-    public int insertReview(ReviewVo review) {
-        int result = 0;
-        SqlSession session = getSqlSession();
-        try{
-            result = reviewDao.insertReview(session, review);
-            System.out.println("ReviewService#insertReview : review#id = " + review.getRevId());
-            session.commit();
-        } catch (Exception e) {
-            session.rollback();
-            throw e;
-        } finally {
-            session.close();
-        }
-        return result;
-    }
+
 
     public Review findByNum(long num) {
         SqlSession session = getSqlSession();
@@ -85,6 +72,22 @@ public class ReviewService {
         SqlSession session = getSqlSession();
         try{
             result = reviewDao.updateReview(session, review);
+            session.commit();
+        } catch (Exception e) {
+            session.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
+        return result;
+    }
+
+
+    public int insertReview(Review review) {
+        int result = 0;
+        SqlSession session = getSqlSession();
+        try{
+            result = reviewDao.insertReview(session, review);
             session.commit();
         } catch (Exception e) {
             session.rollback();

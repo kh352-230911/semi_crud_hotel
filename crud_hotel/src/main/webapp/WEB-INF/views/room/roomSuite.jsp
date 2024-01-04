@@ -31,7 +31,8 @@
                 <button id="dropdownDefaultButton3"
                         data-dropdown-toggle="dropdown3"
                         class="text-black bg-orange-300 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-yellow-200 dark:hover:bg-yellow-700 dark:focus:ring-orange-800"
-                        type="button">객실목록
+                        type="button">
+                        객실 예약 현황
                     <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                          viewBox="0 0 10 6">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -46,8 +47,9 @@
                         <li>
                             <a href="#"
                                class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">Q601
-                                <span class="inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
-                                    <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
+                                <span class="roomStatus inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300"
+                                      data-roomnum="Q601">
+                                    <span class="status-dot w-2 h-2 me-1 bg-green-500 rounded-full" data-roomnum="Q601"></span>
                                     예약가능
                                 </span>
                             </a>
@@ -55,8 +57,9 @@
                         <li>
                             <a href="#"
                                class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">Q602
-                                <span class="inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
-                                    <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
+                                <span class="roomStatus inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300"
+                                      data-roomnum="Q602">
+                                    <span class="status-dot w-2 h-2 me-1 bg-green-500 rounded-full" data-roomnum="Q602"></span>
                                     예약가능
                                 </span>
                             </a>
@@ -64,8 +67,9 @@
                         <li>
                             <a href="#"
                                class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">Q603
-                                <span class="inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
-                                    <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
+                                <span class="roomStatus inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300"
+                                      data-roomnum="Q603">
+                                    <span class="status-dot w-2 h-2 me-1 bg-green-500 rounded-full" data-roomnum="Q603"></span>
                                     예약가능
                                 </span>
                             </a>
@@ -73,26 +77,29 @@
                         <li>
                             <a href="#"
                                class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">Q604
-                                <span class="inline-flex items-center bg-red-900 text-red-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">
-                                    <span class="w-2 h-2 me-1 bg-red-500 rounded-full"></span>
-                                    예약불가
+                                <span class="roomStatus inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300"
+                                      data-roomnum="Q604">
+                                    <span class="status-dot w-2 h-2 me-1 bg-green-500 rounded-full" data-roomnum="Q604"></span>
+                                    예약가능
                                 </span>
                             </a>
                         </li>
                         <li>
                             <a href="#"
                                class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">Q605
-                                <span class="inline-flex items-center bg-red-900 text-red-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">
-                                    <span class="w-2 h-2 me-1 bg-red-500 rounded-full"></span>
-                                    예약불가
+                                <span class="roomStatus inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300"
+                                      data-roomnum="Q605">
+                                    <span class="status-dot w-2 h-2 me-1 bg-green-500 rounded-full" data-roomnum="Q605"></span>
+                                    예약가능
                                 </span>
                             </a>
                         </li>
                         <li>
                             <a href="#"
                                class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">Q606
-                                <span class="inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
-                                    <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
+                                <span class="roomStatus inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300"
+                                      data-roomnum="Q606">
+                                    <span class="status-dot w-2 h-2 me-1 bg-green-500 rounded-full" data-roomnum="Q606"></span>
                                     예약가능
                                 </span>
                             </a>
@@ -161,5 +168,7 @@
         </div>
     </div>
 </div>
-<script src="${pageContext.request.contextPath}/js/room/rooms.js"></script>
+
+<script src="${pageContext.request.contextPath}/js/room/roomSuite.js"></script>
+
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>

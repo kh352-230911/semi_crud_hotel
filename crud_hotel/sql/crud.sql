@@ -213,6 +213,3 @@ update tb_manager
 set manager_pwd='9sXjqetsywnr/rMBYvBx2c7NlZEAgriCL0P8b4ml49LQ+FSrk6BWiUWjpPs/Qu2ZKmwdqZR/zc6IJJt6zxPKsg=='
 where
     manager_id='sd01';
-
-
-
