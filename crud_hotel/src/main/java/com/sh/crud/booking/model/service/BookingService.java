@@ -4,6 +4,7 @@ import com.sh.crud.booking.model.dao.BookingDao;
 import com.sh.crud.booking.model.entity.Booking;
 import org.apache.ibatis.session.SqlSession;
 
+import java.util.List;
 import java.util.Map;
 
 import static com.sh.crud.common.SqlSessionTemplate.getSqlSession;
@@ -22,6 +23,27 @@ public class BookingService {
     public Booking checkRoomAvailability(String roomNumber) {
         SqlSession session = getSqlSession();
         Booking booking = bookingDao.checkRoomAvailability(session ,roomNumber);
+        session.close();
+        return booking;
+    }
+
+    public List<Booking> findAll(Map<String, Object> param) {
+        SqlSession session=getSqlSession();
+        List<Booking> bookings=bookingDao.findAll(session,param);
+        session.close();
+        return bookings;
+    }
+
+    public int getTotalCount() {
+        SqlSession session = getSqlSession();
+        int totalCount = bookingDao.getTotalCount(session);
+        session.close();
+        return totalCount;
+    }
+
+    public Booking findByBookingNum(String bookingNum) {
+        SqlSession session = getSqlSession();
+        Booking booking = bookingDao.findByBookingNum(session, bookingNum);
         session.close();
         return booking;
     }

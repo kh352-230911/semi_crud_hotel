@@ -153,7 +153,7 @@
                                     내정보수정
                                 </a>
 
-                                <a href="#" class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+                                <a href="${pageContext.request.contextPath}/manager/bookingCheck" class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
                                     회원 예약조회
                                 </a>
 

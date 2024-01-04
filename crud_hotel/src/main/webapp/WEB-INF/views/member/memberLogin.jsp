@@ -7,7 +7,7 @@
 <!-- login -->
 <form class="space-y-6" method="POST" name="loginFrm">
 
-    <main class="mx-auto flex min-h-screen w-full items-center justify-center bg-orange-50 text-white">
+    <main class="mx-auto flex py-20 w-full items-center justify-center bg-orange-50 text-white">
         <!-- component -->
         <section class="flex w-[30rem] flex-col space-y-10">
             <div class="text-center text-4xl font-medium text-black">Log In</div>

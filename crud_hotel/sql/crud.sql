@@ -207,9 +207,6 @@ update
 set
     member_password = 'DrXk6Hf+b7FpHqZRnQT9o1GiMOOBN+ky/tgiZtZfnAdUwPmZcZ3kFwbY1BVLJBqd/SGoFmqmTqfKK4UVl4+CCA=='
 where
-<<<<<<< HEAD
-    member_id = 'honggd';
-=======
     member_id = 'honggd';
     
 update tb_manager
@@ -217,4 +214,5 @@ set manager_pwd='9sXjqetsywnr/rMBYvBx2c7NlZEAgriCL0P8b4ml49LQ+FSrk6BWiUWjpPs/Qu2
 where
     manager_id='sd01';
 
->>>>>>> 0e49f30d02d9ee57b0bacc557067c63fc1cb2522
+
+
