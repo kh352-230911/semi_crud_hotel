@@ -58,7 +58,7 @@ public class MemberLoginServlet extends HttpServlet {
             resp.sendRedirect(location);
         }
         else if (manager != null && password.equals(manager.getManagerPwd())) {
-            session.setAttribute("leoginManagr", manager);
+            session.setAttribute("loginManager", manager);
 
             String location = req.getContextPath() + "/"; // 기본경로
             String next = (String) req.getSession().getAttribute("next");

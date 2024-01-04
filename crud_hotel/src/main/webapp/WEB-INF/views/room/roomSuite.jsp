@@ -28,16 +28,24 @@
         <div class="flex justify-between items-center p-10">
             <div><p class="text-2xl font-bold text-orange-300 dark:text-orange-300">스위트룸</p></div>
             <div>
-                <button id="dropdownDefaultButton3" data-dropdown-toggle="dropdown" class="text-black bg-orange-300 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-yellow-200 dark:hover:bg-yellow-700 dark:focus:ring-orange-800" type="button">객실목록<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                </svg>
+                <button id="dropdownDefaultButton3"
+                        data-dropdown-toggle="dropdown3"
+                        class="text-black bg-orange-300 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-yellow-200 dark:hover:bg-yellow-700 dark:focus:ring-orange-800"
+                        type="button">객실목록
+                    <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                         viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="m1 1 4 4 4-4"/>
+                    </svg>
                 </button>
 
                 <!-- Dropdown menu -->
-                <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                <div id="dropdown3"
+                     class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
                     <ul class="py-2 text-sm text-gray-700 dark:text-gray-700" aria-labelledby="dropdownDefaultButton">
                         <li>
-                            <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">Q601
+                            <a href="#"
+                               class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">Q601
                                 <span class="inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
                                     <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
                                     예약가능
@@ -45,7 +53,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">Q602
+                            <a href="#"
+                               class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">Q602
                                 <span class="inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
                                     <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
                                     예약가능
@@ -53,7 +62,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">Q603
+                            <a href="#"
+                               class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">Q603
                                 <span class="inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
                                     <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
                                     예약가능
@@ -61,7 +71,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">Q604
+                            <a href="#"
+                               class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">Q604
                                 <span class="inline-flex items-center bg-red-900 text-red-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">
                                     <span class="w-2 h-2 me-1 bg-red-500 rounded-full"></span>
                                     예약불가
@@ -69,7 +80,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">Q605
+                            <a href="#"
+                               class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">Q605
                                 <span class="inline-flex items-center bg-red-900 text-red-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">
                                     <span class="w-2 h-2 me-1 bg-red-500 rounded-full"></span>
                                     예약불가
@@ -77,7 +89,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">Q606
+                            <a href="#"
+                               class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">Q606
                                 <span class="inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
                                     <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
                                     예약가능
@@ -97,7 +110,9 @@
                 <div class="grid gap-4">
                     <div class="flex">
                         <div class="flex-1">
-                            <img id="main-image" class="h-auto max-w-full rounded-lg" src="${pageContext.request.contextPath}/images/hotelRoom11_up_last.jpg" alt="Main Image">
+                            <img id="main-image" class="h-auto max-w-full rounded-lg"
+                                 src="${pageContext.request.contextPath}/images/hotelRoom11_up_last.jpg"
+                                 alt="Main Image">
                         </div>
 
                         <!-- 관련 내용이 표시될 영역 -->
@@ -116,19 +131,29 @@
                         <!-- 썸네일 이미지들 -->
                         <%-- 썸네일 이미지들에 onclick 이벤트를 추가하여 updateMainImage 함수를 호출 --%>
                         <div>
-                            <img class="h-auto max-w-full rounded-lg cursor-pointer" src="${pageContext.request.contextPath}/images/hotelRoom11_up_last.jpg" alt="Thumbnail" onclick="updateMainImage(this.src);">
+                            <img class="h-auto max-w-full rounded-lg cursor-pointer"
+                                 src="${pageContext.request.contextPath}/images/hotelRoom11_up_last.jpg" alt="Thumbnail"
+                                 onclick="updateMainImage(this.src);">
                         </div>
                         <div>
-                            <img class="h-auto max-w-full rounded-lg cursor-pointer" src="${pageContext.request.contextPath}/images/hotelRoom12_up_last.jpg" alt="Thumbnail" onclick="updateMainImage(this.src);">
+                            <img class="h-auto max-w-full rounded-lg cursor-pointer"
+                                 src="${pageContext.request.contextPath}/images/hotelRoom12_up_last.jpg" alt="Thumbnail"
+                                 onclick="updateMainImage(this.src);">
                         </div>
                         <div>
-                            <img class="h-auto max-w-full rounded-lg cursor-pointer" src="${pageContext.request.contextPath}/images/hotelRoom13_up_last.jpg" alt="Thumbnail" onclick="updateMainImage(this.src);">
+                            <img class="h-auto max-w-full rounded-lg cursor-pointer"
+                                 src="${pageContext.request.contextPath}/images/hotelRoom13_up_last.jpg" alt="Thumbnail"
+                                 onclick="updateMainImage(this.src);">
                         </div>
                         <div>
-                            <img class="h-auto max-w-full rounded-lg cursor-pointer" src="${pageContext.request.contextPath}/images/hotelRoom14_up_last.jpg" alt="Thumbnail" onclick="updateMainImage(this.src);">
+                            <img class="h-auto max-w-full rounded-lg cursor-pointer"
+                                 src="${pageContext.request.contextPath}/images/hotelRoom14_up_last.jpg" alt="Thumbnail"
+                                 onclick="updateMainImage(this.src);">
                         </div>
                         <div>
-                            <img class="h-auto max-w-full rounded-lg cursor-pointer" src="${pageContext.request.contextPath}/images/hotelRoom15_up_last.jpg" alt="Thumbnail" onclick="updateMainImage(this.src);">
+                            <img class="h-auto max-w-full rounded-lg cursor-pointer"
+                                 src="${pageContext.request.contextPath}/images/hotelRoom15_up_last.jpg" alt="Thumbnail"
+                                 onclick="updateMainImage(this.src);">
                         </div>
                     </div>
                 </div>
@@ -136,10 +161,5 @@
         </div>
     </div>
 </div>
-<%--src="#{pageContext.request.contextPath}/js/room/rooms.js"--%>
-<script>
-    function updateMainImage(src) {
-        document.getElementById('main-image').src = src;
-    }
-</script>
+<script src="${pageContext.request.contextPath}/js/room/rooms.js"></script>
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>

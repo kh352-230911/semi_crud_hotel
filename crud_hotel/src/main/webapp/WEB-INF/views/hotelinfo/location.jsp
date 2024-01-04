@@ -108,7 +108,6 @@
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4d27601849c9209286843d85554892ed"></script>
 
-
 <script type="text/javascript">
     var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
     var options = { //지도를 생성할 때 필요한 기본 옵션
@@ -127,6 +126,5 @@
     // 마커가 지도 위에 표시되도록 설정합니다
     marker.setMap(map);
 </script>
-
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>

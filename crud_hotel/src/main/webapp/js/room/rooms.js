@@ -7,31 +7,30 @@ function updateMainImage(src) {
 // 스탠다드
 document.querySelector('#dropdownDefaultButton1').addEventListener('click', (e) => {
     const roomsToCheck = ["A201", "A202", "A203", "A204", "A205", "A206", "T301", "T302", "A303", "A304", "T305", "T306"];
-    roomsToCheck.forEach(roomNumber => {
+    roomsToCheck.forEach(bookingRoomNum => {
         $.ajax({
             url: `${contextPath}/room/roomStandard/roomStandardCheck`, // 서블릿 URL
             type: 'GET',
-            data: { roomNumber: roomNumber },
+            data: { bookingRoomNum: bookingRoomNum },
             success: function(response) {
                     // console.log(response);
-                    const statusSpan = document.querySelector('.roomStatus');
-                    const statusDot = document.querySelector('.status-dot');
+                    const statusSpan = document.querySelector(`.roomStatus[data-roomnum="${bookingRoomNum}"]`);
+                    const statusDot = document.querySelector(`.status-dot[data-roomnum="${bookingRoomNum}"]`);
 
                     // 예약된 방 목록에 현재 방 번호가 있다면 예약불가, 그렇지 않으면 예약가능으로 설정
-                    if (response.includes(roomNumber)) {
+                    if (response === bookingRoomNum) {
                         statusSpan.textContent = "예약불가";
-                        statusSpan.classList.remove('bg-green-500', 'text-green-300');
-                        statusSpan.classList.add('bg-red-500', 'text-red-300');
+                        statusSpan.classList.remove('bg-green-900', 'text-green-300');
+                        statusSpan.classList.add('bg-red-900', 'text-red-300');
                         statusDot.classList.remove('bg-green-500');
                         statusDot.classList.add('bg-red-500');
                     } else {
                         statusSpan.textContent = "예약가능";
-                        statusSpan.classList.remove('bg-red-500', 'text-red-300');
-                        statusSpan.classList.add('bg-green-500', 'text-green-300');
+                        statusSpan.classList.remove('bg-red-900', 'text-red-300');
+                        statusSpan.classList.add('bg-green-900', 'text-green-300');
                         statusDot.classList.remove('bg-red-500');
                         statusDot.classList.add('bg-green-500');
                     }
-
             }
         })
     })
