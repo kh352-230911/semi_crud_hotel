@@ -7,4 +7,8 @@ public class BookingDao {
     public Booking findByBookingMemberId(SqlSession session, String bookingMemberId) {
         return session.selectOne("booking.findByBookingMemberId", bookingMemberId);
     }
+
+    public Booking checkRoomAvailability(SqlSession session, String roomNumber) {
+        return session.selectOne("booking.checkRoomAvailability", roomNumber);
+    }
 }

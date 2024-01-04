@@ -16,20 +16,20 @@
         margin-top: 100px;
     }
 
-    /* 사이드바 스타일링 */
-    .sidebar {
-        width: 200px; /* 사이드바 너비 설정 */
-        height: 200px;
-        background-color: #f9f9f9; /* 배경색 설정 */
-        padding: 20px;
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
-    }
+    /*!* 사이드바 스타일링 *!*/
+    /*.sidebar {*/
+    /*    width: 200px; !* 사이드바 너비 설정 *!*/
+    /*    height: 200px;*/
+    /*    background-color: #f9f9f9; !* 배경색 설정 *!*/
+    /*    padding: 20px;*/
+    /*    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); !* 그림자 효과 추가 *!*/
+    /*}*/
 
-    .sidebar ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0; /* 추가된 부분 */
-    }
+    /*.sidebar ul {*/
+    /*    list-style-type: none;*/
+    /*    padding: 0;*/
+    /*    margin: 0; !* 추가된 부분 *!*/
+    /*}*/
 
     /* 링크 스타일링 */
     .sidebar a {
@@ -76,12 +76,20 @@
 
 </style>
 <body>
-<div class="layout ">
-    <div class="sidebar">
+<div class="flex h-screen">
+    <div class="w-64 bg-yellow-50 p-5 space-y-4">
         <ul>
-            <li><a href="${pageContext.request.contextPath}/hotelintroduce/introduce">호텔 소개</a></li>
-            <li><a href="${pageContext.request.contextPath}/hotelinfo/info">호텔 정보</a></li>
-            <li><a href="${pageContext.request.contextPath}/hotellocation/location">호텔 위치</a></li>
+            <li><a href="${pageContext.request.contextPath}/hotelintroduce/introduce">
+                <p class="text-2xl font-bold text-orange-300 dark:text-orange-300">호텔 소개</p>
+            </a></li>
+            <br>
+            <li><a href="${pageContext.request.contextPath}/hotelinfo/info">
+                <p class="text-2xl font-bold text-orange-300 dark:text-orange-300">호텔 정보</p>
+            </a></li>
+            <br>
+            <li><a href="${pageContext.request.contextPath}/hotellocation/location">
+                <p class="text-2xl font-bold text-orange-300 dark:text-orange-300">호텔 위치</p>
+            </a></li>
         </ul>
     </div>
     <div class="content max-w-5xl mx-auto p-8">
@@ -95,10 +103,10 @@
 
 
 
+
 </body>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4d27601849c9209286843d85554892ed"></script>
-
 
 <script type="text/javascript">
     var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
@@ -118,6 +126,5 @@
     // 마커가 지도 위에 표시되도록 설정합니다
     marker.setMap(map);
 </script>
-
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
