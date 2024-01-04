@@ -19,11 +19,13 @@ document.querySelector("#id").addEventListener('keyup', (e) => {
                     // 아이디가 사용가능한 경우
                     guideError.classList.add('hidden');
                     guideOk.classList.remove('hidden');
+                    idValid.value = 1;
                 }
                 else {
                     // 아이디가 이미 사용중인 경우
                     guideOk.classList.add('hidden');
                     guideError.classList.remove('hidden');
+                    idValid.value = 0;
                 }
 
             }

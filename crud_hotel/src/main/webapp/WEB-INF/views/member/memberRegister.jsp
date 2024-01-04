@@ -53,7 +53,6 @@
 
 
 <script defer src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script src="${pageContext.request.contextPath}/js/member/memberRegister.js"></script>
 <script>
     window.onload = function(){
         document.getElementById("address").addEventListener("click", function(){ //주소입력칸을 클릭하면
@@ -67,4 +66,5 @@
         });
     }
 </script>
+<script src="${pageContext.request.contextPath}/js/member/memberRegister.js"></script>
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
