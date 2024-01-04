@@ -9,6 +9,7 @@
           integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.tailwindcss.com"></script>
+
     <script
             src="https://code.jquery.com/jquery-3.7.1.js"
             integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
@@ -27,7 +28,6 @@
         </c:if>
     </script>
 
-
     <style>
         .my-custom-button {
             width: 100%;
@@ -36,6 +36,8 @@
     </style>
 
 </head>
+<!-- GET http://localhost:8080/favicon.ico 404 (Not Found) 해결-->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
 <!-- component -->
 <header>
     <nav class="bg-orange-50 border-gray-200 px-4 lg:px-6 py-2.5 ">
