@@ -4,17 +4,18 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
+
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg w-9/12 mx-auto mt-4">
     <h2 class="text-bold text-xl absolute top-0 left-4">리뷰목록</h2>
     <button type="button" onclick="location.href='${pageContext.request.contextPath}/review/reviewInsert';" class="py-2 px-5 absolute top-1 right-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200">리뷰작성</button>
     <table class="w-full text-sm text-center text-gray-500 dark:text-gray-400 mt-12">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-orange-100 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" class="py-3 w-24">
                     글 번호
                 </th>
                 <th scope="col" class="py-3">
-                    방 번호
+                    룸 번호
                 </th>
                 <th scope="col" class="py-3">
                     아이디
@@ -35,7 +36,7 @@
         </thead>
         <tbody>
             <c:forEach items="${reviews}" var="review" varStatus="vs">
-                <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-orange-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                     <th scope="row" class="font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
                         ${review.revNum}
                     </th>
@@ -134,4 +135,5 @@
             </ul>
         </nav>
     </div>
+
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>

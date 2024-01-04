@@ -70,4 +70,11 @@ public class AskService {
         }
         return result;
     }
+
+    public List<Ask> findByAsks(String id) {
+        SqlSession session = getSqlSession();
+        List<Ask> asks = askDao.findByAsks(session, id);
+        session.close();
+        return asks;
+    }
 }

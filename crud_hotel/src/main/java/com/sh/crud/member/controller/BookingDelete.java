@@ -1,7 +1,8 @@
 package com.sh.crud.member.controller;
 
+import com.sh.crud.booking.model.entity.Booking;
+import com.sh.crud.booking.model.service.BookingService;
 import com.sh.crud.member.model.entity.Member;
-import com.sh.crud.member.model.service.MemberService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,32 +12,34 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/member/memberDelete")
-public class MemberDeleteServlet extends HttpServlet {
+@WebServlet("/member/bookingDelete")
+public class BookingDelete extends HttpServlet {
 
-    private MemberService memberService = new MemberService();
+    private BookingService bookingService = new BookingService();
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/member/memberDelete.jsp").forward(req,resp);
+        req.getRequestDispatcher("/WEB-INF/views/member/bookingDelete.jsp").forward(req,resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("utf-8");
 
         Member loginMember = (Member) req.getSession().getAttribute("loginMember");
         String id = loginMember.getMemberId();
 
-        Member member = memberService.findById(id);
+        Booking booking = bookingService.findByBookingMemberId(id);
 
-        int result = memberService.deleteMember(id);
+        int result = bookingService.deleteBooking(id);
 
         HttpSession session = req.getSession();
 
         session.invalidate();
 
         session = req.getSession();
-        session.setAttribute("msg", "성공적으로 회원탈퇴했습니다. \n 이용해 주셔서 감사합니다☺");
+        session.setAttribute("msg", "성공적으로 예약취소를 완료했습니다. \n 이용해 주셔서 감사합니다☺");
 
         resp.sendRedirect(req.getContextPath() + "/");
     }

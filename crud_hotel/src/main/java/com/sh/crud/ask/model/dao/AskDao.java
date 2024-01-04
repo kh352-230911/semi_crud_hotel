@@ -25,4 +25,8 @@ public class AskDao {
     public int deleteAsk(SqlSession session, Ask ask) {
         return session.delete("ask.deleteAsk", ask);
     }
+
+    public List<Ask> findByAsks(SqlSession session, String id) {
+        return session.selectList("ask.findById", id);
+    }
 }
