@@ -58,10 +58,40 @@ public class ReviewService {
         return result;
     }
 
-    public Review findByNum(int num) {
+    public Review findByNum(long num) {
         SqlSession session = getSqlSession();
         Review review = reviewDao.findByNum(session, num);
         session.close();
         return review;
+    }
+
+    public int deleteReview(long num) {
+        int result = 0;
+        SqlSession session = getSqlSession();
+        try{
+            result = reviewDao.deleteReview(session, num);
+            session.commit();
+        } catch (Exception e) {
+            session.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
+        return result;
+    }
+
+    public int updateReview(Review review) {
+        int result = 0;
+        SqlSession session = getSqlSession();
+        try{
+            result = reviewDao.updateReview(session, review);
+            session.commit();
+        } catch (Exception e) {
+            session.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
+        return result;
     }
 }
