@@ -17,7 +17,7 @@ public class CheckAvailabilityServlet extends HttpServlet {
     private BookingService bookingService = new BookingService();
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 사용자 입력값 처리
         String bookingRoomNum = req.getParameter("bookingRoomNum");
 
@@ -30,10 +30,5 @@ public class CheckAvailabilityServlet extends HttpServlet {
         if(booking != null) {
             new Gson().toJson(booking.getBookingRoomNum(), resp.getWriter());
         }
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doGet(req, resp);
     }
 }

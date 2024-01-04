@@ -64,7 +64,7 @@
                                 <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">A203
                                     <span class="roomStatus inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300"
                                           data-roomnum="A203">
-                                        <span class="status-dot w-2 h-2 me-1 bg-green-500 rounded-full data-roomnum="A203"></span>
+                                        <span class="status-dot w-2 h-2 me-1 bg-green-500 rounded-full" data-roomnum="A203"></span>
                                         예약가능
                                     </span>
                                 </a>
@@ -204,6 +204,6 @@
             </div>
         </div>
     </div>
-<script src="${pageContext.request.contextPath}/js/room/rooms.js"></script>
+<script src="${pageContext.request.contextPath}/js/room/roomStandard.js"></script>
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
