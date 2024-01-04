@@ -9,6 +9,14 @@
         from
             tb_booking
         where
-            booking_member_id = #{bookingMemeberId}
+            booking_member_id = #{bookingMemberId}
+    </select>
+    <select id="checkRoomAvailability" resultType="booking">
+        SELECT
+            booking_room_num
+        FROM
+            tb_booking
+        WHERE
+            booking_room_num = #{bookingRoomNum}
     </select>
 </mapper>

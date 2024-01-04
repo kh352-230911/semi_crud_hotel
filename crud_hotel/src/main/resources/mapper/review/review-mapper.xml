@@ -52,5 +52,22 @@
               )
     </insert>
 
+    <delete id="deleteReview">
+        delete from
+            tb_review
+        where
+            rev_num = #{num}
+    </delete>
+
+    <update id="updateReview">
+        update
+            tb_review
+        set
+            rev_title = #{revTitle},
+            rev_content = #{revContent}
+        where
+            rev_num = #{revNum}
+    </update>
+
 
 </mapper>

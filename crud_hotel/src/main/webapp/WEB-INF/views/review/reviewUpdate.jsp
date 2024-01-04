@@ -6,7 +6,7 @@
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 <div class="w-9/12 mx-auto mt-4 mb-16 bg-white border border-gray-200 rounded-lg shadow">
     <div class="px-5 pt-5">
-            <h3 class="text-xl font-semibold text-gray-900">${fn:escapeXml(review.revTitle)}</h3>
+        <h3 class="text-xl font-semibold text-gray-900">리뷰 글 수정</h3>
         <div class="flex justify-between">
             <h5 class="font-semibold text-gray-900 mt-4">작성자 : ${review.revId}</h5>
             <h5 class="text-gray-400 mt-4">작성일 :
@@ -94,28 +94,9 @@
             <button type="button"
                     onclick="location.href = '${pageContext.request.contextPath}/review/reviewUpdate?revNum=${review.revNum}';"
                     class="mr-4 text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                수정
-            </button>
-            <button type="button" onclick="confirm('리뷰를 삭제하시겠습니까?') && document.reviewDeleteFrm.submit()"
-                    class="mr-4 text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                삭제
-            </button>
-            <form
-                action="${pageContext.request.contextPath}/review/reviewDelete"
-                method="post"
-                name="reviewDeleteFrm">
-                <input type="hidden" name="revNum" value="${review.revNum}">
-            </form>
-            <button type="button"
-                    class="mr-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                좋아요
-            </button>
-            <button type="button"
-                    class="mr-4 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                신고하기
+                저장
             </button>
         </div>
-
     </div>
 </div>
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
