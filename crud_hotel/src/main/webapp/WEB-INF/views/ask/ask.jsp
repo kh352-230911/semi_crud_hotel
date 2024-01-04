@@ -27,14 +27,14 @@
                         <td>아이디</td>
                         <td>
                             <label for="askId"></label>
-                            <input type="text" id="askId" name="askId" placeholder="아이디를 입력해주세요">
+                            <input type="text" id="askId" name="askId" value="${loginMember.memberId}" readonly>
                         </td>
                     </tr>
                     <tr>
                         <td>방 번호</td>
                         <td>
                             <label for="askRoomNum"></label>
-                            <input type="text" name="askRoomNum" id="askRoomNum" class="w-2/5">
+                            <input type="text" name="askRoomNum" id="askRoomNum" class="w-full" placeholder="문의사항이 있는 방을 적어주세요.">
                         </td>
                     </tr>
                     <tr>
