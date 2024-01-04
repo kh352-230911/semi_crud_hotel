@@ -19,6 +19,12 @@ public class BookingService {
         session.close();
         return booking;
     }
+    public List<Booking> findByBookings(String id) {
+        SqlSession session = getSqlSession();
+        List<Booking> bookings = bookingDao.findByBookings(session, id);
+        session.close();
+        return bookings;
+    }
 
     public Booking checkRoomAvailability(String roomNumber) {
         SqlSession session = getSqlSession();
@@ -26,6 +32,21 @@ public class BookingService {
         session.close();
         return booking;
     }
+
+
+    public int deleteBooking(String id) {
+        int result = 0;
+        SqlSession session = getSqlSession();
+        try {
+            result = bookingDao.deleteBooking(session, id);
+            session.commit();
+        } catch (Exception e) {
+            session.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
+        return result;
 
     public List<Booking> findAll(Map<String, Object> param) {
         SqlSession session=getSqlSession();

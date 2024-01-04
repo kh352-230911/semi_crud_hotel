@@ -11,10 +11,17 @@ public class BookingDao {
     public Booking findByBookingMemberId(SqlSession session, String bookingMemberId) {
         return session.selectOne("booking.findByBookingMemberId", bookingMemberId);
     }
+    public List<Booking> findByBookings(SqlSession session, String id) {
+        return session.selectList("booking.findByBookingMemberId", id);
+    }
 
     public Booking checkRoomAvailability(SqlSession session, String roomNumber) {
         return session.selectOne("booking.checkRoomAvailability", roomNumber);
     }
+
+
+    public int deleteBooking(SqlSession session, String id) {
+        return session.delete("booking.deleteBooking", id);
 
     public List<Booking> findAll(SqlSession session, Map<String, Object> param) {
         int page = (int) param.get("page");
@@ -29,5 +36,6 @@ public class BookingDao {
 
     public Booking findByBookingNum(SqlSession session, String bookingNum) {
         return session.selectOne("booking.findByBookingNum", bookingNum);
+
     }
 }

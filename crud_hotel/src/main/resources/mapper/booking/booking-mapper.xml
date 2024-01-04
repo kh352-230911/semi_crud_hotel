@@ -19,6 +19,15 @@
         WHERE
             booking_room_num = #{bookingRoomNum}
     </select>
+
+
+    <delete id="deleteBooking">
+        delete from
+            tb_booking
+        where
+            booking_member_id = #{bookingMemberId}
+    </delete>
+
     <select id="findAll" resultType="booking">
         select
             *
@@ -37,4 +46,5 @@
         where
             booking_num = #{bookingNum}
     </select>
+
 </mapper>
