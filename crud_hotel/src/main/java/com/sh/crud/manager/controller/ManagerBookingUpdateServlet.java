@@ -15,12 +15,12 @@ public class ManagerBookingUpdateServlet extends HttpServlet {
     BookingService bookingService=new BookingService();
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String bookingNum2="1";
+
         String bookingNum = req.getParameter("bookingNum");
         Booking booking = bookingService.findByBookingNum(bookingNum);
-        Booking booking2 = bookingService.findByBookingNum(bookingNum2);
+
         System.out.println(booking);
-        System.out.println(booking2);
+
         req.setAttribute("booking", booking); // 예약 정보를 요청 속성에 추가
 
 

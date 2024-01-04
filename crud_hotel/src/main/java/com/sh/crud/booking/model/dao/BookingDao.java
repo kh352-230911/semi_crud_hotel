@@ -22,7 +22,7 @@ public class BookingDao {
 
     public int deleteBooking(SqlSession session, String id) {
         return session.delete("booking.deleteBooking", id);
-
+    }
     public List<Booking> findAll(SqlSession session, Map<String, Object> param) {
         int page = (int) param.get("page");
         int limit = (int) param.get("limit");

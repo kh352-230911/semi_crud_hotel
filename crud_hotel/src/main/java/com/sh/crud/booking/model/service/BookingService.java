@@ -47,7 +47,7 @@ public class BookingService {
             session.close();
         }
         return result;
-
+    }
     public List<Booking> findAll(Map<String, Object> param) {
         SqlSession session=getSqlSession();
         List<Booking> bookings=bookingDao.findAll(session,param);
@@ -61,11 +61,16 @@ public class BookingService {
         session.close();
         return totalCount;
     }
-
     public Booking findByBookingNum(String bookingNum) {
         SqlSession session = getSqlSession();
         Booking booking = bookingDao.findByBookingNum(session, bookingNum);
         session.close();
         return booking;
     }
+
 }
+
+
+
+
+
