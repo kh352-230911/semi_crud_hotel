@@ -5,50 +5,43 @@
 <mapper namespace="manager">
 
     <select id="findAll" resultType="manager">
-        select
-            *
-        from
-            tb_manager
+        select *
+        from tb_manager
     </select>
 
     <select id="findById" resultType="manager">
-        select
-            *
-        from
-            tb_manager
-        where
-            manager_id = #{managerId}
+        select *
+        from tb_manager
+        where manager_id = #{managerId}
     </select>
 
     <select id="findByName" resultType="manager">
-        select
-            *
-        from
-            tb_manager
-        where
-            manager_name = #{managerName}
+        select *
+        from tb_manager
+        where manager_name = #{managerName}
     </select>
 
     <insert id="insertManager">
-        insert into
-            tb_manager
+        insert into tb_manager
         values (#{managerNum}, #{managerId}, #{managerPwd}, #{managerName}, #{managerPhone}, null)
     </insert>
 
     <update id="updateManager">
+
         update
             tb_manager
         set
-            manager_pwd = #{managerPwd}
-        where
+            manager_name  = #{managerName},
+            manager_email = #{managerEmail},
+            manager_phone = #{managerPhone}
+            where
             manager_id = #{managerId}
     </update>
 
     <delete id="deleteManager">
-        delete from
-                tb_manager
-        where
-            manager_id = #{managerId}
+        delete
+        from tb_manager
+        where manager_id = #{managerId}
 
     </delete>
 </mapper>
