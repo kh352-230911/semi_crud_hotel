@@ -28,7 +28,7 @@
                 <div><p class="text-2xl font-bold text-orange-300 dark:text-orange-300">스탠다드</p></div>
                 <div>
                     <button id="dropdownDefaultButton1"
-                            data-dropdown-toggle="dropdown"
+                            data-dropdown-toggle="dropdown1"
                             class="text-black bg-orange-300 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-yellow-200 dark:hover:bg-yellow-700 dark:focus:ring-orange-800" type="button">
                                 객실목록
                         <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
@@ -38,13 +38,14 @@
                     </button>
 
                     <!-- Dropdown menu -->
-                    <div id="dropdown" class="z-10 hidden bg-white divide-y divide-orange-700 rounded-lg shadow w-44 dark:bg-orange-700">
+                    <div id="dropdown1" class="room z-10 hidden bg-white divide-y divide-orange-700 rounded-lg shadow w-44 dark:bg-orange-700">
                         <ul class="py-2 text-sm text-gray-700 dark:text-gray-700" aria-labelledby="dropdownDefaultButton">
 
                             <li>
                                 <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">A201
-                                    <span class="roomStatus A201 inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
-                                        <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
+                                    <span class="roomStatus inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300"
+                                          data-roomnum="A201">
+                                        <span class="status-dot w-2 h-2 me-1 bg-green-500 rounded-full" data-roomnum="A201"></span>
                                         예약가능
                                     </span>
                                 </a>
@@ -52,89 +53,100 @@
 
                             <li>
                                 <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">A202
-                                    <span class="roomStatus A202 inline-flex items-center bg-red-900 text-red-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">
-                                        <span class="w-2 h-2 me-1 bg-red-500 rounded-full"></span>
-                                        예약불가
+                                    <span class="roomStatus inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300"
+                                          data-roomnum="A202">
+                                        <span class="status-dot w-2 h-2 me-1 bg-green-500 rounded-full" data-roomnum="A202"></span>
+                                        예약가능
                                     </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">A203
-                                    <span class="roomStatus A203 inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
-                                        <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
+                                    <span class="roomStatus inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300"
+                                          data-roomnum="A203">
+                                        <span class="status-dot w-2 h-2 me-1 bg-green-500 rounded-full data-roomnum="A203"></span>
                                         예약가능
                                     </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">A204
-                                    <span class="roomStatus A204 inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
-                                        <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
+                                    <span class="roomStatus inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300"
+                                          data-roomnum="A204">
+                                        <span class="status-dot w-2 h-2 me-1 bg-green-500 rounded-full" data-roomnum="A204"></span>
                                         예약가능
                                     </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">A205
-                                    <span class="roomStatus A205 inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
-                                        <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
+                                    <span class="roomStatus inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300"
+                                          data-roomnum="A205">
+                                        <span class="status-dot w-2 h-2 me-1 bg-green-500 rounded-full" data-roomnum="A205"></span>
                                         예약가능
                                     </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">A206
-                                    <span class="roomStatus A206 inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
-                                        <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
+                                    <span class="roomStatus inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300"
+                                          data-roomnum="A206">
+                                        <span class="status-dot w-2 h-2 me-1 bg-green-500 rounded-full" data-roomnum="A206"></span>
                                         예약가능
                                     </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">T301
-                                    <span class="roomStatus T301 inline-flex items-center bg-red-900 text-red-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">
-                                        <span class="w-2 h-2 me-1 bg-red-500 rounded-full"></span>
-                                        예약불가
+                                    <span class="roomStatus inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300"
+                                          data-roomnum="T301">
+                                        <span class="status-dot w-2 h-2 me-1 bg-green-500 rounded-full" data-roomnum="T301"></span>
+                                        예약가능
                                     </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">T302
-                                    <span class="roomStatus T302 inline-flex items-center bg-red-900 text-red-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">
-                                        <span class="w-2 h-2 me-1 bg-red-500 rounded-full"></span>
-                                        예약불가
+                                    <span class="roomStatus inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300"
+                                          data-roomnum="T302">
+                                        <span class="status-dot w-2 h-2 me-1 bg-green-500 rounded-full" data-roomnum="T302"></span>
+                                        예약가능
                                     </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">A303
-                                    <span class="roomStatus A303 inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
-                                        <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
+                                    <span class="roomStatus inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300"
+                                          data-roomnum="A303">
+                                        <span class="status-dot w-2 h-2 me-1 bg-green-500 rounded-full" data-roomnum="A303"></span>
                                         예약가능
                                     </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">A304
-                                    <span class="roomStatus A304 inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
-                                        <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
+                                    <span class="roomStatus inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300"
+                                          data-roomnum="A304">
+                                        <span class="status-dot w-2 h-2 me-1 bg-green-500 rounded-full" data-roomnum="A304"></span>
                                         예약가능
                                     </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">T305
-                                    <span class="roomStatus T305 inline-flex items-center bg-red-900 text-red-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">
-                                        <span class="w-2 h-2 me-1 bg-red-500 rounded-full"></span>
-                                        예약불가
+                                    <span class="roomStatus inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300"
+                                          data-roomnum="T305">
+                                        <span class="status-dot w-2 h-2 me-1 bg-green-500 rounded-full" data-roomnum="A305"></span>
+                                        예약가능
                                     </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="block px-4 py-2 hover:bg-orange-100 dark:hover:bg-orange-100 dark:hover:text-black">T306
-                                    <span class="roomStatus T306 inline-flex items-center bg-red-900 text-red-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">
-                                        <span class="w-2 h-2 me-1 bg-red-500 rounded-full"></span>
-                                        예약불가
+                                    <span class="roomStatus inline-flex items-center bg-green-900 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300"
+                                          data-roomnum="T306">
+                                        <span class="status-dot w-2 h-2 me-1 bg-green-500 rounded-full" data-roomnum="A306"></span>
+                                        예약가능
                                     </span>
                                 </a>
                             </li>
@@ -192,10 +204,6 @@
             </div>
         </div>
     </div>
-
-<script>
-    const contextPath = "${pageContext.request.contextPath}";
-</script>
 <script src="${pageContext.request.contextPath}/js/room/rooms.js"></script>
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
