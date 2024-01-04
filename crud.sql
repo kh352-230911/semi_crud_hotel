@@ -244,5 +244,22 @@ select * from tb_pay;
 
 commit;
 
+SELECT 
+    booking_room_num 
+FROM 
+    tb_booking 
+WHERE 
+    booking_room_num = 'A203';
+                
+select * from tb_booking;
 
 
+SELECT
+            booking_room_num
+        FROM
+            tb_booking
+        WHERE
+            booking_room_num = 'A203';
+
+
+commit;
