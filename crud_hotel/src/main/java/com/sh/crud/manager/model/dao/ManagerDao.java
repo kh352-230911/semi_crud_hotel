@@ -29,4 +29,8 @@ public class ManagerDao {
     public int deleteManager(SqlSession session, String id) {
         return session.delete("manager.deleteManager", id);
     }
+
+    public int updateMemberPassword(SqlSession session, Manager manager) {
+        return session.update("manager.updateMemberPassword", manager);
+    }
 }
