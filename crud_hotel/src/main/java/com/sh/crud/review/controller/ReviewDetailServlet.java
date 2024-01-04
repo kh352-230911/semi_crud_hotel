@@ -19,7 +19,7 @@ public class ReviewDetailServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int num = Integer.parseInt(req.getParameter("revNum"));
+        long num = Long.parseLong(req.getParameter("revNum"));
 //        System.out.println(num);
 
         Review review = reviewService.findByNum(num);

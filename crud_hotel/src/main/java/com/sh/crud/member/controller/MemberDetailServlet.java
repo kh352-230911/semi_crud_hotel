@@ -13,8 +13,6 @@ public class MemberDetailServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         req.getRequestDispatcher("/WEB-INF/views/member/memberDetail.jsp").forward(req,resp);
-
     }
-
 
 }
