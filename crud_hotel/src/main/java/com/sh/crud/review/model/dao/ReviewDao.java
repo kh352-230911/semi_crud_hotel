@@ -30,9 +30,7 @@ public class ReviewDao {
         return session.selectOne("review.getTotalCount");
     }
 
-    public int insertReview(SqlSession session, Review review) {
-        return session.insert("review.insertReview", review);
-    }
+
 
     public Review findByNum(SqlSession session, long num) {
         return session.selectOne("review.findByNum", num);
@@ -44,5 +42,10 @@ public class ReviewDao {
 
     public int updateReview(SqlSession session, Review review) {
         return session.update("review.updateReview", review);
+    }
+
+
+    public int insertReview(SqlSession session, Review review) {
+        return session.insert("review.insertReview", review);
     }
 }

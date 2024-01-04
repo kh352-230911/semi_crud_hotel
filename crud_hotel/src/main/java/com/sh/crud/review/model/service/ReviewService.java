@@ -43,20 +43,7 @@ public class ReviewService {
         return totalCount;
     }
 
-    public int insertReview(Review review) {
-        int result = 0;
-        SqlSession session = getSqlSession();
-        try{
-            result = reviewDao.insertReview(session, review);
-            session.commit();
-        } catch (Exception e) {
-            session.rollback();
-            throw e;
-        } finally {
-            session.close();
-        }
-        return result;
-    }
+
 
     public Review findByNum(long num) {
         SqlSession session = getSqlSession();
@@ -85,6 +72,22 @@ public class ReviewService {
         SqlSession session = getSqlSession();
         try{
             result = reviewDao.updateReview(session, review);
+            session.commit();
+        } catch (Exception e) {
+            session.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
+        return result;
+    }
+
+
+    public int insertReview(Review review) {
+        int result = 0;
+        SqlSession session = getSqlSession();
+        try{
+            result = reviewDao.insertReview(session, review);
             session.commit();
         } catch (Exception e) {
             session.rollback();

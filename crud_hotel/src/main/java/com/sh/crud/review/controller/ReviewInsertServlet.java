@@ -36,7 +36,20 @@ public class ReviewInsertServlet extends HttpServlet {
 //        factory.setRepository(repository);
 //        factory.setSizeThreshold(sizeThreshold);
 
-        Review review = reviewService.findById(req.getParameter("revId"));
+        req.setCharacterEncoding("utf-8");
+        String revId = req.getParameter("revId");
+        int revScore = Integer.parseInt(req.getParameter("revScore"));
+        String revRoomNum = req.getParameter("revRoomNum");
+        String revTitle = req.getParameter("revTitle");
+        String revContent = req.getParameter("revContent");
+
+        Review review = new Review();
+        review.setRevId(revId);
+        review.setRevScore(revScore);
+        review.setRevRoomNum(revRoomNum);
+        review.setRevTitle(revTitle);
+        review.setRevContent(revContent);
+        int result = reviewService.insertReview(review);
         System.out.println(review);
         req.getSession().setAttribute("msg", "게시글을 정상등록 했습니다.");
         resp.sendRedirect(req.getContextPath() + "/review/reviewList");

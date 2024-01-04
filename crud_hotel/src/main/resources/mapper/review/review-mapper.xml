@@ -40,7 +40,7 @@
 
     <insert id="insertReview">
         insert into
-            tb_review (rev_num, rev_id, rev_room_num, rev_title, rev_content, rev_score, rev_date)
+            tb_review(rev_num, rev_id, rev_room_num, rev_title, rev_content, rev_score, rev_date)
         values(
                seq_rev_num.nextval,
                #{revId},
@@ -48,8 +48,7 @@
                #{revTitle},
                #{revContent},
                #{revScore},
-               #{revDate}
-              )
+               sysdate)
     </insert>
 
     <delete id="deleteReview">
