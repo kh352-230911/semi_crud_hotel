@@ -50,7 +50,6 @@ public class ReviewInsertServlet extends HttpServlet {
         review.setRevTitle(revTitle);
         review.setRevContent(revContent);
         int result = reviewService.insertReview(review);
-        System.out.println(review);
         req.getSession().setAttribute("msg", "게시글을 정상등록 했습니다.");
         resp.sendRedirect(req.getContextPath() + "/review/reviewList");
     }

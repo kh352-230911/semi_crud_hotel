@@ -62,8 +62,13 @@
         update
             tb_review
         set
+            rev_num = #{revNum},
+            rev_id = #{revId},
+            rev_room_num = #{revRoomNum},
             rev_title = #{revTitle},
-            rev_content = #{revContent}
+            rev_content = #{revContent},
+            rev_score = #{revScore},
+            rev_date = #{revDate}
         where
             rev_num = #{revNum}
     </update>
