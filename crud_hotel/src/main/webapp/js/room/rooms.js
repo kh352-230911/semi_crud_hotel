@@ -11,12 +11,14 @@ document.querySelector('#dropdownDefaultButton1').addEventListener('click', (e) 
         $.ajax({
             url: `${contextPath}/room/roomStandard/roomStandardCheck`, // 서블릿 URL
             type: 'GET',
-            data: { bookingRoomNum: bookingRoomNum },
-            success: function(response) {
-                    // console.log(response);
-                    const statusSpan = document.querySelector(`.roomStatus[data-roomnum="${bookingRoomNum}"]`);
-                    const statusDot = document.querySelector(`.status-dot[data-roomnum="${bookingRoomNum}"]`);
+            data: {bookingRoomNum: bookingRoomNum},
+            success: function (response) {
+                // console.log(response);
+                const statusSpan = document.querySelector(`.roomStatus[data-roomnum="${bookingRoomNum}"]`);
+                const statusDot = document.querySelector(`.status-dot[data-roomnum="${bookingRoomNum}"]`);
 
+                // 해당 요소가 null 이 아닐때만 실행
+                if (statusSpan && statusDot) {
                     // 예약된 방 목록에 현재 방 번호가 있다면 예약불가, 그렇지 않으면 예약가능으로 설정
                     if (response === bookingRoomNum) {
                         statusSpan.textContent = "예약불가";
@@ -31,6 +33,7 @@ document.querySelector('#dropdownDefaultButton1').addEventListener('click', (e) 
                         statusDot.classList.remove('bg-red-500');
                         statusDot.classList.add('bg-green-500');
                     }
+                }
             }
         })
     })
