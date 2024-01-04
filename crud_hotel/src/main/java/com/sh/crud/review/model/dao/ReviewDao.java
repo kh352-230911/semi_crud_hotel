@@ -1,5 +1,6 @@
 package com.sh.crud.review.model.dao;
 
+import com.sh.crud.review.model.entity.RevPicture;
 import com.sh.crud.review.model.entity.Review;
 import com.sh.crud.review.model.vo.ReviewVo;
 import org.apache.ibatis.session.RowBounds;
@@ -29,9 +30,7 @@ public class ReviewDao {
         return session.selectOne("review.getTotalCount");
     }
 
-    public int insertReview(SqlSession session, ReviewVo review) {
-        return session.insert("review.insertReview", review);
-    }
+
 
     public Review findByNum(SqlSession session, long num) {
         return session.selectOne("review.findByNum", num);
@@ -43,5 +42,10 @@ public class ReviewDao {
 
     public int updateReview(SqlSession session, Review review) {
         return session.update("review.updateReview", review);
+    }
+
+
+    public int insertReview(SqlSession session, Review review) {
+        return session.insert("review.insertReview", review);
     }
 }

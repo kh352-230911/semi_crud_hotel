@@ -7,7 +7,14 @@
 
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg w-9/12 mx-auto mt-4">
     <h2 class="text-bold text-xl absolute top-0 left-4">리뷰목록</h2>
-    <button type="button" onclick="location.href='${pageContext.request.contextPath}/review/reviewInsert';" class="py-2 px-5 absolute top-1 right-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200">리뷰작성</button>
+    <c:if test="${loginMember != null || loginManager != null}">
+        <button
+                type="button"
+                onclick="location.href='${pageContext.request.contextPath}/review/reviewInsert';"
+                class="py-2 px-5 absolute top-1 right-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
+                리뷰작성
+        </button>
+    </c:if>
     <table class="w-full text-sm text-center text-gray-500 dark:text-gray-400 mt-12">
         <thead class="text-xs text-gray-700 uppercase bg-orange-100 dark:bg-gray-700 dark:text-gray-400">
             <tr>

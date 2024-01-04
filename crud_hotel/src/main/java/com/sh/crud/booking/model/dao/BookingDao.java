@@ -1,9 +1,11 @@
 package com.sh.crud.booking.model.dao;
 
 import com.sh.crud.booking.model.entity.Booking;
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.List;
+import java.util.Map;
 
 public class BookingDao {
     public Booking findByBookingMemberId(SqlSession session, String bookingMemberId) {
@@ -17,7 +19,23 @@ public class BookingDao {
         return session.selectOne("booking.checkRoomAvailability", roomNumber);
     }
 
+
     public int deleteBooking(SqlSession session, String id) {
         return session.delete("booking.deleteBooking", id);
+
+    public List<Booking> findAll(SqlSession session, Map<String, Object> param) {
+        int page = (int) param.get("page");
+        int limit = (int) param.get("limit");
+        int offset = (page - 1) * limit;
+        return session.selectList("booking.findAll", null, new RowBounds(offset, limit));
+    }
+
+    public int getTotalCount(SqlSession session) {
+        return session.selectOne("booking.getTotalCount");
+    }
+
+    public Booking findByBookingNum(SqlSession session, String bookingNum) {
+        return session.selectOne("booking.findByBookingNum", bookingNum);
+
     }
 }

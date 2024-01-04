@@ -44,4 +44,13 @@
         where manager_id = #{managerId}
 
     </delete>
+
+    <update id="updateMemberPassword">
+        update
+            tb_manager
+        set
+            manager_pwd = #{managerPwd}
+        where
+            manager_id = #{managerId}
+    </update>
 </mapper>

@@ -33,6 +33,7 @@ public class BookingService {
         return booking;
     }
 
+
     public int deleteBooking(String id) {
         int result = 0;
         SqlSession session = getSqlSession();
@@ -46,5 +47,25 @@ public class BookingService {
             session.close();
         }
         return result;
+
+    public List<Booking> findAll(Map<String, Object> param) {
+        SqlSession session=getSqlSession();
+        List<Booking> bookings=bookingDao.findAll(session,param);
+        session.close();
+        return bookings;
+    }
+
+    public int getTotalCount() {
+        SqlSession session = getSqlSession();
+        int totalCount = bookingDao.getTotalCount(session);
+        session.close();
+        return totalCount;
+    }
+
+    public Booking findByBookingNum(String bookingNum) {
+        SqlSession session = getSqlSession();
+        Booking booking = bookingDao.findByBookingNum(session, bookingNum);
+        session.close();
+        return booking;
     }
 }

@@ -76,4 +76,19 @@ public class ManagerService {
         }
         return result;
     }
+
+    public int updateManagerPassword(Manager manager) {
+        int result = 0;
+        SqlSession session = getSqlSession();
+        try {
+            result = managerDao.updateMemberPassword(session, manager);
+            session.commit();
+        } catch (Exception e) {
+            session.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
+        return result;
+    }
 }

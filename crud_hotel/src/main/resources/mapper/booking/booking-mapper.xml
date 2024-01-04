@@ -20,10 +20,31 @@
             booking_room_num = #{bookingRoomNum}
     </select>
 
+
     <delete id="deleteBooking">
         delete from
             tb_booking
         where
             booking_member_id = #{bookingMemberId}
     </delete>
+
+    <select id="findAll" resultType="booking">
+        select
+            *
+        from
+            tb_booking
+    </select>
+    <select id="getTotalCount" resultType="_int">
+        select
+            count(*)
+        from
+            tb_booking
+    </select>
+    <select id="findByBookingNum" resultType="booking">
+        select *
+        from tb_booking
+        where
+            booking_num = #{bookingNum}
+    </select>
+
 </mapper>

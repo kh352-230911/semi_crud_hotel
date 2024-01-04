@@ -9,6 +9,7 @@
           integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.tailwindcss.com"></script>
+
     <script
             src="https://code.jquery.com/jquery-3.7.1.js"
             integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
@@ -27,7 +28,6 @@
         </c:if>
     </script>
 
-
     <style>
         .my-custom-button {
             width: 100%;
@@ -36,6 +36,8 @@
     </style>
 
 </head>
+<!-- GET http://localhost:8080/favicon.ico 404 (Not Found) 해결-->
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
 <!-- component -->
 <header>
     <nav class="bg-orange-50 border-gray-200 px-4 lg:px-6 py-2.5 ">
@@ -153,7 +155,7 @@
                                     내정보수정
                                 </a>
 
-                                <a href="#" class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+                                <a href="${pageContext.request.contextPath}/manager/bookingCheck" class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
                                     회원 예약조회
                                 </a>
 
@@ -199,7 +201,7 @@
                         <a href="${pageContext.request.contextPath}/tour/tourList" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-black-700 lg:p-0 ">즐길거리</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}/booking/bookingList" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-black-700 lg:p-0">예약하기</a>
+                        <a href="${pageContext.request.contextPath}/booking/bookingChoice" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-black-700 lg:p-0">예약하기</a>
                     </li>
                     <li>
                         <a href="${pageContext.request.contextPath}/ask/ask" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-black-700 lg:p-0">문의하기</a>
