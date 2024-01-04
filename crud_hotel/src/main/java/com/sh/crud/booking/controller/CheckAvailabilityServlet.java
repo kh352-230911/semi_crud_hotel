@@ -25,7 +25,11 @@ public class CheckAvailabilityServlet extends HttpServlet {
         System.out.println(booking);
 
         resp.setContentType("application/json; charset=utf-8");
-        new Gson().toJson(booking.getBookingRoomNum(), resp.getWriter());
+
+        // 예약한 방이 있는경우만 resp.getWriter()
+        if(booking != null) {
+            new Gson().toJson(booking.getBookingRoomNum(), resp.getWriter());
+        }
     }
 
     @Override
