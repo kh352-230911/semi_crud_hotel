@@ -19,18 +19,17 @@ public class CheckAvailabilityServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 사용자 입력값 처리
-        String roomNumber = req.getParameter("roomNumber");
+        String bookingRoomNum = req.getParameter("bookingRoomNum");
 
-        Booking booking = bookingService.checkRoomAvailability(roomNumber);
+        Booking booking = bookingService.checkRoomAvailability(bookingRoomNum);
         System.out.println(booking);
 
         resp.setContentType("application/json; charset=utf-8");
-        new Gson().toJson(booking, resp.getWriter());
-
+        new Gson().toJson(booking.getBookingRoomNum(), resp.getWriter());
     }
 
-//    @Override
-//    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        doGet(req, resp);
-//    }
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGet(req, resp);
+    }
 }
