@@ -86,7 +86,7 @@
                                 <a href="#" class="flex items-center p-3 -mt-2 text-sm text-gray-600 transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
                                     <img class="flex-shrink-0 object-cover mx-1 rounded-full w-9 h-9" src="${pageContext.request.contextPath}/images/1.jpg" alt="">
                                     <div class="mx-1">
-                                        <h1 class="text-sm font-semibold text-gray-700 dark:text-gray-200">${loginMember.memberId}</h1>
+                                        <h1 class="text-sm font-semibold text-gray-700 dark:text-gray-200">${loginMember.memberId}   회원</h1>
                                         <p class="text-sm text-gray-500 dark:text-gray-400">🔸${loginMember.memberName}님🔸</p>
                                     </div>
                                 </a>
@@ -98,11 +98,11 @@
                                 </a>
 
                                 <a href="#" class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
-                                    예약조회
+                                    내예약조회
                                 </a>
 
                                 <a href="#" class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
-                                    문의조회
+                                    내문의조회
                                 </a>
 
                                 <hr class="border-gray-200 dark:border-gray-700 ">
@@ -139,7 +139,7 @@
                                 <a href="#" class="flex items-center p-3 -mt-2 text-sm text-gray-600 transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
                                     <img class="flex-shrink-0 object-cover mx-1 rounded-full w-9 h-9" src="${pageContext.request.contextPath}/images/1.jpg" alt="">
                                     <div class="mx-1">
-                                        <h1 class="text-sm font-semibold text-gray-700 dark:text-gray-200">${loginManager.managerId} 관리자</h1>
+                                        <h1 class="text-sm font-semibold text-gray-700 dark:text-gray-200">${loginManager.managerId}   관리자</h1>
                                         <p class="text-sm text-gray-500 dark:text-gray-400">🔸${loginManager.managerName}님🔸</p>
                                     </div>
                                 </a>
@@ -151,17 +151,17 @@
                                 </a>
 
                                 <a href="#" class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
-                                    예약조회
+                                    회원 예약조회
                                 </a>
 
                                 <a href="#" class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
-                                    문의조회
+                                    회원 문의조회
                                 </a>
 
                                 <hr class="border-gray-200 dark:border-gray-700 ">
 
                                 <a href="#" class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
-                                    회원탈퇴
+                                    관리자 회원탈퇴
                                 </a>
                             </div>
                         </div>

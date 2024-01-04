@@ -43,7 +43,7 @@ public class MemberRegisterServlet extends HttpServlet {
         System.out.println(id+ ", " + password + ", " + name+ ", " + email +", " + phone + ", " + address + "," + loginDate);
 
 
-        Member member = new Member(id, password, name, email, phone, address, loginDate, Pride.bronze);
+        Member member = new Member(id, password, name, phone, email, address, loginDate, Pride.bronze);
         System.out.println(member);
 
 
