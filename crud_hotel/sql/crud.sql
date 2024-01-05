@@ -215,3 +215,63 @@ update tb_manager
 set manager_pwd='9sXjqetsywnr/rMBYvBx2c7NlZEAgriCL0P8b4ml49LQ+FSrk6BWiUWjpPs/Qu2ZKmwdqZR/zc6IJJt6zxPKsg=='
 where
     manager_id='sd01';
+    
+    
+select * from tb_ask;   
+
+select * from tb_review;
+
+select * from tb_review_picture;
+
+commit;
+
+
+select * from tb_member;
+
+select * from tb_booking;
+
+-- 예약 횟수 컬럼 추가
+alter table tb_member add booking_count number default 0 not null;
+-- booking_count ck 제약조건 추가
+alter table tb_member add constraints ck_booking_count check(booking_count >= 0);
+
+
+
+-- 콘솔출력 set serveroutput on (세션마다)
+set serveroutput on;
+
+-- tb_member 테이블 booking_count 컬럼 값을 tb_booking테이블에 행추가 될때 마다 1씩 증가하도록 trigger 추가
+create or replace trigger trig_count_increase
+after insert
+on tb_booking
+for each row
+begin
+    update tb_member
+    set booking_count = booking_count + 1
+    where member_id = :new.booking_member_id; 
+end;
+/
+    
+
+-- 회원 테이블 booking_count 컬럼 값 :  예약 테이블에 행추가 될때 마다 1씩 감소하도록 trigger 추가
+create or replace trigger trig_count_decrease
+after delete
+on tb_booking
+for each row
+begin
+    update tb_member
+    set booking_count = booking_count - 1
+    where member_id = :old.booking_member_id; 
+end;
+/
+
+
+-- 예약 테이블 추가 및 회원 트리거 테스트
+insert into tb_booking values(seq_booking_num.nextval, 'honggd', 'Q603', '홍길동', '2024/01/10', '2024/01/11', default);
+
+delete from 
+    tb_booking
+where
+   booking_member_id = 'honggd' and booking_room_num = 'Q603';
+
+select * from tb_member; -- 증가/감소 정상 작동

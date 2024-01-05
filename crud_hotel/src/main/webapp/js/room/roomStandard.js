@@ -39,7 +39,6 @@ document.querySelector('#dropdownDefaultButton1').addEventListener('click', asyn
             }
         })
     })
-
 });
 
 
