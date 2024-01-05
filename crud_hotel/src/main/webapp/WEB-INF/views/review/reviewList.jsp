@@ -61,7 +61,7 @@
                         <fmt:formatDate value="${revDate}" pattern="yy/MM/dd"/>
                     </td>
                     <td class="py-4">
-                        <img class="w-[16px]" src="../images/file-icon.png" alt="">
+                            <img class="w-[16px]" src="../images/file-icon.png" alt="">
                     </td>
                     <td class="py-4 pl-4">
                         <c:if test="${review.revScore == 5}">
