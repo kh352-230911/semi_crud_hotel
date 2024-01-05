@@ -78,12 +78,14 @@ public class BookingService {
         try  {
             int count = bookingDao.checkBookingOverlap(session, bookingParams);
             return count > 0; // 중복 예약의 개수를 boolean 값으로 변환
+
         } catch (Exception e) {
             // 오류 처리
             throw e;
         }finally {
             session.close();
         }
+
     }
 
     public int updateBooking(Booking booking) {
