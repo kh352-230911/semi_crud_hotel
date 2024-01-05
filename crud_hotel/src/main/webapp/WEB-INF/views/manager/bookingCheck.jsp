@@ -37,7 +37,7 @@
         </thead>
         <tbody>
         <c:forEach items="${bookings}" var="booking" varStatus="vs">
-        <form action="${pageContext.request.contextPath}/manager/managerBookingUpdate" method="post" name="memberBookingUpdateFrm${vs.index}" >
+            <form action="${pageContext.request.contextPath}/manager/managerBookingCheck" method="post" name="memberBookingUpdateFrm${vs.index}">
             <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                 <th scope="row" class="font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
                         ${booking.bookingNum}
@@ -59,10 +59,9 @@
                 </td>
                 <td class="py-4">
                     <input type="hidden" name="bookingNum" value="${booking.bookingNum}" />
-                    <button onclick="if(confirm('${booking.bookingName} 님의 예약정보를 수정하시겠습니까?')) { document['memberBookingUpdateFrm' + index].submit(); }" class="font-medium text-red-600 hover:underline">
+                    <button type="button" onclick="handleUpdateConfirmation('${booking.bookingName}', ${vs.index})" class="font-medium text-red-600 hover:underline">
                         수정
                     </button>
-
                 </td>
             </tr>
         </form>
@@ -78,6 +77,14 @@
     </nav>
 </div>
 
+
+<script>
+    function handleUpdateConfirmation(bookingName, index) {
+        if (confirm(bookingName + ' 님의 예약정보를 수정하시겠습니까?')) {
+            document.forms['memberBookingUpdateFrm' + index].submit();
+        }
+    }
+</script>
 
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>

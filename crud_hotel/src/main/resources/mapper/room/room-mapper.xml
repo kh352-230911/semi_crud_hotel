@@ -11,4 +11,5 @@
         where
             room_num = #{roomNum}
     </select>
+
 </mapper>
