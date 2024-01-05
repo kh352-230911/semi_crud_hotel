@@ -25,9 +25,8 @@
         insert into
             tb_member
         values (
-            #{memberId},#{memberPassword},#{memberName},#{memberPhone},#{memberEmail},#{memberAddress},#{memberLoginDate},#{memberPride}
+            #{memberId},#{memberPassword},#{memberName},#{memberPhone},#{memberEmail},#{memberAddress},#{memberLoginDate},#{memberPride}, default
         )
-
     </select>
     <select id="updateMember" >
         update
