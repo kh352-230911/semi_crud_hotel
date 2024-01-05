@@ -39,11 +39,11 @@
                             ${booking.bookingName}
                     </td>
                     <td class="py-4">
-                        <fmt:parseDate value="${booking.checkInDate}" pattern="yyyy-mm-dd'T'HH:mm" var="checkInDate"/>
+                        <fmt:parseDate value="${booking.checkInDate}" pattern="yyyy-MM-dd'T'HH:mm" var="checkInDate"/>
                         <fmt:formatDate value="${checkInDate}" pattern="yy/MM/dd"/>
                     </td>
                     <td class="py-4">
-                        <fmt:parseDate value="${booking.checkOutDate}" pattern="yyyy-mm-dd'T'HH:mm" var="checkOutDate"/>
+                        <fmt:parseDate value="${booking.checkOutDate}" pattern="yyyy-MM-dd'T'HH:mm" var="checkOutDate"/>
                         <fmt:formatDate value="${checkOutDate}" pattern="yy/MM/dd"/>
                     </td>
                 <%-- 예약취소 --%>

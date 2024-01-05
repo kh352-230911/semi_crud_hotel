@@ -40,7 +40,6 @@ public class AskServiceTest {
             System.out.println(ask);
             assertThat(ask.getAskId()).isNotNull();
             assertThat(ask.getAskNum()).isGreaterThan(0);
-            assertThat(ask.getAskRoomNum()).isNotNull();
             assertThat(ask.getAskTitle()).isNotNull();
             assertThat(ask.getAskCase()).isNotNull();
             assertThat(ask.getAskContent()).isNotNull();
@@ -59,7 +58,6 @@ public class AskServiceTest {
 
         assertThat(ask.getAskId()).isNotNull();
         assertThat(ask.getAskNum()).isGreaterThan(0);
-        assertThat(ask.getAskRoomNum()).isNotNull();
         assertThat(ask.getAskTitle()).isNotNull();
         assertThat(ask.getAskCase()).isNotNull();
         assertThat(ask.getAskContent()).isNotNull();

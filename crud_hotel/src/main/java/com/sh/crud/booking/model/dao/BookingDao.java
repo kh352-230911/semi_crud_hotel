@@ -8,6 +8,10 @@ import java.util.List;
 import java.util.Map;
 
 public class BookingDao {
+    public static int updateBooking(SqlSession session, Booking booking) {
+        return session.update("booking.updateBooking",booking);
+    }
+
     public Booking findByBookingMemberId(SqlSession session, String bookingMemberId) {
         return session.selectOne("booking.findByBookingMemberId", bookingMemberId);
     }
@@ -37,5 +41,14 @@ public class BookingDao {
     public Booking findByBookingNum(SqlSession session, String bookingNum) {
         return session.selectOne("booking.findByBookingNum", bookingNum);
 
+    }
+
+
+    public int checkBookingOverlap(SqlSession session, Map<String, Object> bookingParams) {
+        return session.selectOne("booking.checkBookingOverlap", bookingParams);
+    }
+
+    public Booking isRoomNumberValid(SqlSession session, String roomNum) {
+        return session.selectOne("room.findByRoomNum",roomNum);
     }
 }

@@ -128,6 +128,8 @@ create sequence seq_ask_num;
 
 select * from tb_ask;
 
+--alter table tb_ask drop column ask_room_num;
+
 CREATE TABLE tb_review_comment (
 	com_num number		NOT NULL,
 	com_id	varchar2(100)		NULL,

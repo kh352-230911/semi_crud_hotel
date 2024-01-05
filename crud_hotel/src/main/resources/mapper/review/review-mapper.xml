@@ -10,7 +10,7 @@
         from
             tb_review
         order by
-            rev_num
+            rev_num desc
     </select>
 
     <select id="findById" resultType="review">
@@ -22,14 +22,14 @@
             rev_id = #{id}
     </select>
 
-    <select id="findByNum" resultType="review">
-        select
-            *
-        from
-            tb_review
-        where
-            rev_num = #{num}
-    </select>
+<!--    <select id="findByNum" resultType="review">-->
+<!--        select-->
+<!--            *-->
+<!--        from-->
+<!--            tb_review-->
+<!--        where-->
+<!--            rev_num = #{num}-->
+<!--    </select>-->
 
     <select id="getTotalCount" resultType="_int">
         select
@@ -37,6 +37,38 @@
         from
             tb_review
     </select>
+
+    <select id="findByNum" resultMap="reviewVoMap">
+        select
+            r.*,
+            p.rev_picture_num,
+            p.original_filename,
+            p.renamed_filename,
+            p.rev_pic_num
+        from
+            tb_review r
+                left join tb_review_picture p
+                    on r.rev_num = p.rev_pic_num
+        where
+            r.rev_num = #{num}
+
+    </select>
+    <resultMap id="reviewVoMap" type="reviewVo">
+        <id column="rev_num" property="revNum"/>
+        <result column="rev_room_num" property="revRoomNum"/>
+        <result column="rev_id" property="revId"/>
+        <result column="rev_title" property="revTitle"/>
+        <result column="rev_content" property="revContent"/>
+        <result column="rev_score" property="revScore"/>
+        <result column="rev_date" property="revDate"/>
+
+        <collection property="reviewPictures" ofType="reviewPicture">
+            <id column="rev_pic_num" property="revNum"/>
+            <result column="original_filename" property="originalFilename"/>
+            <result column="renamed_filename" property="renamedFilename"/>
+            <result column="rev_picture_num" property="revPictureNum"/>
+        </collection>
+    </resultMap>
 
     <insert id="insertReview">
         insert into
@@ -49,6 +81,23 @@
                #{revContent},
                #{revScore},
                sysdate)
+        <selectKey order="AFTER" resultType="_long" keyProperty="revNum">
+            select
+                seq_rev_num.currval
+            from
+                dual
+        </selectKey>
+    </insert>
+
+    <insert id="insertReviewPicture">
+        insert into
+            tb_review_picture (rev_picture_num, original_filename, renamed_filename, rev_pic_num)
+        values (
+                   seq_rev_picture_num.nextval,
+                   #{originalFilename},
+                   #{renamedFilename},
+                   #{revPicNum}
+               )
     </insert>
 
     <delete id="deleteReview">
@@ -72,6 +121,8 @@
         where
             rev_num = #{revNum}
     </update>
+
+
 
 
 </mapper>

@@ -5,7 +5,7 @@
 
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 <div class="container bg-orange-100 mx-auto mt-8 mb-16">
-    <form name="reviewInsertFrm" method="post">
+    <form name="reviewInsertFrm" method="post" enctype="multipart/form-data">
         <div class="w-9/12 flex-wrap mx-auto">
             <div class="w-1/4 mt-8 border border-gray-200 bg-gray-200">
                     <label for="revId">작성자 : ${loginMember.memberId}</label>
@@ -39,7 +39,7 @@
                 <textarea id="revContent" name="revContent" rows="12" class="w-full text-sm text-gray-900 bg-white border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="내용을 입력해주세요..." required></textarea>
             </div>
             <div class="w-full mx-auto mt-4">
-                <input class="w-full text-sm text-gray-900 border border-gray-300 bg-white focus:outline-none" id="file_input" type="file">
+                <input class="w-full text-sm text-gray-900 border border-gray-300 bg-white focus:outline-none" id="upFile" name="upFile" type="file">
                 <p class="mt-1 text-sm text-gray-500">PNG, JPG 등 이미지 파일 (MAX 10mb 1024 * 1024)</p>
             </div>
             <div class="w-full mx-auto mt-4 text-right">
