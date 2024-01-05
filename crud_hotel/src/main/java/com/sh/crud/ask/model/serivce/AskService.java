@@ -2,6 +2,7 @@ package com.sh.crud.ask.model.serivce;
 
 import com.sh.crud.ask.model.dao.AskDao;
 import com.sh.crud.ask.model.entity.Ask;
+import com.sh.crud.ask.model.vo.AskVo;
 import com.sh.crud.manager.model.entity.Manager;
 import org.apache.ibatis.session.SqlSession;
 
@@ -71,9 +72,9 @@ public class AskService {
         return result;
     }
 
-    public List<Ask> findByAsks(String id) {
+    public List<AskVo> findByAsks(String id) {
         SqlSession session = getSqlSession();
-        List<Ask> asks = askDao.findByAsks(session, id);
+        List<AskVo> asks = askDao.findByAsks(session, id);
         session.close();
         return asks;
     }

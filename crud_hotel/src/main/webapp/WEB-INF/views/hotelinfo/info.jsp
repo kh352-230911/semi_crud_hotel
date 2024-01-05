@@ -81,46 +81,46 @@
         </ul>
     </div>
 
-    <div class="content max-w-5xl mx-auto p-8">
-        <section>
-            <div class="border-b-2 pb-4 mb-4">
-                <h1 class="text-3xl font-semibold">호텔 정보</h1>
-            </div>
-            <div class="grid md:grid-cols-2 gap-4">
-            </div>
-            <section>
-                <div>
-                    <h2 class="text-xl font-semibold mb-2">개관일</h2>
-                    <p class="pb-1">1990년 7월 1일(최종 리뉴얼 개관: 1998.7.1)</p>
-                    <hr>
-
-                    <!-- ... 나머지 정보 ... -->
-
-                    <h2 class="text-xl font-semibold mb-2 ">주소</h2>
-                    <p class="pb-1">제주특별자치도 서귀포시 중문관광로 72번길 75</p>
-                    <hr>
-
-                    <!-- ... 나머지 정보 ... -->
-
-                    <h2 class="text-xl font-semibold mb-2">대표전화</h2>
-                    <p class="pb-1">064-735-5114, 팩스 : 064-735-5414</p>
-                    <hr>
-
-                    <h2 class="text-xl font-semibold mb-2">객실수</h2>
-                    <p class="pb-1">30실</p>
-                    <hr>
-                    <!-- ... 나머지 정보 ... -->
-
-                    <h2 class="text-xl font-semibold mb-2 mt-4">홈페이지</h2>
-                    <a href="http://www.shilla.net/jeju"
-                       class="pb-1 text-blue-600 hover:underline">http://www.shilla.net/jeju</a>
-                    <hr>
-                    <!-- ... 나머지 정보 ... -->
+         <div class="content max-w-5xl mx-auto p-8">
+             <section>
+                <div class="border-b-2 pb-4 mb-4">
+                    <h1 class="text-3xl font-semibold">호텔 정보</h1>
                 </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                </div>
+                <section>
+                    <div>
+                        <h2 class="text-xl font-semibold mb-2">개관일</h2>
+                        <p class="pb-1">1990년 7월 1일(최종 리뉴얼 개관: 1998.7.1)</p>
+                        <hr>
+
+                        <!-- ... 나머지 정보 ... -->
+
+                        <h2 class="text-xl font-semibold mb-2 ">주소</h2>
+                        <p class="pb-1">서울특별시 강남구 테헤란로14길 48</p>
+                        <hr>
+
+                        <!-- ... 나머지 정보 ... -->
+
+                        <h2 class="text-xl font-semibold mb-2">대표전화</h2>
+                        <p class="pb-1">TEL. 02-1111-2222, 팩스 : 064-735-5414</p>
+                        <hr>
+
+                        <h2 class="text-xl font-semibold mb-2">객실수</h2>
+                        <p class="pb-1">30개 보유</p>
+                        <hr>
+                        <!-- ... 나머지 정보 ... -->
+
+                        <h2 class="text-xl font-semibold mb-2 mt-4">홈페이지</h2>
+                        <a href="http://localhost:8080/crud_hotel/"
+                           class="pb-1 text-blue-600 hover:underline">http://localhost:8080/crud_hotel/</a>
+                        <hr>
+                        <!-- ... 나머지 정보 ... -->
+                    </div>
+                </section>
             </section>
-        </section>
+         </div>
     </div>
-</div>
 </body>
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>

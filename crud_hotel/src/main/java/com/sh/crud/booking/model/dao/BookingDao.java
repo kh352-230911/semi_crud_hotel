@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Map;
 
 public class BookingDao {
-    public Booking findByBookingMemberId(SqlSession session, String bookingMemberId) {
-        return session.selectOne("booking.findByBookingMemberId", bookingMemberId);
+    public List<Booking> findByBookingMemberId(SqlSession session, String bookingMemberId) {
+        return session.selectList("booking.findByBookingMemberId", bookingMemberId);
     }
     public List<Booking> findByBookings(SqlSession session, String id) {
         return session.selectList("booking.findByBookingMemberId", id);
@@ -20,8 +20,8 @@ public class BookingDao {
     }
 
 
-    public int deleteBooking(SqlSession session, String id) {
-        return session.delete("booking.deleteBooking", id);
+    public int deleteBooking(SqlSession session, int num) {
+        return session.delete("booking.deleteBooking", num);
     }
     public List<Booking> findAll(SqlSession session, Map<String, Object> param) {
         int page = (int) param.get("page");
@@ -38,4 +38,5 @@ public class BookingDao {
         return session.selectOne("booking.findByBookingNum", bookingNum);
 
     }
+
 }

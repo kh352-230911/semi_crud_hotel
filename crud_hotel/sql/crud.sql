@@ -161,6 +161,14 @@ CREATE TABLE tb_ask_answer (
 
 create SEQUENCE seq_ans_num;
 
+select
+            *
+        from
+            tb_ask a left join tb_ask_answer b
+                               on a.ask_num = b.ans_ask_num
+        where
+            ask_id = 'honggd';
+
 select * from tb_ask_answer;
 
 CREATE TABLE tb_tour (

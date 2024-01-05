@@ -1,6 +1,7 @@
 package com.sh.crud.ask.model.dao;
 
 import com.sh.crud.ask.model.entity.Ask;
+import com.sh.crud.ask.model.vo.AskVo;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.List;
@@ -26,7 +27,7 @@ public class AskDao {
         return session.delete("ask.deleteAsk", ask);
     }
 
-    public List<Ask> findByAsks(SqlSession session, String id) {
+    public List<AskVo> findByAsks(SqlSession session, String id) {
         return session.selectList("ask.findById", id);
     }
 }

@@ -38,13 +38,20 @@ public class MemberRegisterServlet extends HttpServlet {
         String email = req.getParameter("email");
         String phone = req.getParameter("phone");
         String address = req.getParameter("address");
+        String bookingCount = req.getParameter("bookingCount");
+        int intValue = 0;
+        if (bookingCount != null) {
+            intValue = Integer.parseInt(bookingCount);
+            // 나머지 로직 처리
+        } else {
+            // 값이 없는 경우에 대한 처리
+        }
         LocalDateTime loginDate = LocalDateTime.now();
 
-        System.out.println(id+ ", " + password + ", " + name+ ", " + email +", " + phone + ", " + address + "," + loginDate);
+        System.out.println(id + ", " + password + ", " + name + ", " + email + ", " + phone + ", " + address + "," + loginDate  + "," + bookingCount);
 
 
-
-        Member member = new Member(id, password, name, phone, email, address, loginDate, Pride.bronze);
+        Member member = new Member(id, password, name, phone, email, address, loginDate, Pride.bronze, intValue);
         System.out.println(member);
 
 
