@@ -46,5 +46,24 @@
         where
             booking_num = #{bookingNum}
     </select>
+    <select id="checkBookingOverlap" resultType="int" >
+        SELECT COUNT(*)
+        FROM tb_booking
+        WHERE booking_room_num = #{roomNum}
+        AND booking_num != #{bookingNum}
+        AND ((checkin_date &lt; #{checkOutDate} AND checkout_date &gt; #{checkInDate})
+        OR (checkin_date &lt;= #{checkInDate} AND checkout_date &gt;= #{checkOutDate}))
+    </select>
 
+    <update id="updateBooking">
+        update
+            tb_booking
+        set
+            booking_room_num=#{bookingRoomNum},
+            checkin_date=#{checkInDate},
+            checkout_date=#{checkOutDate}
+        where
+            booking_num=#{bookingNum}
+    </update>
 </mapper>
+
