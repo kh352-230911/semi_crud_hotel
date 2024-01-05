@@ -16,8 +16,10 @@
                         <td>질문유형</td>
                         <td>
                             <label for="askCase"></label>
-                            <select name="askCase" id="askCase" class="w-2/5">
+                            <select name="askCase" id="askCase" class="w-3/5">
+                                <option value="select">문의유형을 선택해주세요</option>
                                 <option value="객실문의">객실문의</option>
+                                <option value="예약문의">예약문의</option>
                                 <option value="결제문의">결제문의</option>
                                 <option value="기타문의">기타문의</option>
                             </select>
@@ -31,24 +33,17 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>방 번호</td>
-                        <td>
-                            <label for="askRoomNum"></label>
-                            <input type="text" name="askRoomNum" id="askRoomNum" class="w-full" placeholder="문의사항이 있는 방을 적어주세요.">
-                        </td>
-                    </tr>
-                    <tr>
                         <td>제목</td>
                             <td>
                                 <label for="askTitle"></label>
-                                <input type="text" name="askTitle" id="askTitle" class="w-full">
+                                <input type="text" name="askTitle" id="askTitle" class="w-full" placeholder="제목">
                             </td>
                     </tr>
                     <tr class="relative">
                         <td class="absolute top-0 left-0">내용</td>
                         <td>
                             <label for="askContent"></label>
-                            <input type="text" name="askContent" id="askContent" class="pb-32 w-full">
+                            <input type="text" name="askContent" id="askContent" class="pb-32 w-full" placeholder="내용">
                         </td>
                     </tr>
                     <tr>
