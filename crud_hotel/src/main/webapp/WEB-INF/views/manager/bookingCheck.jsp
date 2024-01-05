@@ -10,6 +10,7 @@
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
+
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg w-9/12 mx-auto mt-4">
     <h2 class="text-bold text-xl absolute top-0 left-4">예약목록</h2>
     <table class="w-full text-sm text-center text-gray-500 dark:text-gray-400 mt-12">
@@ -37,7 +38,7 @@
         </thead>
         <tbody>
         <c:forEach items="${bookings}" var="booking" varStatus="vs">
-        <form action="${pageContext.request.contextPath}/manager/managerBookingUpdate" method="post" name="memberBookingUpdateFrm${vs.index}" >
+            <form action="${pageContext.request.contextPath}/manager/managerBookingCheck" method="post" name="memberBookingUpdateFrm${vs.index}">
             <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                 <th scope="row" class="font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
                         ${booking.bookingNum}
@@ -59,10 +60,9 @@
                 </td>
                 <td class="py-4">
                     <input type="hidden" name="bookingNum" value="${booking.bookingNum}" />
-                    <button onclick="if(confirm('${booking.bookingName} 님의 예약정보를 수정하시겠습니까?')) { document['memberBookingUpdateFrm' + index].submit(); }" class="font-medium text-red-600 hover:underline">
+                    <button type="button" onclick="handleUpdateConfirmation('${booking.bookingName}', ${vs.index})" class="font-medium text-red-600 hover:underline">
                         수정
                     </button>
-
                 </td>
             </tr>
         </form>
@@ -77,7 +77,18 @@
         </ul>
     </nav>
 </div>
-
-
+<script>
+    function handleUpdateConfirmation(bookingName, index) {
+        if (confirm(bookingName + ' 님의 예약정보를 수정하시겠습니까?')) {
+            document.forms['memberBookingUpdateFrm' + index].submit();
+        }
+    }
+</script>
+<% if (session.getAttribute("error") != null) { %>
+<script type="text/javascript">
+    alert('<%= session.getAttribute("error") %>');
+    session.removeAttribute("error");  // 오류 메시지를 표시한 후 세션에서 제거
+</script>
+<% } %>
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
