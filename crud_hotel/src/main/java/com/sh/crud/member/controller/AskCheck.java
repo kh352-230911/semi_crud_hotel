@@ -2,6 +2,7 @@ package com.sh.crud.member.controller;
 
 import com.sh.crud.ask.model.entity.Ask;
 import com.sh.crud.ask.model.serivce.AskService;
+import com.sh.crud.ask.model.vo.AskVo;
 import com.sh.crud.booking.model.entity.Booking;
 import com.sh.crud.booking.model.service.BookingService;
 import com.sh.crud.member.model.entity.Member;
@@ -25,9 +26,9 @@ public class AskCheck extends HttpServlet {
         Member loginMember = (Member) req.getSession().getAttribute("loginMember");
         String id = loginMember.getMemberId();
 
-        List<Ask> asks = askService.findByAsks(id);
-        req.setAttribute("asks", asks);
-        System.out.println(asks);
+        List<AskVo> askVos = askService.findByAsks(id);
+        req.setAttribute("askVos", askVos);
+        System.out.println(askVos);
 
 
         req.getRequestDispatcher("/WEB-INF/views/member/askCheck.jsp").forward(req, resp);

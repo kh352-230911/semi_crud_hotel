@@ -74,15 +74,16 @@ public class MemberServiceTest {
     @Test
     public void test5() {
 
-        String id = "honggd2";
-        String password = "hong21234@";
-        String name = "홍길동동";
-        String phone = "01000000000";
+        String id = "bbb";
+        String password = "bbb123@";
+        String name = "홍동";
+        String phone = "01000001300";
         LocalDateTime loginDate = LocalDateTime.now(); // 현재 날짜와 시간
         String email = ""; // 또는 적절한 이메일 값
         String address = ""; // 또는 적절한 주소 값
+        int bookingCount = 0;
 
-        Member member = new Member(id, password, name, phone, email, address, loginDate, Pride.bronze);
+        Member member = new Member(id, password, name, phone, email, address, loginDate, Pride.bronze, bookingCount);
 
         // 2. Member 객체를 데이터베이스에 저장
         int result=memberService.registerMember(member);
@@ -100,14 +101,15 @@ public class MemberServiceTest {
     @DisplayName("회원가입시 오류 체크")
     @Test
     public void test6() {
-        String id = "honggd3";
-        String password = "hong31234@";
-        String name = "홍길동3";
-        String phone = "01000001111";
+        String id = "bbb";
+        String password = "bbb123@";
+        String name = "홍동";
+        String phone = "01000001300";
         LocalDateTime loginDate = LocalDateTime.now(); // 현재 날짜와 시간
+        int bookingCount = 0;
 
 
-        Member member = new Member(id, password, name, phone, null, null, loginDate, Pride.bronze);
+        Member member = new Member(id, password, name, phone, null, null, loginDate, Pride.bronze, bookingCount);
         Throwable th = catchThrowable(() -> {
             int result = memberService.registerMember(member);
         });
@@ -119,7 +121,7 @@ public class MemberServiceTest {
     @DisplayName("회원정보 수정")
     @Test
     public void test7(){
-        String id = "honggd3";
+        String id = "honggd4";
         Member member = memberService.findById(id);
 
         String newName=member.getMemberName()+"길동";
@@ -148,9 +150,9 @@ public class MemberServiceTest {
     @Test
     public void test8() {
         // update member set password = ? where id = ?
-        String id = "honggd3";
+        String id = "honggd4";
         Member member = memberService.findById(id);
-        String newPassword = "qwer1234@";
+        String newPassword = "qwr1234@";
         member.setMemberPassword(newPassword);
 
         int result = memberService.updateMemberPassword(member);

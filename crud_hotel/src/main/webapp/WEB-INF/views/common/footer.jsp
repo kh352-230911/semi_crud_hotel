@@ -166,11 +166,6 @@
                             <li>
                                 <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="#">리뷰</a>
                             </li>
-                            <br>
-                            <li>
-                               <p class="text-amber-600">CRUD Hotel</p>
-                               <p class="text-amber-600">TEL. 02-1111-2222</p>
-                            </li>
                         </ul>
                     </div>
                 </div>
