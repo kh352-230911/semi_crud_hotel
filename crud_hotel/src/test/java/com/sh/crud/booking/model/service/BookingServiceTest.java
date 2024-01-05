@@ -28,12 +28,12 @@ class BookingServiceTest {
     @DisplayName("회원의 존재하는 예약목록이 정상적으로 조회된다.")
     @Test
     public void test2() {
-        String bookingMemberId = "honggd";
-        List<Booking> booking = bookingService.findByBookingMemberId(bookingMemberId);
-        System.out.println(booking);
-        // 객체
+//        String bookingMemberId = "honggd";
+//        Booking booking = bookingService.findByBookingMemberId(bookingMemberId);
+//        System.out.println(booking);
+////         객체
 //        assertThat(booking).isNotNull();
-        // 필드
+////         필드
 //        assertThat(booking.getBookingNum()).isNotNull();
 //        assertThat(booking.getBookingMemberId()).isNotNull();
 //        assertThat(booking.getBookingRoomNum()).isNotNull();

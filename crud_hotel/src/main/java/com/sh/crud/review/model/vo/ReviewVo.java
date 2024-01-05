@@ -1,54 +1,43 @@
 package com.sh.crud.review.model.vo;
 
-import com.sh.crud.member.model.entity.Member;
-import com.sh.crud.review.model.entity.RevPicture;
 import com.sh.crud.review.model.entity.Review;
+import com.sh.crud.review.model.entity.ReviewPicture;
 
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class ReviewVo extends Review {
+    private long revPicNum;
+    private int revPictureCount;
+    private List<ReviewPicture> reviewPictures = new ArrayList<>();
 
-    private Member member;
-
-    private int attachCount;
-    private List<RevPicture> attachments = new ArrayList<>();
-    private List<Long> delFiles = new ArrayList<>();
-
-    public Member getMember() {
-        return member;
+    public long getRevPicNum() {
+        return revPicNum;
     }
 
-    public void setMember(Member member) {
-        this.member = member;
+    public void setRevPicNum(long revPicNum) {
+        this.revPicNum = revPicNum;
     }
 
-    public int getAttachCount() {
-        return attachCount;
+    public int getRevPictureCount() {
+        return revPictureCount;
     }
 
-    public void setAttachCount(int attachCount) {
-        this.attachCount = attachCount;
+    public void setRevPictureCount(int revPictureCount) {
+        this.revPictureCount = revPictureCount;
     }
 
-    public void addAttachment(RevPicture attachment) {
-        this.attachments.add(attachment);
+    public void addReviewPicture(ReviewPicture reviewPicture) {
+        this.reviewPictures.add(reviewPicture);
     }
 
-    public List<RevPicture> getAttachments() {
-        return attachments;
+    public List<ReviewPicture> getReviewPictures() {
+        return reviewPictures;
     }
 
-    public void setAttachments(List<RevPicture> attachments) {
-        this.attachments = attachments;
-    }
-
-    public List<Long> getDelFiles() {
-        return delFiles;
-    }
-
-    public void setDelFiles(List<Long> delFiles) {
-        this.delFiles = delFiles;
+    public void setReviewPictures(List<ReviewPicture> reviewPictures) {
+        this.reviewPictures = reviewPictures;
     }
 
     public void setValue(String name, String value) {
@@ -59,18 +48,16 @@ public class ReviewVo extends Review {
             case "revTitle" : setRevTitle(value); break;
             case "revContent" : setRevContent(value); break;
             case "revScore" : setRevScore(Integer.parseInt(value)); break;
-            case "delFile" : this.delFiles.add(Long.parseLong(value)); break;
-            default: throw new RuntimeException("부적절한 name 값입니다. : " + name);
+            default: throw new RuntimeException("부적절한 name 값 : " + name);
         }
     }
 
     @Override
     public String toString() {
         return "ReviewVo{" +
-                "member=" + member +
-                ", attachCount=" + attachCount +
-                ", attachments=" + attachments +
-                ", delFiles=" + delFiles +
+                "revPicNum=" + revPicNum +
+                ", revPictureCount=" + revPictureCount +
+                ", reviewPictures=" + reviewPictures +
                 "} " + super.toString();
     }
 }

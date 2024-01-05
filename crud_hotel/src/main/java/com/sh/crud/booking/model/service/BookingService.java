@@ -14,12 +14,6 @@ public class BookingService {
 
     private BookingDao bookingDao = new BookingDao();
 
-    public List<Booking> findByBookingMemberId(String bookingMemberId) {
-        SqlSession session = getSqlSession();
-        List<Booking> bookings = bookingDao.findByBookingMemberId(session, bookingMemberId);
-        session.close();
-        return bookings;
-    }
 
     public List<Booking> findByBookings(String id) {
         SqlSession session = getSqlSession();
@@ -30,7 +24,7 @@ public class BookingService {
 
     public Booking checkRoomAvailability(String roomNumber) {
         SqlSession session = getSqlSession();
-        Booking booking = bookingDao.checkRoomAvailability(session ,roomNumber);
+        Booking booking = bookingDao.checkRoomAvailability(session, roomNumber);
         session.close();
         return booking;
     }
@@ -52,8 +46,8 @@ public class BookingService {
     }
 
     public List<Booking> findAll(Map<String, Object> param) {
-        SqlSession session=getSqlSession();
-        List<Booking> bookings=bookingDao.findAll(session,param);
+        SqlSession session = getSqlSession();
+        List<Booking> bookings = bookingDao.findAll(session, param);
         session.close();
         return bookings;
     }
@@ -72,4 +66,40 @@ public class BookingService {
         return booking;
     }
 
+
+    public boolean checkBookingOverlap(Map<String, Object> bookingParams) {
+        SqlSession session = getSqlSession();
+        try  {
+            int count = bookingDao.checkBookingOverlap(session, bookingParams);
+            return count > 0; // 중복 예약의 개수를 boolean 값으로 변환
+
+        } catch (Exception e) {
+            // 오류 처리
+            throw e;
+        }finally {
+            session.close();
+        }
+
+    }
+
+    public int updateBooking(Booking booking) {
+        int result = 0;
+        SqlSession session = getSqlSession();
+        try {
+            result = BookingDao.updateBooking(session, booking);
+            session.commit();
+        } catch (Exception e) {
+            session.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
+        return result;
+    }
+
 }
+
+
+
+
+

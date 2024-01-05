@@ -28,7 +28,6 @@
         values (
             #{memberId},#{memberPassword},#{memberName},#{memberPhone},#{memberEmail},#{memberAddress},#{memberLoginDate},#{memberPride}, default
         )
-
     </select>
     <select id="updateMember" >
         update

@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 public class Ask {
     private int askNum;
     private String askId;
-    private String askRoomNum;
+
     private String askTitle;
     private AskCase askCase;
     private String askContent;
@@ -14,10 +14,9 @@ public class Ask {
     public Ask() {
     }
 
-    public Ask(int askNum, String askId, String askRoomNum, String askTitle, AskCase askCase, String askContent, LocalDateTime askDate) {
+    public Ask(int askNum, String askId, String askTitle, AskCase askCase, String askContent, LocalDateTime askDate) {
         this.askNum = askNum;
         this.askId = askId;
-        this.askRoomNum = askRoomNum;
         this.askTitle = askTitle;
         this.askCase = askCase;
         this.askContent = askContent;
@@ -38,14 +37,6 @@ public class Ask {
 
     public void setAskId(String askId) {
         this.askId = askId;
-    }
-
-    public String getAskRoomNum() {
-        return askRoomNum;
-    }
-
-    public void setAskRoomNum(String askRoomNum) {
-        this.askRoomNum = askRoomNum;
     }
 
     public String getAskTitle() {
@@ -85,7 +76,6 @@ public class Ask {
         return "Ask{" +
                 "askNum=" + askNum +
                 ", askId='" + askId + '\'' +
-                ", askRoomNum='" + askRoomNum + '\'' +
                 ", askTitle='" + askTitle + '\'' +
                 ", askCase=" + askCase +
                 ", askContent='" + askContent + '\'' +

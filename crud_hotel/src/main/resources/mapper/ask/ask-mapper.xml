@@ -38,8 +38,8 @@
 
     <insert id="insertAsk">
         insert into
-            tb_ask
-        values (#{askNum}, #{askId}, default, #{askTitle}, #{askCase}, #{askContent}, default)
+            tb_ask(ask_num, ask_id, ask_title, ask_case, ask_content, ask_date)
+        values (seq_ask_num.nextval, #{askId}, #{askTitle}, #{askCase}, #{askContent}, sysdate)
     </insert>
 
     <update id="updateAsk">

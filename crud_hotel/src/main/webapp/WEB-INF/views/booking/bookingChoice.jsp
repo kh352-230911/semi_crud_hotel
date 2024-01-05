@@ -11,105 +11,250 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
-<div class="w-[1280px] h-[720px] relative overflow-hidden bg-white">
-    <p class="absolute left-[570px] top-[180px] text-base text-left text-[#715b3f]">
-        객실, 날짜, 인원 선택
-    </p>
-    <svg
-            width="86"
-            height="2"
-            viewBox="0 0 86 2"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="absolute left-[597.06px] top-[148.25px]"
-            preserveAspectRatio="none"
-    >
-        <path d="M1.06396 1.25H84.7465" stroke="#D9D9D9" stroke-linecap="round"></path>
-    </svg
-    >
-    <svg
-            width="35"
-            height="35"
-            viewBox="0 0 35 35"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="absolute left-[564px] top-[132px]"
-            preserveAspectRatio="xMidYMid meet"
-    >
-        <circle cx="17.5" cy="17.5" r="17.5" fill="#715B3F"></circle>
-    </svg
-    >
-    <svg
-            width="36"
-            height="35"
-            viewBox="0 0 36 35"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="absolute left-[621px] top-[132px]"
-            preserveAspectRatio="xMidYMid meet"
-    >
-        <path
-                d="M35.5 17.5C35.5 26.8757 27.6784 34.5 18 34.5C8.32165 34.5 0.5 26.8757 0.5 17.5C0.5 8.12434 8.32165 0.5 18 0.5C27.6784 0.5 35.5 8.12434 35.5 17.5Z"
-                fill="white"
-                stroke="#D9D9D9"
-        ></path>
-    </svg
-    >
-    <svg
-            width="35"
-            height="35"
-            viewBox="0 0 35 35"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="absolute left-[679px] top-[132px]"
-            preserveAspectRatio="xMidYMid meet"
-    >
-        <circle cx="17.5" cy="17.5" r="17" fill="white" stroke="#D9D9D9"></circle>
-    </svg>
-    <p class="absolute left-[576px] top-[136px] text-2xl text-left text-white">1</p>
-    <p class="absolute left-[633px] top-[136px] text-2xl text-left text-[#d9d9d9]">2</p>
-    <p class="absolute left-[689px] top-[136px] text-2xl text-left text-[#d9d9d9]">3</p>
-    <svg
-            width="924"
-            height="2"
-            viewBox="0 0 924 2"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="absolute left-[161.58px] top-[209px]"
-            preserveAspectRatio="none"
-    >
-        <path d="M0.582031 1H922.888" stroke="#715B3F" stroke-linecap="round"></path>
-    </svg>
-    <p class="absolute left-[489px] top-[227px] text-[13px] text-left text-black">
-        방 타입을 선택해주세요
-    </p>
-    <p class="absolute left-[488px] top-72 text-[13px] text-left text-black">
-        날짜를 선택해주세요
-    </p>
-    <p class="absolute left-[489px] top-[409px] text-[13px] text-left text-black">
-        객실을 선택해주세요.
-    </p>
-    <p class="absolute left-[487px] top-[348px] text-[13px] text-left text-black">
-        인원 수를 선택해주세요.
-    </p>
-    <p class="absolute left-[488px] top-[472px] text-[13px] text-left text-black">
-        침대 수를 선택해주세요.
-    </p>
-    <div class="w-[87px] h-6 absolute left-[488px] top-[249px] bg-white border border-black/20"></div>
-    <div
-            class="w-[126px] h-6 absolute left-[487px] top-[310px] bg-white border border-black/20"
-    ></div>
-    <div
-            class="w-[126px] h-6 absolute left-[666px] top-[310px] bg-white border border-black/20"
-    ></div>
-    <div class="w-[30px] h-6 absolute left-[488px] top-[370px] bg-white border border-black/20"></div>
-    <div class="w-[30px] h-6 absolute left-[488px] top-[431px] bg-white border border-black/20"></div>
-    <div class="w-[30px] h-6 absolute left-[488px] top-[494px] bg-white border border-black/20"></div>
-    <div class="w-[304px] h-11 absolute left-[488px] top-[562px] bg-[#715b3f]"></div>
-    <p class="absolute left-[675px] top-[315px] text-[13px] text-left text-[#715b3f]">체크아웃</p>
-    <p class="absolute left-[496px] top-[315px] text-[13px] text-left text-[#715b3f]">체크인</p>
-    <p class="absolute left-[619px] top-[571px] text-2xl text-left text-white">
-        <a href="${pageContext.request.contextPath}/booking/bookingTour">검색</a></p>
+<div class="w-full h-screen flex justify-center items-start bg-white">
+    <div class="w-[1280px] h-[720px] relative overflow-hidden bg-white">
+        <p class="absolute left-[570px] top-[180px] text-base text-left text-[#715b3f]">
+            객실, 날짜, 인원 선택
+        </p>
+        <svg
+                width="86"
+                height="2"
+                viewBox="0 0 86 2"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="absolute left-[597.06px] top-[148.25px]"
+                preserveAspectRatio="none"
+        >
+            <path d="M1.06396 1.25H84.7465" stroke="#D9D9D9" stroke-linecap="round"></path>
+        </svg
+        >
+        <svg
+                width="35"
+                height="35"
+                viewBox="0 0 35 35"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="absolute left-[564px] top-[132px]"
+                preserveAspectRatio="xMidYMid meet"
+        >
+            <circle cx="17.5" cy="17.5" r="17.5" fill="#715B3F"></circle>
+        </svg
+        >
+        <svg
+                width="36"
+                height="35"
+                viewBox="0 0 36 35"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="absolute left-[621px] top-[132px]"
+                preserveAspectRatio="xMidYMid meet"
+        >
+            <path
+                    d="M35.5 17.5C35.5 26.8757 27.6784 34.5 18 34.5C8.32165 34.5 0.5 26.8757 0.5 17.5C0.5 8.12434 8.32165 0.5 18 0.5C27.6784 0.5 35.5 8.12434 35.5 17.5Z"
+                    fill="white"
+                    stroke="#D9D9D9"
+            ></path>
+        </svg
+        >
+        <svg
+                width="35"
+                height="35"
+                viewBox="0 0 35 35"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="absolute left-[679px] top-[132px]"
+                preserveAspectRatio="xMidYMid meet"
+        >
+            <circle cx="17.5" cy="17.5" r="17" fill="white" stroke="#D9D9D9"></circle>
+        </svg>
+        <p class="absolute left-[576px] top-[132px] text-2xl text-left text-white">1</p>
+        <p class="absolute left-[633px] top-[132px] text-2xl text-left text-[#d9d9d9]">2</p>
+        <p class="absolute left-[689px] top-[132px] text-2xl text-left text-[#d9d9d9]">3</p>
+        <svg
+                width="924"
+                height="2"
+                viewBox="0 0 924 2"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="absolute left-[161.58px] top-[209px]"
+                preserveAspectRatio="none"
+        >
+            <path d="M0.582031 1H922.888" stroke="#715B3F" stroke-linecap="round"></path>
+        </svg>
+        <p class="absolute left-[489px] top-[227px] text-[15px] text-left text-black">
+            객실 유형을 선택해주세요
+        </p>
+        <p class="absolute left-[488px] top-72 text-[15px] text-left text-black">
+            날짜를 선택해주세요
+        </p>
+        <p class="absolute left-[487px] top-[360px] text-[15px] text-left text-black">
+            인원 수를 선택해주세요.
+        </p>
+        <p class="absolute left-[489px] top-[435px] text-[15px] text-left text-black">
+            객실을 선택해주세요.
+        </p>
+
+        <div class="w-[126px] h-6 absolute left-[488px] top-[249px] ">
+            <button id="dropdownRadioButton" data-dropdown-toggle="dropdownDefaultRadio" class="text-black bg-white hover:bg-white border-black focus:ring-4 focus:outline-none focus:ring-black-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center" type="button">
+                스탠다드
+                <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                </svg>
+            </button>
+            <!-- Dropdown menu -->
+            <div id="dropdownDefaultRadio" class="z-10 hidden w-48 bg-white divide-y divide-gray-100 rounded-lg shadow">
+                <ul class="p-3 space-y-3 text-sm text-gray-700" aria-labelledby="dropdownRadioButton">
+                    <li>
+                        <div class="flex items-center">
+                            <input onclick="updateButton(this);" id="default-radio-1" type="radio" value="스탠다드" name="default-radio" class="w-4 h-4 text-black-600 bg-gray-100 border-gray-300 focus:ring-black-500">
+                            <label for="default-radio-1" class="ms-2 text-sm font-medium text-gray-900">스탠다드</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <input onclick="updateButton(this);" id="default-radio-2" type="radio" value="프리미어" name="default-radio" class="w-4 h-4 text-black-600 bg-gray-100 border-gray-300 focus:ring-black-500">
+                            <label for="default-radio-2" class="ms-2 text-sm font-medium text-gray-900">프리미어</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <input onclick="updateButton(this);" id="default-radio-3" type="radio" value="스위트룸" name="default-radio" class="w-4 h-4 text-black-600 bg-gray-100 border-gray-300 focus:ring-black-500">
+                            <label for="default-radio-3" class="ms-2 text-sm font-medium text-gray-900">스위트룸</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="w-[126px] h-6 absolute left-[487px] top-[310px]  ">
+            <!-- 날짜 검색 체크인 -->
+            <input type="date" id="checkin-date" name="checkin" placeholder="Select date" required>
+        </div>
+        <div class="w-[126px] h-6 absolute left-[666px] top-[310px] ">
+            <!-- 날짜 검색 체크아웃-->
+            <input type="date" id="checkout-date" name="checkout" placeholder="Select date" required>
+        </div>
+        <div class="w-[30px] h-6 absolute left-[488px] top-[385px] ">
+            <input type="number" id="adult" name="total_adults" placeholder="2" min="1" max="4" required>
+        </div>
+        <div class="w-[30px] h-6 absolute left-[488px] top-[460px]  ">
+            <button type="button" data-modal-target="crypto-modal" data-modal-toggle="crypto-modal" class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700">
+                <svg aria-hidden="true" class="w-4 h-4 me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                A201
+            </button>
+
+            <!-- Main modal -->
+            <div id="crypto-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div class="relative p-4 w-full max-w-md max-h-full">
+                    <!-- Modal content -->
+                    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                        <!-- Modal header -->
+                        <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                                스탠다드
+                            </h3>
+                            <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm h-8 w-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="crypto-modal">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                </svg>
+<%--                                <span class="sr-only">Close modal</span>--%>
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-4 md:p-5">
+                            <p class="text-sm font-normal text-gray-500 dark:text-gray-400">CRUD Hotel의 객실 목록입니다.</p>
+                            <ul class="my-4 space-y-3">
+                                <li>
+                                    <a class="room flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+                                        <span class="flex-1 ms-3 whitespace-nowrap">A201</span>
+<%--                                    <span class="inline-flex items-center justify-center px-2 py-0.5 ms-3 text-xs font-medium text-gray-500 bg-gray-200 rounded dark:bg-gray-700 dark:text-gray-400">Popular</span>--%>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="room flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+                                        <span class="flex-1 ms-3 whitespace-nowrap">A202</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="room flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+                                        <span class="flex-1 ms-3 whitespace-nowrap">A203</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="room flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+
+                                        <span class="flex-1 ms-3 whitespace-nowrap">A204</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="room flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+
+                                        <span class="flex-1 ms-3 whitespace-nowrap">A205</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="room flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+
+                                        <span class="flex-1 ms-3 whitespace-nowrap">A206</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="room flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+
+                                        <span class="flex-1 ms-3 whitespace-nowrap">T301</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="room flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+
+                                        <span class="flex-1 ms-3 whitespace-nowrap">T302</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="room flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+
+                                        <span class="flex-1 ms-3 whitespace-nowrap">A303</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="room flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+
+                                        <span class="flex-1 ms-3 whitespace-nowrap">A304</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="room flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+
+                                        <span class="flex-1 ms-3 whitespace-nowrap">T305</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="room flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+
+                                        <span class="flex-1 ms-3 whitespace-nowrap">T306</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div>
+                                <a href="#" class="inline-flex items-center text-xs font-normal text-gray-500 hover:underline dark:text-gray-400">
+                                    <svg class="w-3 h-3 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.529 7.988a2.502 2.502 0 0 1 5 .191A2.441 2.441 0 0 1 10 10.582V12m-.01 3.008H10M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                                    </svg>
+                                    객실 선택 주의 사항</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-[30px] h-6 absolute left-[488px] top-[494px]  "></div>
+        <div class="w-[304px] h-11 absolute left-[488px] top-[562px] bg-[#715b3f]"></div>
+
+        <p class="absolute left-[590px] top-[568px] text-2xl text-left text-white">
+            <a href="${pageContext.request.contextPath}/booking/bookingRoom">객실검색</a></p>
+    </div>
 </div>
+
+
+<script src="${pageContext.request.contextPath}/js/booking/booking.js"></script>
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
