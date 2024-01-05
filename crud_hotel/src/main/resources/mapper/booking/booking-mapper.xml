@@ -46,12 +46,12 @@
         where
             booking_num = #{bookingNum}
     </select>
-    <select id="checkBookingOverlap" resultType="_int" >
+    <select id="checkBookingOverlap" resultType="integer" >
         SELECT COUNT(*)
         FROM tb_booking
         WHERE booking_room_num = #{roomNum}
           AND booking_num != #{bookingNum}
-          AND (checkin_date &lt;= #{checkOutDate} AND checkout_date &gt;= #{checkInDate})
+          AND (checkin_date &lt; #{checkOutDate} AND checkout_date &gt; #{checkInDate})
     </select>
 
     <update id="updateBooking">

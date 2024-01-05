@@ -36,11 +36,14 @@ public class ManagerBookingUpdateServlet extends HttpServlet {
         LocalDateTime checkOutDateTime = checkOutDate.atStartOfDay();
 
 
-        bookingParams.put("num", bookingNum);
-        bookingParams.put("roomNum", roomNum);
-        bookingParams.put("checkInDateTime", checkInDateTime);
-        bookingParams.put("checkOutDateTime", checkOutDateTime);
-
+        bookingParams.put("bookingNum", bookingNum);
+        bookingParams.put("bookingRoomNum", roomNum);
+        bookingParams.put("checkInDate", checkInDateTime);
+        bookingParams.put("checkOutDate", checkOutDateTime);
+        System.out.println(bookingNum);
+        System.out.println(roomNum);
+        System.out.println(checkInDateTime);
+        System.out.println(checkOutDateTime);
         if (checkInDate.isAfter(checkOutDate)) {
             req.getSession().setAttribute("error", "체크인 날짜는 체크아웃 날짜보다 클 수 없습니다.");
 
@@ -49,6 +52,7 @@ public class ManagerBookingUpdateServlet extends HttpServlet {
         }
         // 방번호 유효성 검증
         if (!roomService.isRoomNumberValid(roomNum)) {
+            System.out.println(roomService.isRoomNumberValid(roomNum));
             req.getSession().setAttribute("error", "유효하지 않은 방 번호입니다.");
             resp.sendRedirect(req.getContextPath() + "/manager/bookingCheck");
             return;
