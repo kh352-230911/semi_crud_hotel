@@ -99,6 +99,22 @@
       <artifactId>osdt_core</artifactId>
       <version>19.21.0.0</version>
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>3.24.2</version>
+      <scope>test</scope>
+    </dependency>
+
+<!--    <dependency>-->
+<!--      <groupId>com.sh</groupId>-->
+<!--      <artifactId>mybatis</artifactId>-->
+<!--      <version>1.0-SNAPSHOT</version>-->
+<!--      <scope>test</scope>-->
+<!--    </dependency>-->
+
   </dependencies>
   <build>
     <finalName>crud_hotel</finalName>

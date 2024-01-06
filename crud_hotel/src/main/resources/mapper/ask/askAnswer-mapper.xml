@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="askAnswer">
+
+    <select id="findByAnswerId" resultType="askAnswer">
+        select
+            *
+        from
+            tb_ask_answer
+        where
+            ans_num = #{ansNum}
+    </select>
+
+    <insert id="insertAnswer">
+        insert into
+            tb_ask_answer
+        values( #{ansNum}, #{ansManagerNum}, default, default, default, #{ansAskNum})
+    </insert>
+
+    <select id="findByAnswerNum" resultType="askAnswer">
+        select
+            *
+        from
+            tb_ask_answer
+        where
+            ans_num = #{ansNum}
+    </select>
+
+    <delete id="deleteAnswer">
+        delete from
+            tb_ask_answer
+        where
+            ans_num = #{ansNum}
+    </delete>
+
+</mapper>

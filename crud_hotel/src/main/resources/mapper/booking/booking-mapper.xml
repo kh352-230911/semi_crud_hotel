@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="booking">
+    <select id="findByBookingMemberId" resultType="booking">
+        select
+            *
+        from
+            tb_booking
+        where
+            booking_member_id = #{bookingMemberId}
+    </select>
+    <select id="checkRoomAvailability" resultType="booking">
+        SELECT
+            booking_room_num
+        FROM
+            tb_booking
+        WHERE
+            booking_room_num = #{bookingRoomNum}
+    </select>
+
+
+    <delete id="deleteBooking">
+        delete from
+            tb_booking
+        where
+            booking_num = #{bookingNum}
+    </delete>
+
+    <select id="findAll" resultType="booking">
+        select
+            *
+        from
+            tb_booking
+    </select>
+    <select id="getTotalCount" resultType="_int">
+        select
+            count(*)
+        from
+            tb_booking
+    </select>
+    <select id="findByBookingNum" resultType="booking">
+        select *
+        from tb_booking
+        where
+            booking_num = #{bookingNum}
+    </select>
+    <select id="checkBookingOverlap" resultType="integer" >
+        SELECT COUNT(*)
+        FROM tb_booking
+        WHERE booking_room_num = #{roomNum}
+          AND booking_num != #{bookingNum}
+          AND (checkin_date &lt; #{checkOutDate} AND checkout_date &gt; #{checkInDate})
+    </select>
+
+    <update id="updateBooking">
+        update
+            tb_booking
+        set
+            booking_room_num=#{bookingRoomNum},
+            checkin_date=#{checkInDate},
+            checkout_date=#{checkOutDate}
+        where
+            booking_num=#{bookingNum}
+    </update>
+</mapper>
+

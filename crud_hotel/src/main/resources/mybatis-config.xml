@@ -55,5 +55,14 @@
 
     <mapper resource="mapper/member/member-mapper.xml"/>
 
+    <mapper resource="mapper/room/room-mapper.xml"/>
+
+    <mapper resource="mapper/booking/booking-mapper.xml"/>
+
+    <mapper resource="mapper/ask/ask-mapper.xml"/>
+
+    <mapper resource="mapper/ask/askAnswer-mapper.xml"/>
+
+
   </mappers>
 </configuration>

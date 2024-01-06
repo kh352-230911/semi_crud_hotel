@@ -3,21 +3,20 @@ package com.sh.crud.ask.model.entity;
 import java.time.LocalDateTime;
 
 public class Ask {
-    private long askNum;
+    private int askNum;
     private String askId;
-    private String askRoomNum;
+
     private String askTitle;
-    private String askCase;
+    private AskCase askCase;
     private String askContent;
     private LocalDateTime askDate;
 
     public Ask() {
     }
 
-    public Ask(long askNum, String askId, String askRoomNum, String askTitle, String askCase, String askContent, LocalDateTime askDate) {
+    public Ask(int askNum, String askId, String askTitle, AskCase askCase, String askContent, LocalDateTime askDate) {
         this.askNum = askNum;
         this.askId = askId;
-        this.askRoomNum = askRoomNum;
         this.askTitle = askTitle;
         this.askCase = askCase;
         this.askContent = askContent;
@@ -28,7 +27,7 @@ public class Ask {
         return askNum;
     }
 
-    public void setAskNum(long askNum) {
+    public void setAskNum(int askNum) {
         this.askNum = askNum;
     }
 
@@ -40,14 +39,6 @@ public class Ask {
         this.askId = askId;
     }
 
-    public String getAskRoomNum() {
-        return askRoomNum;
-    }
-
-    public void setAskRoomNum(String askRoomNum) {
-        this.askRoomNum = askRoomNum;
-    }
-
     public String getAskTitle() {
         return askTitle;
     }
@@ -56,11 +47,11 @@ public class Ask {
         this.askTitle = askTitle;
     }
 
-    public String getAskCase() {
+    public AskCase getAskCase() {
         return askCase;
     }
 
-    public void setAskCase(String askCase) {
+    public void setAskCase(AskCase askCase) {
         this.askCase = askCase;
     }
 
@@ -85,9 +76,8 @@ public class Ask {
         return "Ask{" +
                 "askNum=" + askNum +
                 ", askId='" + askId + '\'' +
-                ", askRoomNum='" + askRoomNum + '\'' +
                 ", askTitle='" + askTitle + '\'' +
-                ", askCase='" + askCase + '\'' +
+                ", askCase=" + askCase +
                 ", askContent='" + askContent + '\'' +
                 ", askDate=" + askDate +
                 '}';
