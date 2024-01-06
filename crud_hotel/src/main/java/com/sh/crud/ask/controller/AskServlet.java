@@ -28,6 +28,7 @@ public class AskServlet extends HttpServlet {
         String askTitle = req.getParameter("askTitle");
         String askCase = req.getParameter("askCase");
         String askContent = req.getParameter("askContent");
+
         Ask ask = new Ask();
         ask.setAskId(askId);
         ask.setAskTitle(askTitle);
@@ -36,7 +37,7 @@ public class AskServlet extends HttpServlet {
         System.out.println(ask);
         int result = askService.insertAsk(ask);
 
-        req.getSession().setAttribute("msg", "문의가 정상적으로 접수되었습니다.");
-        resp.sendRedirect(req.getContextPath());
+        req.getSession().setAttribute("msg", "문의가 정상적으로 접수되었습니다.☺ \n 감사합니다.");
+        resp.sendRedirect(req.getContextPath() + "/");
     }
 }
