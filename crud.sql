@@ -261,5 +261,6 @@ SELECT
         WHERE
             booking_room_num = 'A203';
 
-
 commit;
+
+select * from tb_review;
