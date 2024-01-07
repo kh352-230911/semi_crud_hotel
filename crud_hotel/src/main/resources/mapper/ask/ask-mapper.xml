@@ -59,5 +59,20 @@
         where
             ask_id = #{askId}
     </delete>
+    <select id="getTotalCount" resultType="_int">
+        select
+            count(*)
+        from
+            tb_ask
+    </select>
+
+    <select id="findAllAsk" resultMap="askVoMap">
+        select
+            a.*,
+            b.ans_content
+        from
+            tb_ask a left join tb_ask_answer b
+                               on a.ask_num = b.ans_ask_num
+    </select>
 
 </mapper>

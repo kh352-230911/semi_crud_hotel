@@ -2,9 +2,11 @@ package com.sh.crud.ask.model.dao;
 
 import com.sh.crud.ask.model.entity.Ask;
 import com.sh.crud.ask.model.vo.AskVo;
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.List;
+import java.util.Map;
 
 public class AskDao {
     public List<Ask> findAll(SqlSession session) {
@@ -29,5 +31,14 @@ public class AskDao {
 
     public List<AskVo> findByAsks(SqlSession session, String id) {
         return session.selectList("ask.findById", id);
+    }
+
+
+    public int getTotalCount(SqlSession session) {
+        return session.selectOne("ask.getTotalCount");
+    }
+
+    public List<AskVo> findAllAsk(SqlSession session) {
+        return session.selectList("ask.findAllAsk");
     }
 }

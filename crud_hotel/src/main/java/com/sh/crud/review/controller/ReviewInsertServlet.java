@@ -29,7 +29,7 @@ public class ReviewInsertServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 파일첨부
-        File repository = new File("C:\\Users\\user1\\Dropbox\\Workspaces\\web_server_workspace\\hello-mvc\\src\\main\\webapp\\upload");
+        File repository = new File("C:\\Workspaces\\crud_hotel_workspace\\crud_hotel\\src\\main\\webapp\\upload");
         int sizeThreshold = 10 * 1024 * 1024; // 10mb
         DiskFileItemFactory factory = new DiskFileItemFactory();
         factory.setRepository(repository);
@@ -75,9 +75,11 @@ public class ReviewInsertServlet extends HttpServlet {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        System.out.println(review);
+
 
         int result = reviewService.insertReview(review);
+
+        System.out.println(review);
 
 //        req.setCharacterEncoding("utf-8");
 //        String revId = req.getParameter("revId");

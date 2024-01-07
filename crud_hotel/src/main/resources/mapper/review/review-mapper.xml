@@ -3,21 +3,56 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="review">
-
-    <select id="findAll" resultType="review">
+    <select id="findAll" resultType="reviewVo">
         select
-            *
+            r.*,
+            (select count(*) from tb_review_picture where rev_pic_num = r.rev_num) review_picture_count
         from
-            tb_review
+            tb_review r
         order by
             rev_num desc
     </select>
 
-    <select id="findById" resultType="review">
+    <select id="findByNum" resultMap="reviewVoMap">
         select
-            *
+            r.*,
+            pic.rev_picture_num,
+            pic.original_filename,
+            pic.renamed_filename,
+            pic.rev_pic_num
         from
-            tb_review
+            tb_review r
+                left join tb_review_picture pic
+                          on r.rev_num = pic.rev_pic_num
+        where
+            r.rev_num = #{revNum}
+    </select>
+
+    <resultMap id="reviewVoMap" type="reviewVo">
+        <id column="rev_num" property="revNum"/>
+        <result column="rev_room_num" property="revRoomNum"/>
+        <result column="rev_id" property="revId"/>
+        <result column="rev_title" property="revTitle"/>
+        <result column="rev_content" property="revContent"/>
+        <result column="rev_score" property="revScore"/>
+        <result column="rev_date" property="revDate"/>
+        <collection property="reviewPictures" ofType="reviewPicture">
+            <id column="rev_picture_num" property="revPictureNum"/>
+            <result column="original_filename" property="originalFilename"/>
+            <result column="renamed_filename" property="renamedFilename"/>
+            <result column="rev_pic_num" property="revNum"/>
+        </collection>
+    </resultMap>
+
+    <select id="findById" resultMap="reviewVoMap">
+        select
+            r.*
+        from
+            tb_review r
+                left join tb_member m
+                    on r.rev_id = m.member_id
+                left join tb_review_picture pic
+                    on r.rev_num = pic.rev_pic_num
         where
             rev_id = #{id}
     </select>
@@ -37,38 +72,6 @@
         from
             tb_review
     </select>
-
-    <select id="findByNum" resultMap="reviewVoMap">
-        select
-            r.*,
-            p.rev_picture_num,
-            p.original_filename,
-            p.renamed_filename,
-            p.rev_pic_num
-        from
-            tb_review r
-                left join tb_review_picture p
-                    on r.rev_num = p.rev_pic_num
-        where
-            r.rev_num = #{num}
-
-    </select>
-    <resultMap id="reviewVoMap" type="reviewVo">
-        <id column="rev_num" property="revNum"/>
-        <result column="rev_room_num" property="revRoomNum"/>
-        <result column="rev_id" property="revId"/>
-        <result column="rev_title" property="revTitle"/>
-        <result column="rev_content" property="revContent"/>
-        <result column="rev_score" property="revScore"/>
-        <result column="rev_date" property="revDate"/>
-
-        <collection property="reviewPictures" ofType="reviewPicture">
-            <id column="rev_pic_num" property="revNum"/>
-            <result column="original_filename" property="originalFilename"/>
-            <result column="renamed_filename" property="renamedFilename"/>
-            <result column="rev_picture_num" property="revPictureNum"/>
-        </collection>
-    </resultMap>
 
     <insert id="insertReview">
         insert into
@@ -104,7 +107,7 @@
         delete from
             tb_review
         where
-            rev_num = #{num}
+            rev_num = #{revNum}
     </delete>
 
     <update id="updateReview">
@@ -122,6 +125,12 @@
             rev_num = #{revNum}
     </update>
 
+    <delete id="deleteReviewPicture">
+        delete from
+            tb_review_picture
+        where
+            rev_pic_num = #{revNum}
+    </delete>
 
 
 

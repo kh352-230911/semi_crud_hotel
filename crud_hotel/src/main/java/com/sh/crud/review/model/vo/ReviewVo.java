@@ -3,29 +3,31 @@ package com.sh.crud.review.model.vo;
 import com.sh.crud.review.model.entity.Review;
 import com.sh.crud.review.model.entity.ReviewPicture;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class ReviewVo extends Review {
-    private long revPicNum;
-    private int revPictureCount;
+
+    private int reviewPictureCount;
     private List<ReviewPicture> reviewPictures = new ArrayList<>();
+    private List<Long> delFiles = new ArrayList<>();
 
-    public long getRevPicNum() {
-        return revPicNum;
+    public List<Long> getDelFiles() {
+        return delFiles;
     }
 
-    public void setRevPicNum(long revPicNum) {
-        this.revPicNum = revPicNum;
+    public void setDelFiles(List<Long> delFiles) {
+        this.delFiles = delFiles;
     }
 
-    public int getRevPictureCount() {
-        return revPictureCount;
+    public int getReviewPictureCount() {
+        return reviewPictureCount;
     }
 
-    public void setRevPictureCount(int revPictureCount) {
-        this.revPictureCount = revPictureCount;
+    public void setReviewPictureCount(int reviewPictureCount) {
+        this.reviewPictureCount = reviewPictureCount;
     }
 
     public void addReviewPicture(ReviewPicture reviewPicture) {
@@ -48,6 +50,8 @@ public class ReviewVo extends Review {
             case "revTitle" : setRevTitle(value); break;
             case "revContent" : setRevContent(value); break;
             case "revScore" : setRevScore(Integer.parseInt(value)); break;
+            case "revDate" : setRevDate(LocalDateTime.parse(value)); break;
+            case "delFile" : this.delFiles.add(Long.parseLong(value)); break;
             default: throw new RuntimeException("부적절한 name 값 : " + name);
         }
     }
@@ -55,9 +59,9 @@ public class ReviewVo extends Review {
     @Override
     public String toString() {
         return "ReviewVo{" +
-                "revPicNum=" + revPicNum +
-                ", revPictureCount=" + revPictureCount +
+                ", reviewPictureCount=" + reviewPictureCount +
                 ", reviewPictures=" + reviewPictures +
+                ", delFiles=" + delFiles +
                 "} " + super.toString();
     }
 }
