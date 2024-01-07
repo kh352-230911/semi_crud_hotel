@@ -45,5 +45,5 @@
 </div>
 </section>
 <%--<form action="${pageContext.request.contextPath}/member/memberDelete" method="post" name="memberDeleteFrm"></form>--%>
-<script src="${pageContext.request.contextPath}/js/manager/mangerDetail.js"></script>
+<script src="${pageContext.request.contextPath}/js/manager/managerDetail.js"></script>
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>

@@ -283,3 +283,7 @@ where
    booking_member_id = 'honggd' and booking_room_num = 'Q603';
 
 select * from tb_member; -- 증가/감소 정상 작동
+
+
+
+    
