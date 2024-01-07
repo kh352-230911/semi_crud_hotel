@@ -10,6 +10,13 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
+<style>
+    p,a{
+        font-family: 'Diphylleia', serif;
+        font-family: 'Grandiflora One', cursive;
+        font-family: 'Nanum Myeongjo', serif;
+    }
+</style>
     <!-- 전체 컨테이너 -->
     <div class="flex h-screen">
         <!-- 사이드바 -->
@@ -29,7 +36,7 @@
                 <div>
                     <button id="dropdownDefaultButton1"
                             data-dropdown-toggle="dropdown1"
-                            class="text-black bg-orange-300 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-yellow-200 dark:hover:bg-yellow-700 dark:focus:ring-orange-800" type="button">
+                            class="text-black bg-orange-100 hover:bg-orange-200 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-yellow-200 dark:hover:bg-yellow-700 dark:focus:ring-orange-800" type="button">
                                 객실 예약 현황
                         <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
 

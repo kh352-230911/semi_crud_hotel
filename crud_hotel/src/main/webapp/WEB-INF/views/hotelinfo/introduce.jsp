@@ -65,8 +65,9 @@
 
     p {
         line-height: 1.6; /* 문단의 줄 간격 */
+
     }
-    span{
+    span, p{
         font-family: 'Diphylleia', serif;
         font-family: 'Grandiflora One', cursive;
         font-family: 'Nanum Myeongjo', serif;

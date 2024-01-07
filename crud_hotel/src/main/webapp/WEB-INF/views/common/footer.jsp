@@ -115,6 +115,11 @@
     .ft-legal-list li:nth-last-child(2) {
         flex: 1;
     }
+     h4, h5, a{
+         font-family: 'Diphylleia', serif;
+         font-family: 'Grandiflora One', cursive;
+         font-family: 'Nanum Myeongjo', serif;
+     }
 </style>
 
 <!-- component -->
