@@ -16,7 +16,7 @@
                     <c:forEach items="${askVos}" var="ask" varStatus="vs">
                         <c:if test="${fn:length(ask.askAnswers) == 0}">
                             <!-- 답변이 없는 경우에만 다음 내용을 표시 -->
-                            아이디: ${ask.askId}
+<%--                            아이디: ${ask.askId}--%>
                             <div class="p-4 mb-4 text-sm text-black rounded-lg bg-orange-100 dark:bg-gray-800 dark:text-yellow-300" role="alert">
                                 제목 :  ${ask.askTitle}
                             </div>
@@ -26,6 +26,11 @@
                                     <span class="text-lg text-orange-900 font-bold">${ask.askContent}</span>
                                 </div>
                             </div>
+                            <form action="${pageContext.request.contextPath}/manager/managerAskAnswer" method="post">
+                                <input type="hidden" name="managerId" value="${loginManager.managerId}" />
+                                <input type="hidden" name="askNum" value="${ask.askNum}" />
+                                <input type="submit" value="답변하기" />
+                            </form>
                             <br>
                         </c:if>
                     </c:forEach>
