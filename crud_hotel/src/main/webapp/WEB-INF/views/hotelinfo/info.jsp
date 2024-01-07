@@ -60,12 +60,17 @@
         margin-bottom: 20px; /* 섹션과 섹션 사이의 간격 */
 
     }
+    p, h1{
+        font-family: 'Diphylleia', serif;
+        font-family: 'Grandiflora One', cursive;
+        font-family: 'Nanum Myeongjo', serif;
+    }
 </style>
 
 <body class="bg-white text-gray-800">
 <div class="flex h-screen">
     <!-- 사이드바 메뉴 -->
-    <div class="w-64 bg-yellow-50 p-5 space-y-4">
+    <div id="aaa" class="w-64 bg-yellow-50 p-5 space-y-4">
         <ul>
             <li><a href="${pageContext.request.contextPath}/hotelintroduce/introduce">
                 <p class="text-2xl font-bold text-orange-300 dark:text-orange-300">호텔 소개</p>
@@ -84,7 +89,7 @@
          <div class="content max-w-5xl mx-auto p-8">
              <section>
                 <div class="border-b-2 pb-4 mb-4">
-                    <h1 class="text-3xl font-semibold">호텔 정보</h1>
+                    <h1 class="text-2xl font-semibold">CRUD Hotel Info.</h1>
                 </div>
                 <div class="grid md:grid-cols-2 gap-4">
                 </div>
@@ -113,7 +118,7 @@
 
                         <h2 class="text-xl font-semibold mb-2 mt-4">홈페이지</h2>
                         <a href="http://localhost:8080/crud_hotel/"
-                           class="pb-1 text-blue-600 hover:underline">http://localhost:8080/crud_hotel/</a>
+                           class="pb-1 text-orange-800 hover:underline">http://localhost:8080/crud_hotel/</a>
                         <hr>
                         <!-- ... 나머지 정보 ... -->
                     </div>

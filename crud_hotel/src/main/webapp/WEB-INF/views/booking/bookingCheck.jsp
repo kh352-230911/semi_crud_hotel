@@ -11,6 +11,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
+
+
 <div class="w-full h-screen flex justify-center items-start bg-white">
     <div class="w-[1280px] h-[720px] relative overflow-hidden bg-white">
         <p class="absolute left-[497px] top-[140px] text-[32px] text-left text-[#715b3f]">
@@ -35,4 +37,8 @@
     </div>
 </div>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6ee760559c8ef2e13e8d1f480fc2dd093a9e8c9b
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>

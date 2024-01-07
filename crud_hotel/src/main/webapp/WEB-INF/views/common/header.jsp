@@ -33,7 +33,7 @@
             width: 100%;
 
         }
-        #title{
+        #title, a{
             @import url('https://fonts.googleapis.com/css2?family=Diphylleia&family=Grandiflora+One&family=Nanum+Myeongjo&display=swap');
             font-family: 'Diphylleia', serif;
             font-family: 'Grandiflora One', cursive;
@@ -50,8 +50,20 @@
     <nav class="bg-orange-50 border-gray-200 px-4 lg:px-6 py-2.5 ">
         <div class="flex justify-between items-center mx-auto max-w-screen-xl">
             <div class="flex-1 lg:flex-none">
+                <svg
+                        width="1600"
+                        height="2"
+                        viewBox="0 0 924 2"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="absolute left-[161.58px] top-[209px]"
+                        preserveAspectRatio="none"
+                >
+                    <path d="M0.582031 1H922.888" stroke="#715B3F" stroke-linecap="round"></path>
+                </svg>
                 <!-- Left placeholder for mobile button or anything that should be on the left side -->
             </div>
+
 
             <!-- CRUD Hotel centered on all screen sizes -->
             <div class="flex-1 text-center">
@@ -179,6 +191,8 @@
                                 <a href="${pageContext.request.contextPath}/manager/managerDetail" class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
                                     내정보수정
                                 </a>
+
+                                <hr class="border-gray-200 dark:border-gray-700 ">
 
                                 <a href="${pageContext.request.contextPath}/manager/bookingCheck" class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
                                     회원 예약조회
