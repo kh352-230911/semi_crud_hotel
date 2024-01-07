@@ -88,17 +88,26 @@
         <div>
             <p>${review.revContent}</p>
             <br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <c:forEach items="${review.reviewPictures}" var="reviewPicture">
+                <div class="w-full mt-4 mb-4 bg-white border border-gray-200 rounded-lg">
+                    첨부된 이미지 파일 :
+                        <a href="${pageContext.request.contextPath}/upload/review/${reviewPicture.renamedFilename}"
+                           download="${reviewPicture.originalFilename}" class="hover:underline">
+                                ${reviewPicture.originalFilename}
+                        </a>
+                </div>
+            </c:forEach>
         </div>
 
         <div class="w-full flex justify-end">
             <c:if test="${loginMember.memberId == review.revId || loginManager != null}">
                 <button type="button"
                         onclick="location.href = '${pageContext.request.contextPath}/review/reviewUpdate?revNum=${review.revNum}';"
-                        class="mr-4 text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                        class="mr-4 text-white bg-amber-900 hover:bg-orange-200 focus:outline-none focus:bg-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                     수정
                 </button>
                 <button type="button" onclick="confirm('리뷰를 삭제하시겠습니까?') && document.reviewDeleteFrm.submit()"
-                        class="mr-4 text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                        class="mr-4 text-white bg-amber-900 hover:bg-orange-200 focus:outline-none focus:bg-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                     삭제
                 </button>
             </c:if>
@@ -114,11 +123,48 @@
                     좋아요
                 </button>
                 <button type="button"
-                        class="mr-4 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                        class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                     신고하기
                 </button>
             </c:if>
         </div>
     </div>
+    <div class="w-full mt-16 bg-white">
+        <h3 class="text-xl font-semibold text-gray-900 ml-4 my-4">댓글</h3>
+        <table class="w-full mx-auto text-gray-600">
+            <tr class="border-b">
+                <td scope="row" colspan="2" class="border border-gray-200 pt-2 pb-2 pl-4 font-medium text-gray-800">3344</td>
+            </tr>
+            <tr class="border-b">
+                <td scope="row" colspan="2" class="border border-gray-200 pt-2 pb-2 pl-4 font-medium text-gray-800">댓글2다</td>
+            </tr>
+            <tr class="border-b">
+                <td scope="row" colspan="2" class="border border-gray-200 pt-2 pb-2 pl-4 font-medium text-gray-800">3하고 4</td>
+            </tr>
+        </table>
+    </div>
 </div>
+
+<!-- 댓글영역 -->
+
+
+<div class="w-9/12 mx-auto mb-16 bg-white">
+    <form name="reviewCommentCreateFrm">
+        <label for="content"></label>
+        <h3 class="block mb-2 text-xl text-gray-900 dark:text-white">댓글 내용</h3>
+        <textarea id="content" name="content" rows="4"
+                  class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300
+                   focus:ring-blue-500 focus:border-blue-500"
+                  onclick="'${loginMember.memberId}' || alert('로그인 후 댓글작성이 가능합니다.');"
+                  placeholder="댓글내용을 작성해주세요."></textarea>
+        <div class="mt-4 flax w-full justify-end text-right">
+            <button type="submit"
+                    class="text-white bg-amber-900 hover:bg-orange-200 focus:outline-none focus:bg-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                댓글 작성완료
+            </button>
+        </div>
+
+    </form>
+</div>
+<script src="${pageContext.request.contextPath}/js/review/reviewDetail.js"></script>
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>

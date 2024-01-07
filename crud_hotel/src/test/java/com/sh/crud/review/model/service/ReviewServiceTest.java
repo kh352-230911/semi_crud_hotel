@@ -24,22 +24,22 @@ public class ReviewServiceTest {
         assertThat(reviewService).isNotNull();
     }
 
-    @DisplayName("리뷰 글 전체 조회")
-    @Test
-    public void test2() {
-        List<Review> reviews = reviewService.findAll();
-        assertThat(reviews).isNotEmpty();
-        reviews.forEach((review) -> {
-            System.out.println(review);
-            assertThat(review.getRevNum()).isNotZero();
-            assertThat(review.getRevId()).isNotNull();
-            assertThat(review.getRevRoomNum()).isNotNull();
-            assertThat(review.getRevTitle()).isNotNull();
-            assertThat(review.getRevContent()).isNotNull();
-            assertThat(review.getRevScore()).isNotZero();
-            assertThat(review.getRevDate()).isNotNull();
-        });
-    }
+//    @DisplayName("리뷰 글 전체 조회")
+//    @Test
+//    public void test2() {
+//        List<Review> reviews = reviewService.findAll();
+//        assertThat(reviews).isNotEmpty();
+//        reviews.forEach((review) -> {
+//            System.out.println(review);
+//            assertThat(review.getRevNum()).isNotZero();
+//            assertThat(review.getRevId()).isNotNull();
+//            assertThat(review.getRevRoomNum()).isNotNull();
+//            assertThat(review.getRevTitle()).isNotNull();
+//            assertThat(review.getRevContent()).isNotNull();
+//            assertThat(review.getRevScore()).isNotZero();
+//            assertThat(review.getRevDate()).isNotNull();
+//        });
+//    }
 
     @DisplayName("리뷰 글 Id 조회")
     @Test

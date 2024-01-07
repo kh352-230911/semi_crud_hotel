@@ -15,7 +15,7 @@ public class ReviewDao {
         return session.selectList("review.findAll");
     }
 
-    public Review findById(SqlSession session, String id) {
+    public ReviewVo findById(SqlSession session, String id) {
         return session.selectOne("review.findById", id);
     }
 
@@ -32,12 +32,12 @@ public class ReviewDao {
 
 
 
-    public ReviewVo findByNum(SqlSession session, long num) {
-        return session.selectOne("review.findByNum", num);
+    public ReviewVo findByNum(SqlSession session, long revNum) {
+        return session.selectOne("review.findByNum", revNum);
     }
 
-    public int deleteReview(SqlSession session, long num) {
-        return session.delete("review.deleteReview", num);
+    public int deleteReview(SqlSession session, long revNum) {
+        return session.delete("review.deleteReview", revNum);
     }
 
     public int updateReview(SqlSession session, Review review) {
@@ -51,5 +51,9 @@ public class ReviewDao {
 
     public int insertRevPicture(SqlSession session, ReviewPicture reviewPicture) {
         return session.insert("review.insertReviewPicture", reviewPicture);
+    }
+
+    public int deleteReviewPicture(SqlSession session, Long revNum) {
+        return session.delete("review.deleteReviewPicture", revNum);
     }
 }
