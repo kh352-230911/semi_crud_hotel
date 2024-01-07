@@ -20,5 +20,8 @@ public class ManagerAskAnswerServlet extends HttpServlet {
 
         req.getRequestDispatcher("/WEB-INF/views/manager/managerAskAnswer.jsp").forward(req, resp);
 
+        req.setCharacterEncoding("utf-8");
+
+
     }
 }

@@ -30,7 +30,9 @@
                                 <span class="text-gray-500">${ans.ansContent}</span>
                             </div>
                         </div>
-                        <br>
+
+                        <div class="border-gray-200	border-dotted border-2 border-indigo-800 ..."></div>
+
                     </c:forEach>
                     </c:forEach>
                 </div>
