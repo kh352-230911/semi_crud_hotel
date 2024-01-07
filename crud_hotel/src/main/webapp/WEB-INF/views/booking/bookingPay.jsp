@@ -83,9 +83,7 @@
     </div>
 </div>
 
-<!-- 아임포트 결제 api 호출-->
 <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
-
 <script>
     var IMP = window.IMP; // 생략 가능
     IMP.init("imp32105587"); // 가맹점 식별 코드
@@ -97,6 +95,7 @@
     // IMP.request_pay(param, callback) 결제창 호출
     IMP.request_pay({ // param
         pg: "html5_inicis",
+
         pay_method: "card",
         merchant_uid: "4",
         // 주문번호는 결제 할때 마다 유일해야함 . 이미 결제된 주문번호는 결제가 되지 않아 실패됌.
@@ -129,4 +128,5 @@
         }
     });
 </script>
+
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
