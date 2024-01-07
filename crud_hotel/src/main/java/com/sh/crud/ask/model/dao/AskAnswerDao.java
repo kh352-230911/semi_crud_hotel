@@ -21,4 +21,9 @@ public class AskAnswerDao {
     public int deleteAnswer(SqlSession session, AskAnswer askAnswer) {
         return session.delete("askAnswer.deleteAnswer", askAnswer);
     }
+
+
+    public int saveAnswer(SqlSession session, AskAnswer askAnswer) {
+        return session.insert("askAnswer.insertAnswer",askAnswer);
+    }
 }

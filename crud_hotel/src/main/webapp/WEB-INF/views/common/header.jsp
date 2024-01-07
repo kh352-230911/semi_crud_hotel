@@ -174,7 +174,7 @@
                                     </div>
                                 </a>
 
-                                <hr class="border-gray-200 dark:border-gray-700 ">
+
 
                                 <a href="${pageContext.request.contextPath}/manager/managerDetail" class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
                                     내정보수정
@@ -184,15 +184,12 @@
                                     회원 예약조회
                                 </a>
 
-                                <a href="#" class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+                                <a href="${pageContext.request.contextPath}/manager/askCheck" class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
                                     회원 문의조회
                                 </a>
 
-                                <hr class="border-gray-200 dark:border-gray-700 ">
 
-                                <a href="#" class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
-                                    관리자 회원탈퇴
-                                </a>
+
                             </div>
                         </div>
                     </div>

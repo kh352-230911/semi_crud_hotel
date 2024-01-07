@@ -59,6 +59,5 @@
 
 <form action="${pageContext.request.contextPath}/member/bookingDelete" method="post" name="bookingDeleteFrm">
     <input type="hidden" name="num" id="num" value="${bookings[0].bookingNum}">
-    <input type="hidden" name="name" id="name" value="${bookings[3].bookingName}">
 </form>
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
