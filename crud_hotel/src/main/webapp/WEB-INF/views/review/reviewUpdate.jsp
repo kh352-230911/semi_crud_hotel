@@ -5,9 +5,10 @@
 
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 <div class="container bg-orange-100 mx-auto mt-8 mb-16">
-    <form name="reviewUpdateFrm" method="post">
+    <form name="reviewUpdateFrm" method="post" enctype="multipart/form-data">
         <div class="w-9/12 flex-wrap mx-auto">
             <input type="hidden" id="revDate" name="revDate" value="${review.revDate}">
+            <input type="hidden" id="revNum" name="revNum" value="${review.revNum}">
             <div class="w-1/4 mt-8 border border-gray-200 bg-gray-200">
                 <label for="revId">작성자 : ${review.revId}</label>
                 <input type="hidden" id="revId" name="revId" value="${review.revId}">
@@ -51,8 +52,15 @@
                           required>${review.revContent}</textarea>
             </div>
             <div class="w-full mx-auto mt-4">
-                <input class="w-full text-sm text-gray-900 border border-gray-300 bg-white focus:outline-none" id="file_input" type="file">
+                <input class="w-full text-sm text-gray-900 border border-gray-300 bg-white focus:outline-none" id="upFile" name="upFile" type="file" accept="image/*">
                 <p class="mt-1 text-sm text-gray-500">PNG, JPG 등 이미지 파일 (MAX 10mb 1024 * 1024)</p>
+            </div>
+            <div class="w-full mx-auto mt-4">
+                <c:forEach items="${review.reviewPictures}" var="reviewPicture" varStatus="vs">
+                    <label for="delFile${vs.count}">${reviewPicture.originalFilename} 삭제</label>
+                    <input type="checkbox" name="delFile" id="delFile${vs.count}" value="${reviewPicture.revNum}">
+                    <br>
+                </c:forEach>
             </div>
             <div class="w-full mx-auto mt-4 text-right">
                 <button type="submit"

@@ -75,9 +75,11 @@ public class ReviewInsertServlet extends HttpServlet {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        System.out.println(review);
+
 
         int result = reviewService.insertReview(review);
+
+        System.out.println(review);
 
 //        req.setCharacterEncoding("utf-8");
 //        String revId = req.getParameter("revId");

@@ -45,18 +45,11 @@ public class ReviewService {
 
 
 
-    public Review findByNum(long num) {
-        SqlSession session = getSqlSession();
-        Review review = reviewDao.findByNum(session, num);
-        session.close();
-        return review;
-    }
-
-    public int deleteReview(long num) {
+    public int deleteReview(long revNum) {
         int result = 0;
         SqlSession session = getSqlSession();
         try{
-            result = reviewDao.deleteReview(session, num);
+            result = reviewDao.deleteReview(session, revNum);
             session.commit();
         } catch (Exception e) {
             session.rollback();
@@ -67,11 +60,26 @@ public class ReviewService {
         return result;
     }
 
-    public int updateReview(Review review) {
+    public int updateReview(ReviewVo review) {
         int result = 0;
         SqlSession session = getSqlSession();
         try{
             result = reviewDao.updateReview(session, review);
+
+            List<Long> delFiles = review.getDelFiles();
+            if (!delFiles.isEmpty()) {
+                for (Long revNum : delFiles) {
+                    result = reviewDao.deleteReviewPicture(session, revNum);
+                }
+            }
+
+            List<ReviewPicture> reviewPictures = review.getReviewPictures();
+            if (!reviewPictures.isEmpty()) {
+                for (ReviewPicture reviewPicture : reviewPictures) {
+                    reviewPicture.setRevPicNum(review.getRevNum());
+                    result = reviewDao.insertRevPicture(session, reviewPicture);
+                }
+            }
             session.commit();
         } catch (Exception e) {
             session.rollback();
@@ -89,13 +97,14 @@ public class ReviewService {
         try{
             // tb_review
             result = reviewDao.insertReview(session, review);
-            System.out.println("ReivewService#insertReview : review#id = " + review.getRevId());
+
             // tb_review_picture
             List<ReviewPicture> reviewPictures = review.getReviewPictures();
             if(!reviewPictures.isEmpty()) {
                 for (ReviewPicture reviewPicture : reviewPictures) {
                     reviewPicture.setRevPicNum(review.getRevNum());
                     result = reviewDao.insertRevPicture(session, reviewPicture);
+                    System.out.println(reviewPictures);
                 }
             }
             session.commit();
@@ -106,5 +115,13 @@ public class ReviewService {
             session.close();
         }
         return result;
+    }
+
+    public ReviewVo findByNum(long revNum) {
+        SqlSession session = getSqlSession();
+        ReviewVo review = null;
+        review = reviewDao.findByNum(session, revNum);
+        session.close();
+        return review;
     }
 }
