@@ -34,4 +34,5 @@
         <p class="absolute left-[506px] top-[330px] text-4xl text-left text-black">예약 내용 출력</p>
     </div>
 </div>
+
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>

@@ -67,18 +67,21 @@ public class BookingService {
     }
 
 
-    public boolean checkBookingOverlap(Map<String, Object> bookingParams) {
+    public int checkBookingOverlap(Map<String, Object> bookingParams) {
         SqlSession session = getSqlSession();
+        int result = 0;
         try  {
-            int count = bookingDao.checkBookingOverlap(session, bookingParams);
-            return count > 0; // 중복 예약의 개수를 boolean 값으로 변환
-
+            // 중복 예약의 개수
+            result = bookingDao.checkBookingOverlap(session, bookingParams);
+            session.commit();
         } catch (Exception e) {
             // 오류 처리
+            session.rollback();
             throw e;
         }finally {
             session.close();
         }
+        return result;
 
     }
 
