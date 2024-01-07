@@ -28,9 +28,9 @@ public class MemberUpdateServlet extends HttpServlet {
         String email = req.getParameter("email");
         String phone = req.getParameter("phone");
         String address = req.getParameter("address");
+        int bookingCount = Integer.parseInt(req.getParameter("bookingCount"));
 
-
-        Member member = new Member(id, null, name, phone, email, address, null, Pride.bronze);
+        Member member = new Member(id, null, name, phone, email, address, null, Pride.bronze, bookingCount);
         System.out.println(member);
 
         int result = memberService.updateMember(member);

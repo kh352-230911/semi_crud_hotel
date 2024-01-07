@@ -11,12 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet("/member/bookingDelete")
 public class BookingDelete extends HttpServlet {
 
     private BookingService bookingService = new BookingService();
-
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -27,12 +27,9 @@ public class BookingDelete extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
 
-        Member loginMember = (Member) req.getSession().getAttribute("loginMember");
-        String id = loginMember.getMemberId();
+        int num = Integer.parseInt(req.getParameter("num"));
 
-        Booking booking = bookingService.findByBookingMemberId(id);
-
-        int result = bookingService.deleteBooking(id);
+        int result = bookingService.deleteBooking(num);
 
         HttpSession session = req.getSession();
 

@@ -12,8 +12,13 @@ public class Member {
     private String memberAddress;
     private LocalDateTime memberLoginDate;
     private Pride memberPride;
+    private int bookingCount;
 
-    public Member(String memberId, String memberPassword, String memberName, String memberPhone, String memberEmail, String memberAddress, LocalDateTime memberLoginDate, Pride memberPride) {
+    public Member() {
+
+    }
+
+    public Member(String memberId, String memberPassword, String memberName, String memberPhone, String memberEmail, String memberAddress, LocalDateTime memberLoginDate, Pride memberPride, int bookingCount) {
         this.memberId = memberId;
         this.memberPassword = memberPassword;
         this.memberName = memberName;
@@ -22,23 +27,7 @@ public class Member {
         this.memberAddress = memberAddress;
         this.memberLoginDate = memberLoginDate;
         this.memberPride = memberPride;
-    }
-
-    public Member() {
-    }
-
-    @Override
-    public String toString() {
-        return "Member{" +
-                "memberId='" + memberId + '\'' +
-                ", memberPassword='" + memberPassword + '\'' +
-                ", memberName='" + memberName + '\'' +
-                ", memberPhone='" + memberPhone + '\'' +
-                ", memberEmail='" + memberEmail + '\'' +
-                ", memberAddress='" + memberAddress + '\'' +
-                ", memberLoginDate=" + memberLoginDate +
-                ", memberPride=" + memberPride +
-                '}';
+        this.bookingCount = bookingCount;
     }
 
     public String getMemberId() {
@@ -103,6 +92,29 @@ public class Member {
 
     public void setMemberPride(Pride memberPride) {
         this.memberPride = memberPride;
+    }
+
+    public int getBookingCount() {
+        return bookingCount;
+    }
+
+    public void setBookingCount(int bookingCount) {
+        this.bookingCount = bookingCount;
+    }
+
+    @Override
+    public String toString() {
+        return "Member{" +
+                "memberId='" + memberId + '\'' +
+                ", memberPassword='" + memberPassword + '\'' +
+                ", memberName='" + memberName + '\'' +
+                ", memberPhone='" + memberPhone + '\'' +
+                ", memberEmail='" + memberEmail + '\'' +
+                ", memberAddress='" + memberAddress + '\'' +
+                ", memberLoginDate=" + memberLoginDate +
+                ", memberPride=" + memberPride +
+                ", bookingCount=" + bookingCount +
+                '}';
     }
 }
 

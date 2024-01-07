@@ -163,6 +163,14 @@ CREATE TABLE tb_ask_answer (
 
 create SEQUENCE seq_ans_num;
 
+select
+            *
+        from
+            tb_ask a left join tb_ask_answer b
+                               on a.ask_num = b.ans_ask_num
+        where
+            ask_id = 'honggd';
+
 select * from tb_ask_answer;
 
 CREATE TABLE tb_tour (
@@ -275,3 +283,7 @@ where
    booking_member_id = 'honggd' and booking_room_num = 'Q603';
 
 select * from tb_member; -- 증가/감소 정상 작동
+
+
+
+    
