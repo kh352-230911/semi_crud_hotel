@@ -35,7 +35,7 @@ public class ManagerBookingCheckServlet extends HttpServlet {
         String pagebar = MvcUtils.getPagebar(page, limit, totalCount, url);
         req.setAttribute("pagebar", pagebar);
 
-        System.out.println(bookings);
+//        System.out.println(bookings);
         req.getRequestDispatcher("/WEB-INF/views/manager/bookingCheck.jsp").forward(req,resp);
     }
 

@@ -30,20 +30,23 @@ public class ManagerBookingUpdateServlet extends HttpServlet {
         Map<String, Object> bookingParams = new HashMap<>();
         String bookingNum = req.getParameter("num");
         String roomNum = req.getParameter("roomNum");
+//        LocalDateTime checkInDate = LocalDateTime.parse(req.getParameter("checkin"));
         LocalDate checkInDate = LocalDate.parse(req.getParameter("checkin"));
         LocalDateTime checkInDateTime = checkInDate.atStartOfDay();
         LocalDate checkOutDate = LocalDate.parse(req.getParameter("checkout"));
         LocalDateTime checkOutDateTime = checkOutDate.atStartOfDay();
+//        LocalDateTime checkOutDate = LocalDateTime.parse(req.getParameter("checkout"));
 
 
-        bookingParams.put("bookingNum", bookingNum);
+
         bookingParams.put("bookingRoomNum", roomNum);
-        bookingParams.put("checkInDate", checkInDateTime);
-        bookingParams.put("checkOutDate", checkOutDateTime);
+        bookingParams.put("bookingNum", bookingNum);
+        bookingParams.put("checkInDate", checkInDate);
+        bookingParams.put("checkOutDate", checkOutDate);
         System.out.println(bookingNum);
         System.out.println(roomNum);
-        System.out.println(checkInDateTime);
-        System.out.println(checkOutDateTime);
+        System.out.println(checkInDate);
+        System.out.println(checkOutDate);
         if (checkInDate.isAfter(checkOutDate)) {
             req.getSession().setAttribute("error", "체크인 날짜는 체크아웃 날짜보다 클 수 없습니다.");
 
@@ -52,7 +55,7 @@ public class ManagerBookingUpdateServlet extends HttpServlet {
         }
         // 방번호 유효성 검증
         if (!roomService.isRoomNumberValid(roomNum)) {
-            System.out.println(roomService.isRoomNumberValid(roomNum));
+//            System.out.println(roomService.isRoomNumberValid(roomNum));
             req.getSession().setAttribute("error", "유효하지 않은 방 번호입니다.");
             resp.sendRedirect(req.getContextPath() + "/manager/bookingCheck");
             return;
@@ -65,6 +68,7 @@ public class ManagerBookingUpdateServlet extends HttpServlet {
             resp.sendRedirect(req.getContextPath() + "/manager/bookingCheck");
             return;
         }
+
 
         Booking booking = bookingService.findByBookingNum(bookingNum);
 

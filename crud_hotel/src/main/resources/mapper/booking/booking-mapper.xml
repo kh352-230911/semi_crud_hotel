@@ -3,6 +3,11 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="booking">
+    <parameterMap type="map" id="bookingMap">
+        <parameter property="checkOutDate" jdbcType="DATE"/>
+        <parameter property="checkInDate" jdbcType="DATE"/>
+        <!-- 다른 파라미터 설정 -->
+    </parameterMap>
     <select id="findByBookingMemberId" resultType="booking">
         select
             *
@@ -49,9 +54,10 @@
     <select id="checkBookingOverlap" resultType="_int" >
         SELECT COUNT(*)
         FROM tb_booking
-        WHERE booking_room_num = #{roomNum}
+        WHERE booking_room_num = #{bookingRoomNum}
+          and (checkin_date &lt;= #{checkOutDate} and checkout_date &gt;= #{checkInDate})
           AND booking_num != #{bookingNum}
-          AND (checkin_date &lt; #{checkOutDate} AND checkout_date &gt; #{checkInDate})
+
     </select>
 
     <update id="updateBooking">

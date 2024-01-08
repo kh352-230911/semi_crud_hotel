@@ -60,9 +60,9 @@
                 </td>
                 <td class="py-4">
 
-                    <input type="hidden" name="bookingNum" value="${booking.bookingNum}"/>
-                    <button type="button" onclick="handleUpdateConfirmation('${booking.bookingName}', ${vs.index})" class="font-medium text-red-600 hover:underline">
-
+<%--                    <input type="hidden" name="bookingNum" value="${booking.bookingNum}"/>--%>
+<%--                    <button type="button" onclick="handleUpdateConfirmation('${booking.bookingName}', ${vs.index})" class="font-medium text-red-600 hover:underline">--%>
+<%--                    </button>--%>
                     <input type="hidden" name="bookingNum" value="${booking.bookingNum}" />
                     <button type="button" onclick="handleUpdateConfirmation('${booking.bookingName}', ${vs.index})" class="text-black bg-orange-200 hover:bg-orange-300 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium text-sm px-5 py-2.5 text-center">
 
