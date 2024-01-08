@@ -72,6 +72,7 @@ public class BookingService {
         SqlSession session = getSqlSession();
 
         try {
+
             int count = bookingDao.checkBookingOverlap(session, bookingParams);
             System.out.println(count);
             return count ;
@@ -83,7 +84,6 @@ public class BookingService {
         }finally {
             session.close();
         }
-
 
     }
 

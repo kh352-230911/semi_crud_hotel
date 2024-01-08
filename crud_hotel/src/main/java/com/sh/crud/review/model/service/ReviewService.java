@@ -1,6 +1,7 @@
 package com.sh.crud.review.model.service;
 
 import com.sh.crud.review.model.dao.ReviewDao;
+import com.sh.crud.review.model.entity.ReviewComment;
 import com.sh.crud.review.model.entity.ReviewPicture;
 import com.sh.crud.review.model.entity.Review;
 import com.sh.crud.review.model.vo.ReviewVo;
@@ -45,11 +46,17 @@ public class ReviewService {
 
 
 
-    public int deleteReview(long revNum) {
+    public int deleteReview(ReviewVo review) {
         int result = 0;
         SqlSession session = getSqlSession();
         try{
-            result = reviewDao.deleteReview(session, revNum);
+            result = reviewDao.deleteReview(session, review);
+            List<Long> delFiles = review.getDelFiles();
+            if (!delFiles.isEmpty()) {
+                for (Long revNum : delFiles) {
+                    result = reviewDao.deleteReviewPicture(session, revNum);
+                }
+            }
             session.commit();
         } catch (Exception e) {
             session.rollback();
@@ -121,7 +128,24 @@ public class ReviewService {
         SqlSession session = getSqlSession();
         ReviewVo review = null;
         review = reviewDao.findByNum(session, revNum);
+        List<ReviewComment> comments = reviewDao.findCommentByRevNum(session, revNum);
+        review.setComments(comments);
         session.close();
         return review;
+    }
+
+    public int insertReviewComment(ReviewComment reviewComment) {
+        int result = 0;
+        SqlSession session = getSqlSession();
+        try {
+            result = reviewDao.insertReviewComment(session, reviewComment);
+            session.commit();
+        } catch (Exception e) {
+            session.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
+        return result;
     }
 }
