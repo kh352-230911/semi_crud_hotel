@@ -41,8 +41,8 @@ $(document).ready(checkRoomAvailability);
 function checkRoomAvailability() {
     const roomsToCheck = [
         "A201", "A202", "A203", "A204", "A205", "A206", "T301", "T302", "A303", "A304", "T305", "T306",
-        T306",
-        "A201", "A202", "A203", "A204", "A205", "A206""A201", "A202", "A203", "A204", "A205", "A206", "T301", "T302", "A303", "A304", "T305", "
+        "T306",
+        "A201", "A202", "A203", "A204", "A205", "A206","A201", "A202", "A203", "A204", "A205", "A206", "T301", "T302", "A303", "A304", "T305"
     ];
     roomsToCheck.forEach(bookingRoomNum => {
         // jQuery의 $.ajax를 사용하여 POST 요청을 보냄

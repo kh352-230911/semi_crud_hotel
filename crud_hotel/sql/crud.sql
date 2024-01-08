@@ -220,9 +220,9 @@ where
     member_id = 'honggd';
     
 update tb_manager
-set manager_pwd='9sXjqetsywnr/rMBYvBx2c7NlZEAgriCL0P8b4ml49LQ+FSrk6BWiUWjpPs/Qu2ZKmwdqZR/zc6IJJt6zxPKsg=='
+set manager_pwd=' lAlSA/IyJ70vfZOfply3XR2apz5ZIHzl7iiCwndng7EyOjBFQ5FWFcZK/BBdibmzShV4GLYJSccfwRePB19GSw=='
 where
-    manager_id='sd01';
+    manager_id='sd02';
     
     
 select * from tb_ask;   
@@ -285,6 +285,10 @@ where
 select * from tb_member; -- 증가/감소 정상 작동
 
 
+
+select * from tb_order;
+    
+
 commit;
 
 select * from tb_review;
@@ -315,4 +319,5 @@ SELECT S.SID
      , V$PROCESS P
  WHERE S.TADDR = T.ADDR
    AND S.PADDR = P.ADDR;
+
 

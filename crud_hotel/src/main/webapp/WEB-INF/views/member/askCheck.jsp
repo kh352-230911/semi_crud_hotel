@@ -31,7 +31,7 @@
                             </div>
                         </div>
 
-                        <div class="border-gray-200	border-dotted border-2 border-indigo-800 ..."></div>
+                        <div class="border-gray-200 m-10 border-dotted border-2 border-indigo-800 ..."></div>
 
                     </c:forEach>
                     </c:forEach>
