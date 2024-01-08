@@ -136,6 +136,10 @@
     <!-- 댓글 테이블 -->
     <div class="w-full mt-16 bg-white">
         <h3 class="text-xl font-semibold text-gray-900 ml-4 my-4">댓글</h3>
+        <c:if test="${empty review.comments}">
+            <p class="px-4 py-4 w-2/12">댓글이 없습니다. 😮</p>
+        </c:if>
+
         <table class="w-full mx-auto text-gray-800">
             <tbody>
             <c:forEach items="${review.comments}" var="comment" varStatus="vs">
@@ -144,7 +148,7 @@
                     <td class="text-left w-4/6 px-4 py-4">
                         <p class="text-gray-600 pl-4">${comment.comContent}</p>
                     </td>
-                    <td class="text-gray-400 px-4 py-4">
+                    <td class="text-gray-400 px-4 py-4 text-right">
                         <fmt:parseDate value="${comment.comDate}" pattern="yyyy-mm-dd'T'HH:mm" var="comDate"/>
                         <fmt:formatDate value="${comDate}" pattern="yy/MM/dd"/>
                     </td>
@@ -157,13 +161,14 @@
 
 <!-- 댓글작성 폼 -->
 <div class="w-9/12 mx-auto mb-16 bg-white">
-    <form name="reviewCommentCreateFrm">
-        <label for="content"></label>
+    <form name="reviewCommentCreateFrm" action="${pageContext.request.contextPath}/review/reviewCommentCreate" method="post">
+        <input type="hidden" name="comId" id="comId" value="${loginMember.memberId}">
+        <input type="hidden" name="comNum" id="comNum" value="${review.revNum}">
+        <label for="comContent"></label>
         <h3 class="block mb-2 text-xl text-gray-900 dark:text-white">댓글 내용</h3>
-        <textarea id="content" name="content" rows="4"
+        <textarea id="comContent" name="comContent" rows="4"
                   class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300
                    focus:ring-blue-500 focus:border-blue-500"
-                  onclick="'${loginMember.memberId}' || alert('로그인 후 댓글작성이 가능합니다.');"
                   placeholder="댓글내용을 작성해주세요."></textarea>
         <div class="mt-4 flax w-full justify-end text-right">
             <button type="submit"

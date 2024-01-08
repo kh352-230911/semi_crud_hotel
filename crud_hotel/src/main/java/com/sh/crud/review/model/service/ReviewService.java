@@ -133,4 +133,19 @@ public class ReviewService {
         session.close();
         return review;
     }
+
+    public int insertReviewComment(ReviewComment reviewComment) {
+        int result = 0;
+        SqlSession session = getSqlSession();
+        try {
+            result = reviewDao.insertReviewComment(session, reviewComment);
+            session.commit();
+        } catch (Exception e) {
+            session.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
+        return result;
+    }
 }

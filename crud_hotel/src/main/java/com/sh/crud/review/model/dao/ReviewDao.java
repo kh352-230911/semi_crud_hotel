@@ -61,4 +61,8 @@ public class ReviewDao {
     public List<ReviewComment> findCommentByRevNum(SqlSession session, long revNum) {
         return session.selectList("review.findCommentByRevNum", revNum);
     }
+
+    public int insertReviewComment(SqlSession session, ReviewComment reviewComment) {
+        return session.insert("review.insertReviewComment", reviewComment);
+    }
 }

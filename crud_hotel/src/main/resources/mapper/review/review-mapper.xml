@@ -142,5 +142,20 @@
             com_rev_num = #{revNum}
     </select>
 
+    <insert id="insertReviewComment">
+        insert into tb_review_comment
+        values (seq_com_num.nextval,
+                #{comId},
+                #{comContent},
+                default,
+                #{comRevNum}
+               )
+        <selectKey order="AFTER" resultType="_long" keyProperty="comRevNum">
+            select
+                seq_com_num.currval
+            from
+                dual
+        </selectKey>
+    </insert>
 
 </mapper>
