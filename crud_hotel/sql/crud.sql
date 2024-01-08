@@ -293,31 +293,69 @@ commit;
 
 select * from tb_review;
 
-SELECT * FROM V$SESSION;
+select * from tb_room;
 
-SELECT S.SID
-     , S.SERIAL#
-     , S.USERNAME
-     , P.SPID -- SPID 확인
-     , S.STATUS
-     , S.EVENT
-     , S.PROCESS
-     , T.USED_UBLK
-     , T.USED_UREC
-     , ROUND(T.USED_UBLK*8192/1024/1024, 2) USED_MB
-     , S.OSUSER
-     , S.PROCESS
-     , S.MACHINE
-     , S.PORT
-     , S.TERMINAL
-     , S.PROGRAM
-     , TYPE
-     , START_TIME
-     , SYSDATE
-  FROM V$SESSION S
-     , V$TRANSACTION T
-     , V$PROCESS P
- WHERE S.TADDR = T.ADDR
-   AND S.PADDR = P.ADDR;
+select * from tb_tour;
+
+<<<<<<< HEAD
+select * from tb_booking;
+
+CREATE TABLE tb_order (
+	order_num	number		NOT NULL, -- 주문번호
+	order_member_id 	varchar2(100)		NOT NULL,
+	order_room_num	 varchar2(30)		NOT NULL,
+	order_name	varchar2(50)		NULL,
+	checkin_date	date	DEFAULT sysdate	NULL,
+	checkout_date 	date	DEFAULT sysdate	NULL,
+    order_date date DEFAULT sysdate NULL, -- 주문날짜
+	order_tour_num 	number		NULL,
+    
+    constraint pk_order_num primary key(order_num),
+    constraint fk_order_member_id foreign key(order_member_id) references tb_member(member_id) on delete cascade,
+    constraint fk_order_room_num foreign key(order_room_num) references tb_room(room_num) on delete cascade,
+    constraint fk_order_tour_num foreign key(order_tour_num) references tb_tour(tour_num) on delete set null
+);
+
+commit;
+
+select * from tb_order;
+
+select * from tb_pay;
+
+CREATE TABLE tb_pay (
+	pay_num	number		NOT NULL,
+	pay_choice	number	DEFAULT 0	NULL,
+	pay_discount	number	DEFAULT 0	NULL,
+	pay_all_price	number	DEFAULT 0	NULL,
+	pay_booking_num	number	NULL,
+    pay_order_num number NULL,
+    
+    constraint pk_pay_num primary key(pay_num),
+    constraint fk_pay_booking_num foreign key(pay_booking_num) references tb_booking(booking_num) on delete cascade,
+    constraint fk_pay_order_num foreign key(pay_order_num) references tb_order(order_num) on delete cascade
+);
+
+select * from tb_booking;
+
+select * from tb_room;
 
 
+SELECT 
+    *
+FROM
+    tb_room r
+WHERE   
+    r.room_type = '프리미어'
+    and
+    r.room_people >= 3
+    AND NOT EXISTS (
+        SELECT 1
+        FROM tb_booking b
+        WHERE b.booking_room_num = r.room_num
+            AND (
+                (b.checkin_date <= '2024/01/14' AND b.checkout_date >= '2024/01/13')
+            )
+);
+=======
+
+>>>>>>> 352e2a4e43535e6a0f2b27fd887b7d7234733690

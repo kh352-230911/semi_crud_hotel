@@ -60,7 +60,6 @@ public class ManagerBookingUpdateServlet extends HttpServlet {
             return;
         }
 
-
         // 체크인/체크아웃 날짜 중복 검사
         if (bookingService.checkBookingOverlap(bookingParams) != 0) {
 
