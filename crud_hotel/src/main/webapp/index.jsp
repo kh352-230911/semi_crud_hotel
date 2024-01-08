@@ -100,7 +100,7 @@
 <section class="top-banner">
     <div class="top-banner-overlay">
         <h1 class="text-white">예약하기</h1>
-         <form class="form-proup" action="reservation.php" method="post">
+         <form name="bookingSerchFrm" class="form-proup" action="${pageContext.request.contextPath}/booking/bookingRoom" method="get">
 
         <div class="elem-group inlined">
                 <label class="text-white" for="checkin-date">Check-in Date</label>
@@ -113,11 +113,12 @@
             <hr>
             <div class="elem-group inlined">
                 <label class="text-white" for="adult">Adults</label>
-                <input type="number" id="adult" name="total_adults" placeholder="2" min="1" max="4" required>
+                <input type="number" id="adult" name="Adults" placeholder="2" min="1" max="4" required>
             </div>
         </form>
+
         <div class="elem-group inlined">
-            <button class="text-white" type="submit">검색</button>
+            <button onclick="document.bookingSerchFrm.submit()" class="text-white" type="submit">검색</button>
         </div>
     </div>
 
