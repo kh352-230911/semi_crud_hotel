@@ -46,11 +46,11 @@
                                     <div class="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50">
                                         <div class="px-4 py-2 bg-white rounded-t-lg">
                                             <label for="content" class="sr-only">답변 작성하기</label>
-                                            <textarea id="content" rows="4" name="content" class="resize-none w-full px-0 text-sm text-gray-900 bg-white border-0" placeholder="댓글을 작성하세요" required></textarea>
+                                            <textarea id="content" rows="4" name="content" class="resize-none w-full px-0 text-sm text-gray-900 bg-white border-0" placeholder="답변을 작성하세요" required></textarea>
                                         </div>
                                         <div class="flex items-center justify-end px-3 py-2 border-t">
                                             <button type="submit" class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-amber-900 rounded-lg focus:ring-4 focus:ring-blue-200 hover:bg-orange-200	">
-                                                댓글 등록
+                                                등록
                                             </button>
                                         </div>
                                     </div>
