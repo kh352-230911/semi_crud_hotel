@@ -20,7 +20,7 @@
                                 제목 : ${ask.askTitle}
                             </div>
                             <div class="p-4 mb-4 text-sm text-black rounded-lg bg-orange-200 dark:bg-gray-800 dark:text-yellow-300" role="alert">
-                                작성자 : ${loginManager.managerId}
+                                작성자 : ${ask.askId}
                             </div>
 
                             <div class="mb-10 flex items-center h-16 border-l-4 border-orange-900">
@@ -39,9 +39,9 @@
 
                             <div class="border-gray-200	border-dotted border-2 border-indigo-800 ..."></div>
 
-                            <div id="commentForm_${vs.index}" style="display: none;">
-                                <form method="post">
-                                    <input type="hidden" name="managerId" value="${loginManager.managerId}"/>
+                            <div id="commentForm_${vs.index}" style="display: none;" >
+                                <form method="post" action="${pageContext.request.contextPath}/manager/processAnswer">
+                                    <input type="hidden" name="managerNum" value="${loginManager.managerNum}"/>
                                     <input type="hidden" name="askNum" value="${ask.askNum}" />
                                     <div class="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50">
                                         <div class="px-4 py-2 bg-white rounded-t-lg">

@@ -18,13 +18,16 @@ public class ManagerProcessAnswer extends HttpServlet {
     private AskAnswerService askAnswerService=new AskAnswerService();
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        req.setCharacterEncoding("utf-8");
         int askNum= Integer.parseInt(req.getParameter("askNum"));
-        String answer = req.getParameter("answer");
-        String managerid=req.getParameter("managerId");
 
-        AskAnswer askAnswer= new AskAnswer(0,managerid,null,answer,null,askNum);
+        String answer = req.getParameter("content");
+        String managerNum=req.getParameter("managerNum");
+
+        AskAnswer askAnswer= new AskAnswer(0,managerNum,null,answer,null,askNum);
         int result= askAnswerService.saveAnswer(askAnswer);
+
+        resp.sendRedirect(req.getContextPath() + "/manager/askCheck");
 
 
 
