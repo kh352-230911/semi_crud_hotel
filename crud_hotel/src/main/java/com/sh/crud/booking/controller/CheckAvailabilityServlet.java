@@ -22,7 +22,7 @@ public class CheckAvailabilityServlet extends HttpServlet {
         String bookingRoomNum = req.getParameter("bookingRoomNum");
 
         Booking booking = bookingService.checkRoomAvailability(bookingRoomNum);
-        System.out.println(booking);
+//        System.out.println(booking);
 
         resp.setContentType("application/json; charset=utf-8");
 

@@ -9,7 +9,6 @@ public class BookingVo extends Booking {
 
     private Room room;
 
-
     public Room getRoom() {
         return room;
     }

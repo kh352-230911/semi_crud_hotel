@@ -43,6 +43,7 @@ public class BookingChoiceServlet extends HttpServlet {
 
         // 3. 업무로직
         List<BookingVo> booking = bookingService.findBookingAll(param);
+        System.out.println(booking);
         req.setAttribute("booking", booking);
 
         // 리다이렉트후 경고창으로 성공메세지 전달
