@@ -80,7 +80,6 @@
         <p class="absolute left-[556px] top-[352px] text-4xl text-left text-black">결제 진행중입니다.</p>
         <p class="absolute left-[572px] top-[528px] text-4xl text-left text-black"></p>
 
-        <p class="absolute left-[556px] top-[352px] text-4xl text-left text-black">결제 form</p>
         <p class="absolute left-[572px] top-[528px] text-4xl text-left text-black"></p>
         <a onclick="request_pay();"></a>
     </div>
@@ -88,7 +87,6 @@
 
 <!-- 아임포트 결제 api 호출-->
 <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
-
 <script>
     var IMP = window.IMP; // 생략 가능
     IMP.init("imp32105587"); // 가맹점 식별 코드
@@ -101,7 +99,7 @@
     IMP.request_pay({ // param
         pg: "html5_inicis",
         pay_method: "card",
-        merchant_uid: "8",
+        merchant_uid: "11",
         // 주문번호는 결제 할때 마다 유일해야함 . 이미 결제된 주문번호는 결제가 되지 않아 실패됌.
         name: "호텔 결제",
         amount: 100,
