@@ -95,7 +95,6 @@
     // IMP.request_pay(param, callback) 결제창 호출
     IMP.request_pay({ // param
         pg: "html5_inicis",
-
         pay_method: "card",
         merchant_uid: "4",
         // 주문번호는 결제 할때 마다 유일해야함 . 이미 결제된 주문번호는 결제가 되지 않아 실패됌.
@@ -128,5 +127,4 @@
         }
     });
 </script>
-
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
