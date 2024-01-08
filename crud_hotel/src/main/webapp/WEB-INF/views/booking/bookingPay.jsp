@@ -11,8 +11,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
-<div class="w-full h-screen flex justify-center items-start bg-white">
-    <div class="w-[1280px] h-[720px] relative overflow-hidden bg-white">
+<div class="w-full h-screen flex-col justify-center items-start bg-white">
+    <div class="w-[1280px] h-[300px] mx-auto relative overflow-hidden bg-white">
         <p class="absolute left-[553px] top-[180px] text-base text-left text-[#715b3f]">
             걸제방법 및 할인혜택 선택
         </p>
@@ -81,7 +81,7 @@
 
             <a onclick="request_pay();"></a>
     </div>
-    <div class="w-1/2 h-1/2 m-auto top-[120px] flex items-center justify-center border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+    <div class="w-[640] h-1/2 m-auto flex items-center justify-center border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
         <div class="px-3 py-1 text-xl font-medium leading-none text-center text-orange-900 bg-orange-200 rounded-full animate-pulse dark:bg-orange-200 dark:text-blue-200">결제가 진행중입니다.....</div>
     </div>
 </div>

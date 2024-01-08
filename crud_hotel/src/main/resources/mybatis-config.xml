@@ -63,6 +63,8 @@
 
     <mapper resource="mapper/ask/askAnswer-mapper.xml"/>
 
+    <mapper resource="mapper/pride/pride-mapper.xml"/>
+
 
   </mappers>
 </configuration>

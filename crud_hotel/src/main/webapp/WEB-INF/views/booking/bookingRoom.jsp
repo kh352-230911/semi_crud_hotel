@@ -868,6 +868,7 @@
                         <button type="button"
                                 class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
                             <a href="${pageContext.request.contextPath}/booking/bookingCheck">
+
                                 예약하기</a>
                         </button>
                     </div>
