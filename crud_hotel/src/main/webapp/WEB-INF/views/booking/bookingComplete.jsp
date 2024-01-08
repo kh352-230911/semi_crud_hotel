@@ -19,7 +19,7 @@
 
 <div class="flex justify-center items-start bg-white">
     <div class="w-[1280px] h-[220px] relative overflow-hidden bg-white">
-        <p class="absolute left-[497px] top-[140px] text-[32px] text-left text-[#715b3f]">
+        <p class="absolute left-[410px] top-[140px] text-[32px] text-left text-[#715b3f]">
             예약이 완료되었습니다.
         </p>
         <svg

@@ -19,7 +19,7 @@ public class ManagerBookingUpdateListServlet extends HttpServlet {
         String bookingNum = req.getParameter("bookingNum");
         Booking booking = bookingService.findByBookingNum(bookingNum);
 
-        System.out.println(booking);
+//        System.out.println(booking);
 
         req.setAttribute("booking", booking); // 예약 정보를 요청 속성에 추가
 

@@ -18,6 +18,12 @@
             tb_ask_answer
         values( #{ansNum}, #{ansManagerNum}, default, default, default, #{ansAskNum})
     </insert>
+    <insert id="saveAnswer">
+        insert into
+            tb_ask_answer
+        values( seq_ans_num.NEXTVAL, #{ansManagerNum}, default, #{ansContent}, default, #{ansAskNum})
+    </insert>
+
 
     <select id="findByAnswerNum" resultType="askAnswer">
         select
