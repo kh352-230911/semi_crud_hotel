@@ -1,5 +1,6 @@
 package com.sh.crud.review.model.dao;
 
+import com.sh.crud.review.model.entity.ReviewComment;
 import com.sh.crud.review.model.entity.ReviewPicture;
 import com.sh.crud.review.model.entity.Review;
 import com.sh.crud.review.model.vo.ReviewVo;
@@ -36,8 +37,8 @@ public class ReviewDao {
         return session.selectOne("review.findByNum", revNum);
     }
 
-    public int deleteReview(SqlSession session, long revNum) {
-        return session.delete("review.deleteReview", revNum);
+    public int deleteReview(SqlSession session, ReviewVo review) {
+        return session.delete("review.deleteReview", review);
     }
 
     public int updateReview(SqlSession session, Review review) {
@@ -55,5 +56,13 @@ public class ReviewDao {
 
     public int deleteReviewPicture(SqlSession session, Long revNum) {
         return session.delete("review.deleteReviewPicture", revNum);
+    }
+
+    public List<ReviewComment> findCommentByRevNum(SqlSession session, long revNum) {
+        return session.selectList("review.findCommentByRevNum", revNum);
+    }
+
+    public int insertReviewComment(SqlSession session, ReviewComment reviewComment) {
+        return session.insert("review.insertReviewComment", reviewComment);
     }
 }
