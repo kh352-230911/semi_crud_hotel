@@ -33,7 +33,7 @@ public class ReviewUpdateServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        File repository = new File("C:\\Workspaces\\crud_hotel_workspace\\crud_hotel\\src\\main\\webapp\\upload\\review");
+        File repository = new File("C:\\Workspaces\\crud_hotel_workspace\\crud_hotel\\target\\crud_hotel\\upload\\review");
         int sizeThreshold = 10 * 1024 * 1024; // 10mb
         DiskFileItemFactory factory = new DiskFileItemFactory();
         factory.setRepository(repository);

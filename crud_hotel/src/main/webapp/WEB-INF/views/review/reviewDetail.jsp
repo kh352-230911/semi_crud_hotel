@@ -86,6 +86,9 @@
             </div>
         </div>
         <div>
+            <c:forEach items="${review.reviewPictures}" var="reviewPicture">
+                <img src="${pageContext.request.contextPath}/upload/review/${reviewPicture.renamedFilename}">
+            </c:forEach>
             <p>${review.revContent}</p>
             <br><br><br><br><br><br><br><br><br><br><br><br><br>
             <c:forEach items="${review.reviewPictures}" var="reviewPicture">

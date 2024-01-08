@@ -25,7 +25,7 @@
             </div>
             <div class="w-full mt-4">
                 <label for="revScore">리뷰 점수 선택 : </label>
-                <select id="revScore" name="revScore" class="ml-4 w-1/8 border-0">
+                <select id="revScore" name="revScore" class="ml-4 w-1/8 border-0" required>
                     <option value="1" ${review.revScore == 1 ? 'selected' : ''}>1</option>
                     <option value="2" ${review.revScore == 2 ? 'selected' : ''}>2</option>
                     <option value="3" ${review.revScore == 3 ? 'selected' : ''}>3</option>
@@ -56,7 +56,8 @@
             </div>
             <div class="w-full mx-auto mt-4">
                 <c:forEach items="${review.reviewPictures}" var="reviewPicture" varStatus="vs">
-                    <label for="delFile${vs.count}">${reviewPicture.originalFilename} 삭제할 첨부파일은 체크해주세요</label>
+                    <p>삭제할 첨부파일은 체크해주세요</p>
+                    <label for="delFile${vs.count}">${reviewPicture.originalFilename}</label>
                     <input type="checkbox" name="delFile" id="delFile${vs.count}" value="${reviewPicture.revNum}">
                     <br>
                 </c:forEach>

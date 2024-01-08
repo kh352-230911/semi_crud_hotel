@@ -12,11 +12,12 @@ import java.util.List;
 public class ReviewVo extends Review {
 
     private int reviewPictureCount;
+    private int reviewCommentCount;
+
     private List<ReviewPicture> reviewPictures = new ArrayList<>();
     private List<Long> delFiles = new ArrayList<>();
     private List<ReviewComment> comments;
 
-    private long comCount;
 
     public List<ReviewComment> getComments() {
         return comments;
@@ -24,14 +25,6 @@ public class ReviewVo extends Review {
 
     public void setComments(List<ReviewComment> comments) {
         this.comments = comments;
-    }
-
-    public long getComCount() {
-        return comCount;
-    }
-
-    public void setComCount(long comCount) {
-        this.comCount = comCount;
     }
 
     public List<Long> getDelFiles() {
@@ -62,6 +55,14 @@ public class ReviewVo extends Review {
         this.reviewPictures = reviewPictures;
     }
 
+    public int getReviewCommentCount() {
+        return reviewCommentCount;
+    }
+
+    public void setReviewCommentCount(int reviewCommentCount) {
+        this.reviewCommentCount = reviewCommentCount;
+    }
+
     public void setValue(String name, String value) {
         switch (name) {
             case "revNum" : setRevNum(Long.parseLong(value)); break;
@@ -80,10 +81,10 @@ public class ReviewVo extends Review {
     public String toString() {
         return "ReviewVo{" +
                 "reviewPictureCount=" + reviewPictureCount +
+                "reviewCommentCount=" + reviewCommentCount +
                 ", reviewPictures=" + reviewPictures +
                 ", delFiles=" + delFiles +
                 ", comments=" + comments +
-                ", comCount=" + comCount +
                 "} " + super.toString();
     }
 }

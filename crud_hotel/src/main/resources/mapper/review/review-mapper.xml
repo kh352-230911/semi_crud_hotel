@@ -7,7 +7,7 @@
         select
             r.*,
             (select count(*) from tb_review_picture where rev_pic_num = r.rev_num) review_picture_count,
-            (select count(*) from tb_review_comment where com_rev_num = r.rev_num) comment_count
+            (select count(*) from tb_review_comment where com_rev_num = r.rev_num) review_comment_count
         from
             tb_review r
         order by
