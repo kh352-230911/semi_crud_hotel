@@ -122,20 +122,20 @@
                     </ul>
                 </div>
 
-        </div>
-        <div class="w-[126px] h-6 absolute left-[487px] top-[310px]  ">
-            <!-- 날짜 검색 체크인 -->
-            <input type="date" id="checkInDate" name="checkInDate" placeholder="Select date" required>
+            </div>
+            <div class="w-[126px] h-6 absolute left-[487px] top-[310px]  ">
+                <!-- 날짜 검색 체크인 -->
+                <input type="date" id="checkInDate" name="checkInDate" placeholder="Select date" required>
 
-        </div>
-        <div class="w-[126px] h-6 absolute left-[666px] top-[310px] ">
-            <!-- 날짜 검색 체크아웃-->
-            <input type="date" id="checkOutDate" name="checkOutDate" placeholder="Select date" required>
+            </div>
+            <div class="w-[126px] h-6 absolute left-[666px] top-[310px] ">
+                <!-- 날짜 검색 체크아웃-->
+                <input type="date" id="checkOutDate" name="checkOutDate" placeholder="Select date" required>
+            </div>
+            <div class="w-[30px] h-6 absolute left-[488px] top-[385px] ">
+                <input type="number" id="roomPeople" name="roomPeople" placeholder="2" min="1" max="4" required>
+            </div>
 
-        </div>
-        <div class="w-[30px] h-6 absolute left-[488px] top-[385px] ">
-            <input type="number" id="roomPeople" name="roomPeople" placeholder="2" min="1" max="4" required>
-        </div>
         </form>
         <div class="w-[150px] h-6 absolute left-[488px] top-[460px]  ">
             <button type="button" data-modal-target="crypto-modal" data-modal-toggle="crypto-modal" class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700">
@@ -476,7 +476,7 @@
         <div class="w-[304px] h-11 absolute left-[488px] top-[562px] bg-[#715b3f]"></div>
 
         <p class="roomSearch absolute left-[590px] top-[568px] text-2xl text-left text-white">
-            <button form="SelectBooking" type="submit">
+            <button form="SelectBooking" type="submit" onclick="document.bookingRoomFrm.submit()">
             <a>객실검색</a>
             </button>
         </p>
@@ -484,5 +484,7 @@
 </div>
 
 <script src="${pageContext.request.contextPath}/js/booking/booking.js"></script>
+
+
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
