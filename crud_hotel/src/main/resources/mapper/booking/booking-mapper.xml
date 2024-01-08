@@ -46,7 +46,7 @@
         where
             booking_num = #{bookingNum}
     </select>
-    <select id="checkBookingOverlap" resultType="integer" >
+    <select id="checkBookingOverlap" resultType="_int" >
         SELECT COUNT(*)
         FROM tb_booking
         WHERE booking_room_num = #{roomNum}
