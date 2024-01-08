@@ -19,8 +19,8 @@
             </div>
             <div class="w-full mt-4">
                 <label for="revScore">리뷰 점수 선택 : </label>
-                <select id="revScore" name="revScore" class="ml-4 w-1/8 border-0">
-                    <option value="select">선택</option>
+                <select id="revScore" name="revScore" class="ml-4 w-1/8 border-0" required>
+                    <option value="" disabled selected>선택</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -52,4 +52,5 @@
     </form>
 </div>
 
+<script src="${pageContext.request.contextPath}/js/review/reviewInsert.js"></script>
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>

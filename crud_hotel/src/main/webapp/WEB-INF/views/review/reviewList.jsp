@@ -55,6 +55,9 @@
                     </td>
                     <td class="py-4 px-2 text-left">
                         <a href="${pageContext.request.contextPath}/review/reviewDetail?revNum=${review.revNum}">${fn:escapeXml(review.revTitle)}</a>
+                        <c:if test="${review.reviewCommentCount > 0}">
+                            <span class="text-amber-600 pl-4">(${review.reviewCommentCount})</span>
+                        </c:if>
                     </td>
                     <td class="py-4">
                         <fmt:parseDate value="${review.revDate}" pattern="yyyy-mm-dd'T'HH:mm" var="revDate"/>

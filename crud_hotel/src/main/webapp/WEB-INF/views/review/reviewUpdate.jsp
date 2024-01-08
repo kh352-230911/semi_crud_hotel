@@ -25,13 +25,12 @@
             </div>
             <div class="w-full mt-4">
                 <label for="revScore">리뷰 점수 선택 : </label>
-                <select id="revScore" name="revScore" class="ml-4 w-1/8 border-0">
-                    <option value="select">${review.revScore}</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
+                <select id="revScore" name="revScore" class="ml-4 w-1/8 border-0" required>
+                    <option value="1" ${review.revScore == 1 ? 'selected' : ''}>1</option>
+                    <option value="2" ${review.revScore == 2 ? 'selected' : ''}>2</option>
+                    <option value="3" ${review.revScore == 3 ? 'selected' : ''}>3</option>
+                    <option value="4" ${review.revScore == 4 ? 'selected' : ''}>4</option>
+                    <option value="5" ${review.revScore == 5 ? 'selected' : ''}>5</option>
                 </select>
             </div>
             <div class="w-full mt-4 mx-auto border border-gray-200 bg-gray-50">
@@ -57,7 +56,8 @@
             </div>
             <div class="w-full mx-auto mt-4">
                 <c:forEach items="${review.reviewPictures}" var="reviewPicture" varStatus="vs">
-                    <label for="delFile${vs.count}">${reviewPicture.originalFilename} 삭제</label>
+                    <p>삭제할 첨부파일은 체크해주세요</p>
+                    <label for="delFile${vs.count}">${reviewPicture.originalFilename}</label>
                     <input type="checkbox" name="delFile" id="delFile${vs.count}" value="${reviewPicture.revNum}">
                     <br>
                 </c:forEach>
@@ -71,4 +71,5 @@
         </div>
     </form>
 </div>
+<script src="${pageContext.request.contextPath}/js/review/reviewUpdate.js"></script>
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
