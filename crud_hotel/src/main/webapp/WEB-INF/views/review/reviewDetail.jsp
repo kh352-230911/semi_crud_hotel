@@ -116,30 +116,43 @@
                 method="post"
                 name="reviewDeleteFrm">
                 <input type="hidden" name="revNum" value="${review.revNum}">
+                <c:forEach items="${review.reviewPictures}" var="reviewPicture" varStatus="vs">
+                    <label for="delFile${vs.count}"></label>
+                    <input type="hidden" name="delFile" id="delFile${vs.count}" value="${reviewPicture.revNum}">
+                </c:forEach>
             </form>
-            <c:if test="${loginMember != null || loginManager != null}">
-                <button type="button"
-                        class="mr-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                    좋아요
-                </button>
-                <button type="button"
-                        class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                    신고하기
-                </button>
-            </c:if>
+<%--            <c:if test="${loginMember != null || loginManager != null}">--%>
+<%--                <button type="button"--%>
+<%--                        class="mr-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">--%>
+<%--                    좋아요--%>
+<%--                </button>--%>
+<%--                <button type="button"--%>
+<%--                        class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">--%>
+<%--                    신고하기--%>
+<%--                </button>--%>
+<%--            </c:if>--%>
         </div>
     </div>
     <div class="w-full mt-16 bg-white">
         <h3 class="text-xl font-semibold text-gray-900 ml-4 my-4">댓글</h3>
         <table class="w-full mx-auto text-gray-600">
             <tr class="border-b">
-                <td scope="row" colspan="2" class="border border-gray-200 pt-2 pb-2 pl-4 font-medium text-gray-800">3344</td>
+                <td class="pl-4 text-left w-12">사용자명</td>
+                <td class="w-10/12 pt-2 pb-2 pl-2 font-medium text-gray-800">3344</td>
             </tr>
             <tr class="border-b">
-                <td scope="row" colspan="2" class="border border-gray-200 pt-2 pb-2 pl-4 font-medium text-gray-800">댓글2다</td>
+                <td class="pl-4 text-left w-12">사용자홍길동</td>
+                <td class="w-10/12 pt-2 pb-2 pl-2 font-medium text-gray-800">가나다라마바사</td>
             </tr>
             <tr class="border-b">
-                <td scope="row" colspan="2" class="border border-gray-200 pt-2 pb-2 pl-4 font-medium text-gray-800">3하고 4</td>
+                <td class="pl-4 text-left w-12">사용자홍길동동생홍글동</td>
+                <td class="w-10/12 pt-2 pb-2 pl-2 font-medium text-gray-800">가나다라마바사아자차카타파하 그리고 너도
+                ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ<br>점심에 만나요
+                </td>
+            </tr>
+            <tr class="border-b">
+                <td class="pl-4 text-left w-12">사용자테스트</td>
+                <td class="w-10/12 pt-2 pb-2 pl-2 font-medium text-gray-800">점심에 만나요</td>
             </tr>
         </table>
     </div>

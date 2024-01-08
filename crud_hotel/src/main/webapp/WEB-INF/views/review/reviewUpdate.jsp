@@ -57,7 +57,7 @@
             </div>
             <div class="w-full mx-auto mt-4">
                 <c:forEach items="${review.reviewPictures}" var="reviewPicture" varStatus="vs">
-                    <label for="delFile${vs.count}">${reviewPicture.originalFilename} 삭제</label>
+                    <label for="delFile${vs.count}">${reviewPicture.originalFilename} 삭제할 첨부파일은 체크해주세요</label>
                     <input type="checkbox" name="delFile" id="delFile${vs.count}" value="${reviewPicture.revNum}">
                     <br>
                 </c:forEach>

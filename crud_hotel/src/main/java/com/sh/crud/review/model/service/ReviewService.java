@@ -45,11 +45,17 @@ public class ReviewService {
 
 
 
-    public int deleteReview(long revNum) {
+    public int deleteReview(ReviewVo review) {
         int result = 0;
         SqlSession session = getSqlSession();
         try{
-            result = reviewDao.deleteReview(session, revNum);
+            result = reviewDao.deleteReview(session, review);
+            List<Long> delFiles = review.getDelFiles();
+            if (!delFiles.isEmpty()) {
+                for (Long revNum : delFiles) {
+                    result = reviewDao.deleteReviewPicture(session, revNum);
+                }
+            }
             session.commit();
         } catch (Exception e) {
             session.rollback();

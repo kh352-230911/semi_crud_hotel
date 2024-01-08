@@ -36,8 +36,8 @@ public class ReviewDao {
         return session.selectOne("review.findByNum", revNum);
     }
 
-    public int deleteReview(SqlSession session, long revNum) {
-        return session.delete("review.deleteReview", revNum);
+    public int deleteReview(SqlSession session, ReviewVo review) {
+        return session.delete("review.deleteReview", review);
     }
 
     public int updateReview(SqlSession session, Review review) {
