@@ -37,7 +37,7 @@
 </div>
 
 
-        <%-- 예약완료 폼영역 --%>
+        <%-- 결제완료 폼영역 --%>
 <div class="flex justify-center items-start bg-white">
         <div class="flex h-screen items-center justify-center">
             <div class="w-80 rounded bg-gray-50 px-6 pt-8 shadow-lg">
@@ -114,11 +114,7 @@
             </div>
         </div>
 </div>
-<%--        <div class="w-[426px] h-[68px] absolute left-[430px] top-[507px] bg-[#d9d9d9]"></div>--%>
-<%--        <p class="absolute left-[577px] top-[520px] text-4xl text-left text-black">--%>
-<%--            <a href="${pageContext.request.contextPath}">메인으로</a></p>--%>
-<%--        <div class="w-[422px] h-[247px] absolute left-[434px] top-[228px] bg-[#d9d9d9]"></div>--%>
-<%--        <p class="absolute left-[506px] top-[330px] text-4xl text-left text-black">예약완료 내용 출력</p>--%>
+
 
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>

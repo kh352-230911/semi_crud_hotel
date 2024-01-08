@@ -4,21 +4,6 @@
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
 <style>
-    /** {*/
-    /*    padding: 0;*/
-    /*    margin: 0;*/
-    /*    box-sizing: border-box;*/
-    /*}*/
-
-    /*.top-banner {*/
-    /*    position: relative;*/
-    /*    display: flex;*/
-    /*    width: 100vw;*/
-    /*    height: 100vh;*/
-    /*    background: url(https://cdn.pixabay.com/photo/2017/03/09/06/30/pool-2128578_640.jpg) no-repeat center / cover;*/
-    /*}*/
-
-
     html, body {
         width: 100%;
         overflow-x: hidden; /* 수평 스크롤을 제거합니다. */
@@ -115,7 +100,7 @@
 <section class="top-banner">
     <div class="top-banner-overlay">
         <h1 class="text-white">예약하기</h1>
-         <form class="form-proup" action="reservation.php" method="post">
+         <form name="bookingSerchFrm" class="form-proup" action="${pageContext.request.contextPath}/booking/bookingRoom" method="get">
 
         <div class="elem-group inlined">
                 <label class="text-white" for="checkin-date">Check-in Date</label>
@@ -128,11 +113,12 @@
             <hr>
             <div class="elem-group inlined">
                 <label class="text-white" for="adult">Adults</label>
-                <input type="number" id="adult" name="total_adults" placeholder="2" min="1" max="4" required>
+                <input type="number" id="adult" name="Adults" placeholder="2" min="1" max="4" required>
             </div>
         </form>
+
         <div class="elem-group inlined">
-            <button class="text-white" type="submit">검색</button>
+            <button onclick="document.bookingSerchFrm.submit()" class="text-white" type="submit">검색</button>
         </div>
     </div>
 

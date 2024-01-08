@@ -75,16 +75,17 @@
         >
             <path d="M0.582031 1H922.888" stroke="#715B3F" stroke-linecap="round"></path>
         </svg>
-        <div class="w-[431px] h-[225px] absolute left-[426px] top-[261px] bg-[#d9d9d9]"></div>
-        <div class="w-[426px] h-[68px] absolute left-[431px] top-[511px] bg-[#d9d9d9]"></div>
-        <p class="absolute left-[556px] top-[352px] text-4xl text-left text-black">결제 진행중입니다.</p>
-        <p class="absolute left-[572px] top-[528px] text-4xl text-left text-black"></p>
 
-        <p class="absolute left-[556px] top-[352px] text-4xl text-left text-black">결제 form</p>
-        <p class="absolute left-[572px] top-[528px] text-4xl text-left text-black"></p>
+
+
             <a onclick="request_pay();"></a>
     </div>
+    <div class="w-1/2 h-1/2 m-auto top-[120px] flex items-center justify-center border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+        <div class="px-3 py-1 text-xl font-medium leading-none text-center text-orange-900 bg-orange-200 rounded-full animate-pulse dark:bg-orange-200 dark:text-blue-200">결제가 진행중입니다.....</div>
+    </div>
 </div>
+
+
 
 <!-- 아임포트 결제 api 호출-->
 <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
@@ -101,7 +102,7 @@
     IMP.request_pay({ // param
         pg: "html5_inicis",
         pay_method: "card",
-        merchant_uid: "4",
+        merchant_uid: "12",
         // 주문번호는 결제 할때 마다 유일해야함 . 이미 결제된 주문번호는 결제가 되지 않아 실패됌.
         name: "호텔 결제",
         amount: 100,
@@ -109,8 +110,7 @@
         buyer_name: "홍길동",
         buyer_tel: "01042424242",
         // KG이니시스 결제는 전화번호 필수, 없으면 에러발생.
-        buyer_addr: "서울특별시 강남구 신사동",
-        buyer_postcode: "01181"
+        buyer_addr: "서울특별시 강남구 신사동"
     }, function (rsp) { // callback
         if (rsp.success) {
             // 결제 성공 시 로직

@@ -196,7 +196,7 @@
                                name="default-radio"
                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-orange-200 focus:ring-2">
                         <label for="default-radio-6" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">강남
-                            롯데월드</label>
+                            놋데월드</label>
                     </div>
                 </li>
                 <li>
