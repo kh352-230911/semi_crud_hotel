@@ -285,5 +285,5 @@ where
 select * from tb_member; -- 증가/감소 정상 작동
 
 
-
+select * from tb_order;
     

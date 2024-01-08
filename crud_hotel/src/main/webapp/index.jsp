@@ -23,6 +23,7 @@
         width: 100%;
         overflow-x: hidden; /* 수평 스크롤을 제거합니다. */
     }
+
     .top-banner-overlay.is-moved {
         transform: translateX(350px);
     }
@@ -115,9 +116,9 @@
 <section class="top-banner">
     <div class="top-banner-overlay">
         <h1 class="text-white">예약하기</h1>
-         <form class="form-proup" action="reservation.php" method="post">
+        <form class="form-proup" action="reservation.php" method="post">
 
-        <div class="elem-group inlined">
+            <div class="elem-group inlined">
                 <label class="text-white" for="checkin-date">Check-in Date</label>
                 <input type="date" id="checkin-date" name="checkin" placeholder="Select date" required>
             </div>
@@ -136,7 +137,7 @@
         </div>
     </div>
 
-<%-- 이미지 영역 --%>
+    <%-- 이미지 영역 --%>
     <div id="gallery" class="relative w-full h-full" data-carousel="slide">
         <!-- Carousel wrapper -->
         <div class="relative w-full h-full overflow-hidden">
@@ -168,8 +169,8 @@
         </div>
     </div>
 
-<!-- Slider controls -->
-<span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+    <!-- Slider controls -->
+    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
             <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -177,7 +178,7 @@
             </svg>
             <span class="sr-only">Previous</span>
         </span>
-<span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
             <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

@@ -25,7 +25,7 @@
             </div>
             <div>
                 <div class="flex items-center justify-between">
-                    <label for="newPassword" class="block text-sm font-medium leading-6 text-gray-900">비밀번호</label>
+                    <label for="newPassword" class="block text-sm font-medium leading-6 text-gray-900">변경할 비밀번호</label>
                 </div>
                 <div class="mt-2">
                     <input id="newPassword" name="newPassword" type="password" value="" size=50 required class="px-4 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
@@ -33,7 +33,7 @@
             </div>
             <div>
                 <div class="flex items-center justify-between">
-                    <label for="newPasswordConfirmation" class="block text-sm font-medium leading-6 text-gray-900">비밀번호</label>
+                    <label for="newPasswordConfirmation" class="block text-sm font-medium leading-6 text-gray-900">비밀번호 확인</label>
                 </div>
                 <div class="mt-2">
                     <input id="newPasswordConfirmation" type="password" value="" required size=50 class="px-4 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
