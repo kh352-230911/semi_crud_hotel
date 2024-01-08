@@ -54,4 +54,20 @@ public class AskAnswerService {
         }
         return result;
     }
+
+
+    public int saveAnswer(AskAnswer askAnswer) {
+        int result = 0;
+        SqlSession session = getSqlSession();
+        try {
+            result = askAnswerDao.saveAnswer(session,askAnswer);
+            session.commit();
+        } catch (Exception e) {
+            session.rollback();
+            throw e;
+        }finally {
+            session.close();
+        }
+        return result;
+    }
 }

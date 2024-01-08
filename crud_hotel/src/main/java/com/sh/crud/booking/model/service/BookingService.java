@@ -1,5 +1,6 @@
 package com.sh.crud.booking.model.service;
 
+import com.sh.crud.ask.model.vo.AskVo;
 import com.sh.crud.booking.model.dao.BookingDao;
 import com.sh.crud.booking.model.entity.Booking;
 import org.apache.ibatis.session.SqlSession;
@@ -13,12 +14,6 @@ public class BookingService {
 
     private BookingDao bookingDao = new BookingDao();
 
-    public Booking findByBookingMemberId(String bookingMemberId) {
-        SqlSession session = getSqlSession();
-        Booking booking = bookingDao.findByBookingMemberId(session, bookingMemberId);
-        session.close();
-        return booking;
-    }
 
     public List<Booking> findByBookings(String id) {
         SqlSession session = getSqlSession();
@@ -35,11 +30,11 @@ public class BookingService {
     }
 
 
-    public int deleteBooking(String id) {
+    public int deleteBooking(int num) {
         int result = 0;
         SqlSession session = getSqlSession();
         try {
-            result = bookingDao.deleteBooking(session, id);
+            result = bookingDao.deleteBooking(session, num);
             session.commit();
         } catch (Exception e) {
             session.rollback();
@@ -73,7 +68,11 @@ public class BookingService {
 
 
 
+
     public int checkBookingOverlap(Map<String, Object> bookingParams) {
+
+
+
         SqlSession session = getSqlSession();
         try  {
             int count = bookingDao.checkBookingOverlap(session, bookingParams);
@@ -102,6 +101,7 @@ public class BookingService {
         }
         return result;
     }
+
 }
 
 

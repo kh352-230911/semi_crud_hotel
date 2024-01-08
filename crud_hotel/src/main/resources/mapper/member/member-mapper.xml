@@ -3,6 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="member">
+
   <select id="findById" resultType="member">
     select
         *
@@ -25,9 +26,8 @@
         insert into
             tb_member
         values (
-            #{memberId},#{memberPassword},#{memberName},#{memberPhone},#{memberEmail},#{memberAddress},#{memberLoginDate},#{memberPride}
+            #{memberId},#{memberPassword},#{memberName},#{memberPhone},#{memberEmail},#{memberAddress},#{memberLoginDate},#{memberPride}, default
         )
-
     </select>
     <select id="updateMember" >
         update

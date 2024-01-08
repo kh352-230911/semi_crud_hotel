@@ -19,10 +19,12 @@ public class ReviewDetailServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        long num = Long.parseLong(req.getParameter("revNum"));
+        long revNum = Long.parseLong(req.getParameter("revNum"));
+        System.out.println("detail revNum 은 " + "revNum");
 //        System.out.println(num);
 
-        Review review = reviewService.findByNum(num);
+        ReviewVo review = reviewService.findByNum(revNum);
+        System.out.println("디테일서블릿 탐색된 review객체 : " + review);
 //        System.out.println(review.getRevId());
         String safeHtml = MvcUtils.escapeHtml(review.getRevContent());
         review.setRevContent(MvcUtils.convertLineFeedToBr(safeHtml));

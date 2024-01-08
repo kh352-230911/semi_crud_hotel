@@ -2,10 +2,12 @@ package com.sh.crud.ask.model.serivce;
 
 import com.sh.crud.ask.model.dao.AskDao;
 import com.sh.crud.ask.model.entity.Ask;
+import com.sh.crud.ask.model.vo.AskVo;
 import com.sh.crud.manager.model.entity.Manager;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.List;
+import java.util.Map;
 
 import static com.sh.crud.common.SqlSessionTemplate.getSqlSession;
 
@@ -71,9 +73,23 @@ public class AskService {
         return result;
     }
 
-    public List<Ask> findByAsks(String id) {
+    public List<AskVo> findByAsks(String id) {
         SqlSession session = getSqlSession();
-        List<Ask> asks = askDao.findByAsks(session, id);
+        List<AskVo> asks = askDao.findByAsks(session, id);
+        session.close();
+        return asks;
+    }
+
+    public int getTotalCount() {
+        SqlSession session = getSqlSession();
+        int totalCount = askDao.getTotalCount(session);
+        session.close();
+        return totalCount;
+    }
+
+    public List<AskVo> findAllAsk() {
+        SqlSession session = getSqlSession();
+        List<AskVo> asks = askDao.findAllAsk(session);
         session.close();
         return asks;
     }

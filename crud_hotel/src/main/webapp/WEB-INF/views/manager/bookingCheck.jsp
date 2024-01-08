@@ -14,7 +14,7 @@
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg w-9/12 mx-auto mt-4">
     <h2 class="text-bold text-xl absolute top-0 left-4">예약목록</h2>
     <table class="w-full text-sm text-center text-gray-500 dark:text-gray-400 mt-12">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-orange-100 dark:bg-gray-700 dark:text-gray-400">
         <tr>
             <th scope="col" class="py-3 w-24">
                 예약 번호
@@ -59,8 +59,13 @@
 
                 </td>
                 <td class="py-4">
+
                     <input type="hidden" name="bookingNum" value="${booking.bookingNum}"/>
                     <button type="button" onclick="handleUpdateConfirmation('${booking.bookingName}', ${vs.index})" class="font-medium text-red-600 hover:underline">
+
+                    <input type="hidden" name="bookingNum" value="${booking.bookingNum}" />
+                    <button type="button" onclick="handleUpdateConfirmation('${booking.bookingName}', ${vs.index})" class="text-black bg-orange-200 hover:bg-orange-300 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium text-sm px-5 py-2.5 text-center">
+
                         수정
                     </button>
                 </td>

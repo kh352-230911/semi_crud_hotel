@@ -11,19 +11,35 @@
             tb_ask
     </select>
 
-    <select id="findById" resultType="ask">
+    <select id="findById" resultMap="askVoMap">
         select
-            *
+            a.*,
+            b.ans_content
         from
-            tb_ask
+            tb_ask a left join tb_ask_answer b
+                               on a.ask_num = b.ans_ask_num
         where
             ask_id = #{askId}
     </select>
+    <resultMap id="askVoMap" type="askVo">
+        <id column="ask_num" property="askNum"/>
+        <result column="ask_id" property="askId"/>
+        <result column="ask_room_num" property="askRoomNum"/>
+        <result column="ask_title" property="askTitle"/>
+        <result column="ask_case" property="askCase"/>
+        <result column="ask_content" property="askContent"/>
+        <result column="ask_date" property="askDate"/>
+        <collection property="askAnswers" ofType="askAnswer">
+            <id column="ans_num" property="ansNum"/>
+            <result column="ans_content" property="ansContent"/>
+            <result column="ans_ask_num" property="ansAskNum"/>
+        </collection>
+    </resultMap>
 
     <insert id="insertAsk">
         insert into
-            tb_ask
-        values (#{askNum}, #{askId}, default, #{askTitle}, #{askCase}, #{askContent}, default)
+            tb_ask(ask_num, ask_id, ask_title, ask_case, ask_content, ask_date)
+        values (seq_ask_num.nextval, #{askId}, #{askTitle}, #{askCase}, #{askContent}, sysdate)
     </insert>
 
     <update id="updateAsk">
@@ -43,5 +59,20 @@
         where
             ask_id = #{askId}
     </delete>
+    <select id="getTotalCount" resultType="_int">
+        select
+            count(*)
+        from
+            tb_ask
+    </select>
+
+    <select id="findAllAsk" resultMap="askVoMap">
+        select
+            a.*,
+            b.ans_content
+        from
+            tb_ask a left join tb_ask_answer b
+                               on a.ask_num = b.ans_ask_num
+    </select>
 
 </mapper>

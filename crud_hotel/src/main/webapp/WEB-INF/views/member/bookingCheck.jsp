@@ -48,7 +48,7 @@
                     </td>
                 <%-- 예약취소 --%>
                     <td class="py-4">
-                        <button onclick="if(confirm('🔸${booking.bookingName}님🔸\n🔹<fmt:formatDate value="${checkOutDate}" pattern="yy/MM/dd"/>-입실🔹 \n예약을 정말 예약취소 하시겠습니까?')) { document.bookingDeleteFrm.submit(); }" type="submit" class="text-black bg-orange-200 hover:bg-orange-300 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium text-sm px-5 py-2.5 text-center">예약취소</button>
+                        <button onclick="if(confirm('🔸${booking.bookingName}님🔸\n🔹<fmt:formatDate value="${checkInDate}" pattern="yy/MM/dd"/>-입실🔹 \n예약을 정말 예약취소 하시겠습니까?')) { document.bookingDeleteFrm.submit(); }" type="submit" class="text-black bg-orange-200 hover:bg-orange-300 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium text-sm px-5 py-2.5 text-center">예약취소</button>
                     </td>
                 </tr>
             </c:forEach>
@@ -58,5 +58,6 @@
 </div>
 
 <form action="${pageContext.request.contextPath}/member/bookingDelete" method="post" name="bookingDeleteFrm">
+    <input type="hidden" name="num" id="num" value="${bookings[0].bookingNum}">
 </form>
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>

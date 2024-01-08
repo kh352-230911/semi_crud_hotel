@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
           integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
-
     <script
             src="https://code.jquery.com/jquery-3.7.1.js"
             integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
@@ -33,6 +33,13 @@
             width: 100%;
 
         }
+        #title, a{
+            @import url('https://fonts.googleapis.com/css2?family=Diphylleia&family=Grandiflora+One&family=Nanum+Myeongjo&display=swap');
+            font-family: 'Diphylleia', serif;
+            font-family: 'Grandiflora One', cursive;
+            font-family: 'Nanum Myeongjo', serif;
+        }
+
     </style>
 
 </head>
@@ -43,14 +50,25 @@
     <nav class="bg-orange-50 border-gray-200 px-4 lg:px-6 py-2.5 ">
         <div class="flex justify-between items-center mx-auto max-w-screen-xl">
             <div class="flex-1 lg:flex-none">
+                <svg
+                        width="1600"
+                        height="2"
+                        viewBox="0 0 924 2"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="absolute left-[161.58px] top-[209px]"
+                        preserveAspectRatio="none"
+                >
+                    <path d="M0.582031 1H922.888" stroke="#715B3F" stroke-linecap="round"></path>
+                </svg>
                 <!-- Left placeholder for mobile button or anything that should be on the left side -->
             </div>
+
 
             <!-- CRUD Hotel centered on all screen sizes -->
             <div class="flex-1 text-center">
                 <span class="items-center justify-center self-center text-2xl font-semibold whitespace-nowrap">
-                    <a href="${pageContext.request.contextPath}">
-                       
+                    <a id="title" href="${pageContext.request.contextPath}">
                         CRUD Hotel
                     </a>
                 </span>
@@ -66,12 +84,9 @@
 
 
                 <!-- 종아이콘 -->
-
-
                     <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 21">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9.046 3.59-.435-2.324m.435 2.324a5.338 5.338 0 0 1 6.033 4.333l.331 1.77c.439 2.344 2.383 2.587 2.599 3.76.11.586.22 1.171-.309 1.271L5 17.101c-.529.1-.639-.488-.749-1.074-.219-1.172 1.506-2.102 1.067-4.447l-.331-1.769a5.338 5.338 0 0 1 4.059-6.22Zm-7.13 4.602a8.472 8.472 0 0 1 2.17-5.048m2.646 13.633A3.472 3.472 0 0 0 13.46 16l.089-.5-6.817 1.277Z"/>
                     </svg>
-
 
                     <div class="flex justify-center">
                         <div class="relative inline-block mb-20">
@@ -91,10 +106,32 @@
                                 <a href="#" class="flex items-center p-3 -mt-2 text-sm text-gray-600 transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
                                     <img class="flex-shrink-0 object-cover mx-1 rounded-full w-9 h-9" src="${pageContext.request.contextPath}/images/1.jpg" alt="">
                                     <div class="mx-1">
-                                        <h1 class="text-sm font-semibold text-gray-700 dark:text-gray-200">${loginMember.memberId}   회원</h1>
-                                        <p class="text-sm text-gray-500 dark:text-gray-400">🔸${loginMember.memberName}님🔸</p>
+                                        <h1 class="text-sm py-1 font-semibold text-gray-700 dark:text-gray-200">${loginMember.memberId}  회원
+                                        </h1>
+
+                                        <p class="text-sm py-1 text-gray-500 dark:text-gray-400">🔸${loginMember.memberName}님🔸</p>
                                     </div>
                                 </a>
+
+                                <%-- 배지영역 --%>
+                                <hr class="border-white dark:border-gray-700 ">
+                                <div class="pb-3 text-center">
+                                    <c:if test="${loginMember.bookingCount ge 0 && loginMember.bookingCount le 3}">  <%--0 ~ 3 --%>
+                                    <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">${loginMember.memberPride}</span> <%-- bronze --%>
+                                    </c:if>
+                                    <c:if test="${loginMember.bookingCount gt 3 && loginMember.bookingCount le 10}"> <%--3 ~ 10 --%>
+                                        <span class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-300">${loginMember.memberPride}</span> <%-- silver --%>
+                                    </c:if>
+                                    <c:if test="${loginMember.bookingCount gt 10 && loginMember.bookingCount le 25}"> <%--10 ~ 25 --%>
+                                    <span class="m-20 flex-grow bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300">${loginMember.memberPride}</span> <%--gold --%>
+                                    </c:if>
+                                    <c:if test="${loginMember.bookingCount gt 25 && loginMember.bookingCount lt 50}"> <%--25 ~ 50 --%>
+                                    <span class="bg-purple-100 text-purple-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-300">${loginMember.memberPride}</span> <%--platinum --%>
+                                    </c:if>
+                                    <c:if test="${loginMember.bookingCount ge 50}"> <%-- 50 ~ 이상 --%>
+                                    <span class="bg-pink-100 text-pink-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300">${loginMember.memberPride}</span> <%--diamond --%>
+                                    </c:if>
+                                </div>
 
                                 <hr class="border-gray-200 dark:border-gray-700 ">
 
@@ -149,25 +186,24 @@
                                     </div>
                                 </a>
 
-                                <hr class="border-gray-200 dark:border-gray-700 ">
+
 
                                 <a href="${pageContext.request.contextPath}/manager/managerDetail" class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
                                     내정보수정
                                 </a>
 
+                                <hr class="border-gray-200 dark:border-gray-700 ">
+
                                 <a href="${pageContext.request.contextPath}/manager/bookingCheck" class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
                                     회원 예약조회
                                 </a>
 
-                                <a href="#" class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+                                <a href="${pageContext.request.contextPath}/manager/askCheck" class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
                                     회원 문의조회
                                 </a>
 
-                                <hr class="border-gray-200 dark:border-gray-700 ">
 
-                                <a href="#" class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
-                                    관리자 회원탈퇴
-                                </a>
+
                             </div>
                         </div>
                     </div>
@@ -217,3 +253,4 @@
 </header>
 
 <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>

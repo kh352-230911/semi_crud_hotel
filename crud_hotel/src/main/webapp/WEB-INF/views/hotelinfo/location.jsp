@@ -73,6 +73,11 @@
         width: 95%;
         height: 95%;
     }
+    ul>li, h1{
+        font-family: 'Diphylleia', serif;
+        font-family: 'Grandiflora One', cursive;
+        font-family: 'Nanum Myeongjo', serif;
+    }
 
 </style>
 <body>
@@ -92,17 +97,19 @@
             </a></li>
         </ul>
     </div>
+
     <div class="content max-w-5xl mx-auto p-8">
+        <h1 class="text-2xl font-bold text-gray-800">CRUD Hotel Location</h1>
+        <p class="text-gray-600 text-sm mt-2 pb-6">
+            Address - 48, Teheran-ro 14-gil, Gangnam-gu, Seoul, Republic of Korea
+            <br>
+            주소 - 서울특별시 강남구 테헤란로14길 48
+        </p>
         <section>
             <div id="map"></div>
         </section>
     </div>
 </div>
-
-
-
-
-
 
 </body>
 
