@@ -4,21 +4,6 @@
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
 <style>
-    /** {*/
-    /*    padding: 0;*/
-    /*    margin: 0;*/
-    /*    box-sizing: border-box;*/
-    /*}*/
-
-    /*.top-banner {*/
-    /*    position: relative;*/
-    /*    display: flex;*/
-    /*    width: 100vw;*/
-    /*    height: 100vh;*/
-    /*    background: url(https://cdn.pixabay.com/photo/2017/03/09/06/30/pool-2128578_640.jpg) no-repeat center / cover;*/
-    /*}*/
-
-
     html, body {
         width: 100%;
         overflow-x: hidden; /* 수평 스크롤을 제거합니다. */

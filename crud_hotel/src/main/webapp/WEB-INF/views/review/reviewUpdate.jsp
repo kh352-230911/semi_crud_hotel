@@ -64,7 +64,7 @@
             </div>
             <div class="w-full mx-auto mt-4 text-right">
                 <button type="submit"
-                        class="w-32 h-16 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 hover:bg-blue-800">
+                        class="w-32 h-16 text-sm font-medium text-center text-white bg-amber-900 rounded-lg focus:ring-4 focus:ring-blue-200 hover:bg-orange-200">
                     수정완료
                 </button>
             </div>
