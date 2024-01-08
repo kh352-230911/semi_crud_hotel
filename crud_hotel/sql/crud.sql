@@ -285,5 +285,39 @@ where
 select * from tb_member; -- 증가/감소 정상 작동
 
 
+
 select * from tb_order;
     
+
+commit;
+
+select * from tb_review;
+
+SELECT * FROM V$SESSION;
+
+SELECT S.SID
+     , S.SERIAL#
+     , S.USERNAME
+     , P.SPID -- SPID 확인
+     , S.STATUS
+     , S.EVENT
+     , S.PROCESS
+     , T.USED_UBLK
+     , T.USED_UREC
+     , ROUND(T.USED_UBLK*8192/1024/1024, 2) USED_MB
+     , S.OSUSER
+     , S.PROCESS
+     , S.MACHINE
+     , S.PORT
+     , S.TERMINAL
+     , S.PROGRAM
+     , TYPE
+     , START_TIME
+     , SYSDATE
+  FROM V$SESSION S
+     , V$TRANSACTION T
+     , V$PROCESS P
+ WHERE S.TADDR = T.ADDR
+   AND S.PADDR = P.ADDR;
+
+

@@ -67,22 +67,35 @@ public class BookingService {
     }
 
 
+<<<<<<< HEAD
+    public int checkBookingOverlap(Map<String, Object> bookingParams) {
+=======
 
 
     public int checkBookingOverlap(Map<String, Object> bookingParams) {
 
+>>>>>>> ee52f8e188a6cbc77a5c7bf13400bdeb3b5e18da
         SqlSession session = getSqlSession();
+        int result = 0;
         try  {
+<<<<<<< HEAD
+            // 중복 예약의 개수
+            result = bookingDao.checkBookingOverlap(session, bookingParams);
+            session.commit();
+=======
             int count = bookingDao.checkBookingOverlap(session, bookingParams);
             System.out.println(count);
             return count ;
 
+>>>>>>> ee52f8e188a6cbc77a5c7bf13400bdeb3b5e18da
         } catch (Exception e) {
             // 오류 처리
+            session.rollback();
             throw e;
         }finally {
             session.close();
         }
+        return result;
 
     }
 
