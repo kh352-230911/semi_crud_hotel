@@ -76,10 +76,9 @@
             <path d="M0.582031 1H922.888" stroke="#715B3F" stroke-linecap="round"></path>
         </svg>
 
-
-
             <a onclick="request_pay();"></a>
     </div>
+
     <div class="w-1/2 h-1/2 m-auto top-[120px] flex items-center justify-center border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
         <div class="px-3 py-1 text-xl font-medium leading-none text-center text-orange-900 bg-orange-200 rounded-full animate-pulse dark:bg-orange-200 dark:text-blue-200">결제가 진행중입니다.....</div>
     </div>
