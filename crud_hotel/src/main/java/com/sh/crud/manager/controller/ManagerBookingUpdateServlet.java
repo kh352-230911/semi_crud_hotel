@@ -62,7 +62,11 @@ public class ManagerBookingUpdateServlet extends HttpServlet {
 
 
         // 체크인/체크아웃 날짜 중복 검사
+<<<<<<< HEAD
+        if (bookingService.checkBookingOverlap(bookingParams) != 0) {
+=======
         if (bookingService.checkBookingOverlap(bookingParams)!=0) {
+>>>>>>> ee52f8e188a6cbc77a5c7bf13400bdeb3b5e18da
             req.getSession().setAttribute("error", "선택한 날짜에는 이미 다른 예약이 있습니다.");
             resp.sendRedirect(req.getContextPath() + "/manager/bookingCheck");
             return;

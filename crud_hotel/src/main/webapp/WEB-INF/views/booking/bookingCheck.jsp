@@ -15,7 +15,7 @@
 
 <div class="w-full h-screen flex justify-center items-start bg-white">
     <div class="w-[1280px] h-[720px] relative overflow-hidden bg-white">
-        <p class="absolute left-[497px] top-[140px] text-[32px] text-left text-[#715b3f]">
+        <p class="absolute left-[410px] top-[140px] text-[32px] text-left text-[#715b3f]">
             선택한 예약내용을 확인해주세요.
         </p>
         <svg
@@ -36,6 +36,4 @@
         <p class="absolute left-[506px] top-[330px] text-4xl text-left text-black">예약 내용 출력</p>
     </div>
 </div>
-
-
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
