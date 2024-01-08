@@ -91,46 +91,50 @@
         </p>
 
         <div class="w-[126px] h-6 absolute left-[488px] top-[240px] ">
-            <button id="dropdownRadioButton" data-dropdown-toggle="dropdownDefaultRadio" class="text-black bg-white hover:bg-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-black-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center" type="button">
-                스탠다드
-                <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" fill="none" viewBox="0 0 10 6">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                </svg>
-            </button>
-            <!-- Dropdown menu -->
-            <div id="dropdownDefaultRadio" class="z-10 hidden w-48 bg-white divide-y divide-gray-100 rounded-lg shadow">
-                <ul class="p-3 space-y-3 text-sm text-gray-700" aria-labelledby="dropdownRadioButton">
-                    <li>
-                        <div class="flex items-center">
-                            <input onclick="updateButton(this);" id="default-radio-1" type="radio" value="스탠다드" name="default-radio" class="w-4 h-4 text-black-600 bg-gray-100 border-gray-300 focus:ring-black-500">
-                            <label for="default-radio-1" class="ms-2 text-sm font-medium text-gray-900">스탠다드</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="flex items-center">
-                            <input onclick="updateButton(this);" id="default-radio-2" type="radio" value="프리미어" name="default-radio" class="w-4 h-4 text-black-600 bg-gray-100 border-gray-300 focus:ring-black-500">
-                            <label for="default-radio-2" class="ms-2 text-sm font-medium text-gray-900">프리미어</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="flex items-center">
-                            <input onclick="updateButton(this);" id="default-radio-3" type="radio" value="스위트룸" name="default-radio" class="w-4 h-4 text-black-600 bg-gray-100 border-gray-300 focus:ring-black-500">
-                            <label for="default-radio-3" class="ms-2 text-sm font-medium text-gray-900">스위트룸</label>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+            <form id="SelectBooking" action="${pageContext.request.contextPath}/booking/bookingRoom" method="get" name="bookingRoomFrm">
+                <button id="dropdownRadioButton" data-dropdown-toggle="dropdownDefaultRadio" class="text-black bg-white hover:bg-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-black-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center" type="button">
+                    스탠다드
+                    <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                    </svg>
+                </button>
+                <!-- Dropdown menu -->
+                <div id="dropdownDefaultRadio" class="z-10 hidden w-48 bg-white divide-y divide-gray-100 rounded-lg shadow">
+                    <ul class="p-3 space-y-3 text-sm text-gray-700" aria-labelledby="dropdownRadioButton">
+                        <li>
+                            <div class="flex items-center">
+                                <input onclick="updateButton(this);" id="standard" type="radio" value="스탠다드" name="roomType" class="w-4 h-4 text-black-600 bg-gray-100 border-gray-300 focus:ring-black-500">
+                                <label for="standard" class="ms-2 text-sm font-medium text-gray-900">스탠다드</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                                <input onclick="updateButton(this);" id="premier" type="radio" value="프리미어" name="roomType" class="w-4 h-4 text-black-600 bg-gray-100 border-gray-300 focus:ring-black-500">
+                                <label for="premier" class="ms-2 text-sm font-medium text-gray-900">프리미어</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                                <input onclick="updateButton(this);" id="suite" type="radio" value="스위트룸" name="roomType" class="w-4 h-4 text-black-600 bg-gray-100 border-gray-300 focus:ring-black-500">
+                                <label for="suite" class="ms-2 text-sm font-medium text-gray-900">스위트룸</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </form>
         </div>
         <div class="w-[126px] h-6 absolute left-[487px] top-[310px]  ">
             <!-- 날짜 검색 체크인 -->
-            <input type="date" id="checkin-date" name="checkin" placeholder="Select date" required>
+            <input type="date" id="checkInDate" name="checkInDate" placeholder="Select date" required>
+
         </div>
         <div class="w-[126px] h-6 absolute left-[666px] top-[310px] ">
             <!-- 날짜 검색 체크아웃-->
-            <input type="date" id="checkout-date" name="checkout" placeholder="Select date" required>
+            <input type="date" id="checkOutDate" name="checkOutDate" placeholder="Select date" required>
+
         </div>
         <div class="w-[30px] h-6 absolute left-[488px] top-[385px] ">
-            <input type="number" id="adult" name="total_adults" placeholder="2" min="1" max="4" required>
+            <input type="number" id="roomPeople" name="roomPeople" placeholder="2" min="1" max="4" required>
         </div>
         <div class="w-[150px] h-6 absolute left-[488px] top-[460px]  ">
             <button type="button" data-modal-target="crypto-modal" data-modal-toggle="crypto-modal" class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700">
@@ -471,7 +475,10 @@
         <div class="w-[304px] h-11 absolute left-[488px] top-[562px] bg-[#715b3f]"></div>
 
         <p class="roomSearch absolute left-[590px] top-[568px] text-2xl text-left text-white">
-            <a  href="${pageContext.request.contextPath}/booking/bookingRoom">객실검색</a></p>
+            <button form="SelectBooking" type="submit">
+            <a>객실검색</a>
+            </button>
+        </p>
     </div>
 </div>
 

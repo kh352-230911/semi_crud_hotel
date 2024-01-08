@@ -30,7 +30,6 @@ public class AskCheck extends HttpServlet {
         req.setAttribute("askVos", askVos);
         System.out.println(askVos);
 
-
         req.getRequestDispatcher("/WEB-INF/views/member/askCheck.jsp").forward(req, resp);
 
     }
