@@ -24,6 +24,6 @@ public class AskAnswerDao {
 
 
     public int saveAnswer(SqlSession session, AskAnswer askAnswer) {
-        return session.insert("askAnswer.insertAnswer",askAnswer);
+        return session.insert("askAnswer.saveAnswer",askAnswer);
     }
 }

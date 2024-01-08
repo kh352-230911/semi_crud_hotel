@@ -48,11 +48,10 @@ public class BookingDao {
 
 
     public int checkBookingOverlap(SqlSession session, Map<String, Object> bookingParams) {
-        return session.selectOne("booking.checkBookingOverlap", bookingParams);
+        int result = session.selectOne("booking.checkBookingOverlap", bookingParams);
+        // 결과값 로깅
+        System.out.println(bookingParams);
+        System.out.println("checkBookingOverlap result: " + result);
+        return result;
     }
-
-    public Booking isRoomNumberValid(SqlSession session, String roomNum) {
-        return session.selectOne("room.findByRoomNum",roomNum);
-    }
-
 }
