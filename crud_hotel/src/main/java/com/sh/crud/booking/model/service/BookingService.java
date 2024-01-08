@@ -69,7 +69,6 @@ public class BookingService {
 
 
     public int checkBookingOverlap(Map<String, Object> bookingParams) {
-
         SqlSession session = getSqlSession();
         try  {
 
