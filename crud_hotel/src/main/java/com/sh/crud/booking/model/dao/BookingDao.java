@@ -1,6 +1,7 @@
 package com.sh.crud.booking.model.dao;
 
 import com.sh.crud.booking.model.entity.Booking;
+import com.sh.crud.booking.model.vo.BookingVo;
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 
@@ -53,5 +54,9 @@ public class BookingDao {
         System.out.println(bookingParams);
         System.out.println("checkBookingOverlap result: " + result);
         return result;
+    }
+
+    public List<BookingVo> findBookingAll(SqlSession session, Map<String, Object> param) {
+        return session.selectList("booking.findBookingAll", param);
     }
 }

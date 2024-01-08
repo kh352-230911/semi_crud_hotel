@@ -70,5 +70,24 @@
         where
             booking_num=#{bookingNum}
     </update>
+
+    <select id="findBookingAll" resultType="bookings">
+        SELECT
+            *
+        FROM
+            tb_room r
+        WHERE
+            r.room_type = #{roomType}
+            and
+            r.room_people >= #{roomPeople}
+            AND NOT EXISTS (
+                SELECT 1
+                FROM tb_booking b
+                WHERE b.booking_room_num = r.room_num
+                AND (
+                    (b.checkin_date <= #{checkOutDate} AND b.checkout_date >= #{checkInDate})
+                )
+            );
+    </select>
 </mapper>
 

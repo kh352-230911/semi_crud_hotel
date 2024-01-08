@@ -131,7 +131,7 @@
             조건에 맞는 객실 선택
         </p>
         <p class="absolute left-[950px] top-[230px] text-[15px] text-left text-black">
-            <button id="dropdownRadioButton1" data-dropdown-toggle="dropdownDefaultRadio1"
+            <button id="dropdownRadioButton" data-dropdown-toggle="dropdownDefaultRadio"
                     class="text-black bg-white hover:bg-orange-200 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium border border-gray-900 rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
                     type="button">
                 즐길거리
@@ -143,68 +143,68 @@
             </button>
 
             <!-- Dropdown menu -->
-        <div id="dropdownDefaultRadio1"
+        <div id="dropdownDefaultRadio"
              class="z-10 hidden w-48 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600">
             <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownRadioButton">
                 <li>
                     <div class="flex items-center">
-                        <input onclick="updateButton(this);" id="default-radio-1" type="radio" value="양재 동물원"
+                        <input onclick="updateButton(this);" id="default-radio-4" type="radio" value=""
                                name="default-radio"
                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-orange-200 focus:ring-2">
-                        <label for="default-radio-1" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">양재
-                            동물원</label>
+                        <label for="default-radio-4" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                           양재 동물원</label>
                     </div>
                 </li>
                 <li>
                     <div class="flex items-center">
-                        <input onclick="updateButton(this);" id="default-radio-2" type="radio" value="코엑스 아쿠아리움"
+                        <input onclick="updateButton(this);" id="default-radio-5" type="radio" value=""
                                name="default-radio"
                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-orange-200 focus:ring-2">
-                        <label for="default-radio-2" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">코엑스
+                        <label for="default-radio-5" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">코엑스
                             아쿠아리움</label>
                     </div>
                 </li>
                 <li>
                     <div class="flex items-center">
-                        <input onclick="updateButton(this);" id="default-radio-3" type="radio" value="피규어 뮤지엄"
+                        <input onclick="updateButton(this);" id="default-radio-6" type="radio" value=""
                                name="default-radio"
                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-orange-200 focus:ring-2">
-                        <label for="default-radio-3" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">피규어
+                        <label for="default-radio-6" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">피규어
                             뮤지엄</label>
                     </div>
                 </li>
                 <li>
                     <div class="flex items-center">
-                        <input onclick="updateButton(this);" id="default-radio-4" type="radio" value="가로수길"
+                        <input onclick="updateButton(this);" id="default-radio-7" type="radio" value=""
                                name="default-radio"
                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-orange-200 focus:ring-2">
-                        <label for="default-radio-4" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">가로수길</label>
+                        <label for="default-radio-7" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">가로수길</label>
                     </div>
                 </li>
                 <li>
                     <div class="flex items-center">
-                        <input onclick="updateButton(this);" id="default-radio-5" type="radio" value="뮤지컬 나그네"
+                        <input onclick="updateButton(this);" id="default-radio-8" type="radio" value=""
                                name="default-radio"
                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-orange-200 focus:ring-2">
-                        <label for="default-radio-5" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">뮤지컬
+                        <label for="default-radio-8" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">뮤지컬
                             나그네</label>
                     </div>
                 </li>
                 <li>
                     <div class="flex items-center">
-                        <input onclick="updateButton(this);" id="default-radio-6" type="radio" value="강남 롯데월드"
+                        <input onclick="updateButton(this);" id="default-radio-9" type="radio" value="강남 롯데월드"
                                name="default-radio"
                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-orange-200 focus:ring-2">
-                        <label for="default-radio-6" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">강남
+                        <label for="default-radio-9" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">강남
                             롯데월드</label>
                     </div>
                 </li>
                 <li>
                     <div class="flex items-center">
-                        <input onclick="updateButton(this);" id="default-radio-7" type="radio" value="선택안함"
+                        <input onclick="updateButton(this);" id="default-radio-10" type="radio" value="선택안함"
                                name="default-radio"
                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-orange-200 focus:ring-2">
-                        <label for="default-radio-7" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">선택안함</label>
+                        <label for="default-radio-10" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">선택안함</label>
                     </div>
                 </li>
             </ul>
@@ -214,6 +214,7 @@
         <!-- 여러개 위한 스크롤 가능한 컨테이너 -->
         <div class="relative left-[162px] top-[280px] w-[924px] h-[440px] overflow-auto">
             <!-- Repeat this part for each room -->
+
             <div class="room-card" type="standard" data-room-id="A201">
                 <img src="${pageContext.request.contextPath}/images/hotelRoom1_up_last.jpg" alt="Room Image"
                      class="room-image">

@@ -1,5 +1,5 @@
 function updateButton(radio) {
-    document.getElementById('dropdownRadioButton1').innerText = radio.value;
+    document.getElementById('dropdownRadioButton').innerText = radio.value;
 }
 
 // 스크롤 요소 전부 다 보이게 설정
@@ -13,36 +13,14 @@ var rooms = [
     { type: 'suite'}
 ];
 
-// 객실 유형에 따라 필터링하고 결과를 표시하는 함수
-function filterRooms(type) {
-    var filteredRooms = rooms.filter(function(room) {
-        return room.type === type;
-    });
-
-    // 필터링된 객실을 페이지에 표시하는 코드를 여기에 작성합니다.
-    // 예를 들어, filteredRooms 배열을 사용하여 HTML을 생성하고
-    // .room-card 컨테이너 내부에 삽입할 수 있습니다.
-}
-
-// 버튼 클릭 이벤트 리스너를 추가하여 객실 유형에 따라 필터링
-// document.getElementById('standard-btn').addEventListener('click', function() {
-//     filterRooms('standard');
-// });
-// document.getElementById('premier-btn').addEventListener('click', function() {
-//     filterRooms('premier');
-// });
-// document.getElementById('suite-btn').addEventListener('click', function() {
-//     filterRooms('suite');
-// });
-
 // 페이지 로드 시 예약 가능 여부 확인
 $(document).ready(checkRoomAvailability);
 
 function checkRoomAvailability() {
     const roomsToCheck = [
         "A201", "A202", "A203", "A204", "A205", "A206", "T301", "T302", "A303", "A304", "T305", "T306",
-        T306",
-        "A201", "A202", "A203", "A204", "A205", "A206""A201", "A202", "A203", "A204", "A205", "A206", "T301", "T302", "A303", "A304", "T305", "
+        "T401", "T402", "Q403", "Q404", "Q405", "Q406", "T501", "T502", "Q503", "Q504", "Q505", "Q506",
+        "Q601", "Q602", "Q603", "Q604", "Q605", "Q606"
     ];
     roomsToCheck.forEach(bookingRoomNum => {
         // jQuery의 $.ajax를 사용하여 POST 요청을 보냄

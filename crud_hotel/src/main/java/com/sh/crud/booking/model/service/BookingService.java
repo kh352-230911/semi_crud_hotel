@@ -3,6 +3,7 @@ package com.sh.crud.booking.model.service;
 import com.sh.crud.ask.model.vo.AskVo;
 import com.sh.crud.booking.model.dao.BookingDao;
 import com.sh.crud.booking.model.entity.Booking;
+import com.sh.crud.booking.model.vo.BookingVo;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.List;
@@ -67,27 +68,14 @@ public class BookingService {
     }
 
 
-<<<<<<< HEAD
     public int checkBookingOverlap(Map<String, Object> bookingParams) {
-=======
-
-
-    public int checkBookingOverlap(Map<String, Object> bookingParams) {
-
->>>>>>> ee52f8e188a6cbc77a5c7bf13400bdeb3b5e18da
         SqlSession session = getSqlSession();
-        int result = 0;
-        try  {
-<<<<<<< HEAD
-            // 중복 예약의 개수
-            result = bookingDao.checkBookingOverlap(session, bookingParams);
-            session.commit();
-=======
+
+        try {
             int count = bookingDao.checkBookingOverlap(session, bookingParams);
             System.out.println(count);
             return count ;
 
->>>>>>> ee52f8e188a6cbc77a5c7bf13400bdeb3b5e18da
         } catch (Exception e) {
             // 오류 처리
             session.rollback();
@@ -95,7 +83,7 @@ public class BookingService {
         }finally {
             session.close();
         }
-        return result;
+
 
     }
 
@@ -114,6 +102,12 @@ public class BookingService {
         return result;
     }
 
+    public List<BookingVo> findBookingAll(Map<String, Object> param) {
+        SqlSession session = getSqlSession();
+        List<BookingVo> booking = bookingDao.findBookingAll(session, param);
+        session.close();
+        return booking;
+    }
 }
 
 
