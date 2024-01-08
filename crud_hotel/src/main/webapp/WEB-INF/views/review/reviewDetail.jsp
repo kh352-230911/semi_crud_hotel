@@ -86,6 +86,9 @@
             </div>
         </div>
         <div>
+            <c:forEach items="${review.reviewPictures}" var="reviewPicture">
+                <img src="${pageContext.request.contextPath}/upload/review/${reviewPicture.renamedFilename}">
+            </c:forEach>
             <p>${review.revContent}</p>
             <br><br><br><br><br><br><br><br><br><br><br><br><br>
             <c:forEach items="${review.reviewPictures}" var="reviewPicture">
@@ -116,46 +119,59 @@
                 method="post"
                 name="reviewDeleteFrm">
                 <input type="hidden" name="revNum" value="${review.revNum}">
+                <c:forEach items="${review.reviewPictures}" var="reviewPicture" varStatus="vs">
+                    <label for="delFile${vs.count}"></label>
+                    <input type="hidden" name="delFile" id="delFile${vs.count}" value="${reviewPicture.revNum}">
+                </c:forEach>
             </form>
-            <c:if test="${loginMember != null || loginManager != null}">
-                <button type="button"
-                        class="mr-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                    좋아요
-                </button>
-                <button type="button"
-                        class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                    신고하기
-                </button>
-            </c:if>
+<%--            <c:if test="${loginMember != null || loginManager != null}">--%>
+<%--                <button type="button"--%>
+<%--                        class="mr-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">--%>
+<%--                    좋아요--%>
+<%--                </button>--%>
+<%--                <button type="button"--%>
+<%--                        class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">--%>
+<%--                    신고하기--%>
+<%--                </button>--%>
+<%--            </c:if>--%>
         </div>
     </div>
+    <!-- 댓글 테이블 -->
     <div class="w-full mt-16 bg-white">
         <h3 class="text-xl font-semibold text-gray-900 ml-4 my-4">댓글</h3>
-        <table class="w-full mx-auto text-gray-600">
-            <tr class="border-b">
-                <td scope="row" colspan="2" class="border border-gray-200 pt-2 pb-2 pl-4 font-medium text-gray-800">3344</td>
-            </tr>
-            <tr class="border-b">
-                <td scope="row" colspan="2" class="border border-gray-200 pt-2 pb-2 pl-4 font-medium text-gray-800">댓글2다</td>
-            </tr>
-            <tr class="border-b">
-                <td scope="row" colspan="2" class="border border-gray-200 pt-2 pb-2 pl-4 font-medium text-gray-800">3하고 4</td>
-            </tr>
+        <c:if test="${empty review.comments}">
+            <p class="px-4 py-4 w-2/12">댓글이 없습니다. 😮</p>
+        </c:if>
+
+        <table class="w-full mx-auto text-gray-800">
+            <tbody>
+            <c:forEach items="${review.comments}" var="comment" varStatus="vs">
+                <tr class="border-b">
+                    <th class="text-left px-4 py-4 w-2/12 border-b">${comment.comId}</th>
+                    <td class="text-left w-4/6 px-4 py-4">
+                        <p class="text-gray-600 pl-4">${comment.comContent}</p>
+                    </td>
+                    <td class="text-gray-400 px-4 py-4 text-right">
+                        <fmt:parseDate value="${comment.comDate}" pattern="yyyy-mm-dd'T'HH:mm" var="comDate"/>
+                        <fmt:formatDate value="${comDate}" pattern="yy/MM/dd"/>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
         </table>
     </div>
 </div>
 
-<!-- 댓글영역 -->
-
-
+<!-- 댓글작성 폼 -->
 <div class="w-9/12 mx-auto mb-16 bg-white">
-    <form name="reviewCommentCreateFrm">
-        <label for="content"></label>
+    <form name="reviewCommentCreateFrm" action="${pageContext.request.contextPath}/review/reviewCommentCreate" method="post">
+        <input type="hidden" name="comId" id="comId" value="${loginMember.memberId}">
+        <input type="hidden" name="comNum" id="comNum" value="${review.revNum}">
+        <label for="comContent"></label>
         <h3 class="block mb-2 text-xl text-gray-900 dark:text-white">댓글 내용</h3>
-        <textarea id="content" name="content" rows="4"
+        <textarea id="comContent" name="comContent" rows="4"
                   class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300
                    focus:ring-blue-500 focus:border-blue-500"
-                  onclick="'${loginMember.memberId}' || alert('로그인 후 댓글작성이 가능합니다.');"
                   placeholder="댓글내용을 작성해주세요."></textarea>
         <div class="mt-4 flax w-full justify-end text-right">
             <button type="submit"
@@ -163,7 +179,6 @@
                 댓글 작성완료
             </button>
         </div>
-
     </form>
 </div>
 <script src="${pageContext.request.contextPath}/js/review/reviewDetail.js"></script>

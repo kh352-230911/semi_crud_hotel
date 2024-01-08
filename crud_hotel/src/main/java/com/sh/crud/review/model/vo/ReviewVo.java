@@ -1,6 +1,7 @@
 package com.sh.crud.review.model.vo;
 
 import com.sh.crud.review.model.entity.Review;
+import com.sh.crud.review.model.entity.ReviewComment;
 import com.sh.crud.review.model.entity.ReviewPicture;
 
 import java.time.LocalDateTime;
@@ -11,8 +12,20 @@ import java.util.List;
 public class ReviewVo extends Review {
 
     private int reviewPictureCount;
+    private int reviewCommentCount;
+
     private List<ReviewPicture> reviewPictures = new ArrayList<>();
     private List<Long> delFiles = new ArrayList<>();
+    private List<ReviewComment> comments;
+
+
+    public List<ReviewComment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<ReviewComment> comments) {
+        this.comments = comments;
+    }
 
     public List<Long> getDelFiles() {
         return delFiles;
@@ -42,6 +55,14 @@ public class ReviewVo extends Review {
         this.reviewPictures = reviewPictures;
     }
 
+    public int getReviewCommentCount() {
+        return reviewCommentCount;
+    }
+
+    public void setReviewCommentCount(int reviewCommentCount) {
+        this.reviewCommentCount = reviewCommentCount;
+    }
+
     public void setValue(String name, String value) {
         switch (name) {
             case "revNum" : setRevNum(Long.parseLong(value)); break;
@@ -59,9 +80,11 @@ public class ReviewVo extends Review {
     @Override
     public String toString() {
         return "ReviewVo{" +
-                ", reviewPictureCount=" + reviewPictureCount +
+                "reviewPictureCount=" + reviewPictureCount +
+                "reviewCommentCount=" + reviewCommentCount +
                 ", reviewPictures=" + reviewPictures +
                 ", delFiles=" + delFiles +
+                ", comments=" + comments +
                 "} " + super.toString();
     }
 }

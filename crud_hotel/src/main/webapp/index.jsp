@@ -4,21 +4,6 @@
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
 <style>
-    /** {*/
-    /*    padding: 0;*/
-    /*    margin: 0;*/
-    /*    box-sizing: border-box;*/
-    /*}*/
-
-    /*.top-banner {*/
-    /*    position: relative;*/
-    /*    display: flex;*/
-    /*    width: 100vw;*/
-    /*    height: 100vh;*/
-    /*    background: url(https://cdn.pixabay.com/photo/2017/03/09/06/30/pool-2128578_640.jpg) no-repeat center / cover;*/
-    /*}*/
-
-
     html, body {
         width: 100%;
         overflow-x: hidden; /* 수평 스크롤을 제거합니다. */
@@ -118,6 +103,7 @@
         <h1 class="text-white">예약하기</h1>
         <form name="bookingSerchFrm" class="form-proup" action="${pageContext.request.contextPath}/booking/bookingRoom" method="get">
             <div class="elem-group inlined">
+
                 <label class="text-white" for="checkin-date">Check-in Date</label>
                 <input type="date" id="checkin-date" name="checkin" placeholder="Select date" required>
             </div>
@@ -128,7 +114,7 @@
             <hr>
             <div class="elem-group inlined">
                 <label class="text-white" for="adult">Adults</label>
-                <input type="number" id="adult" name="total_adults" placeholder="2" min="1" max="4" required>
+                <input type="number" id="adult" name="Adults" placeholder="2" min="1" max="4" required>
             </div>
 
             <div class="w-[126px] h-6  left-[488px] top-[240px] elem-group">
@@ -171,6 +157,7 @@
 <%--        </div>--%>
         <div class="elem-group inlined">
             <button id="search" onclick="document.bookingSerchFrm.submit()" class="text-white" type="submit">검색</button>
+
         </div>
     </div>
 

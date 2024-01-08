@@ -31,7 +31,8 @@
             <c:forEach items="${bookings}" var="booking" varStatus="vs">
                 <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-orange-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                     <th scope="row" class="font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
-                            ${booking.bookingNum}</th>
+                            ${booking.bookingNum}
+                    </th>
                     <td class="py-4">
                             ${booking.bookingRoomNum}
                     </td>

@@ -77,7 +77,6 @@ public class BookingService {
             System.out.println(count);
             return count ;
 
-
         } catch (Exception e) {
             // 오류 처리
             session.rollback();
@@ -85,7 +84,6 @@ public class BookingService {
         }finally {
             session.close();
         }
-
 
     }
 
