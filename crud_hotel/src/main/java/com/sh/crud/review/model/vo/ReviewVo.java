@@ -1,6 +1,7 @@
 package com.sh.crud.review.model.vo;
 
 import com.sh.crud.review.model.entity.Review;
+import com.sh.crud.review.model.entity.ReviewComment;
 import com.sh.crud.review.model.entity.ReviewPicture;
 
 import java.time.LocalDateTime;
@@ -13,6 +14,25 @@ public class ReviewVo extends Review {
     private int reviewPictureCount;
     private List<ReviewPicture> reviewPictures = new ArrayList<>();
     private List<Long> delFiles = new ArrayList<>();
+    private List<ReviewComment> comments;
+
+    private long comCount;
+
+    public List<ReviewComment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<ReviewComment> comments) {
+        this.comments = comments;
+    }
+
+    public long getComCount() {
+        return comCount;
+    }
+
+    public void setComCount(long comCount) {
+        this.comCount = comCount;
+    }
 
     public List<Long> getDelFiles() {
         return delFiles;
@@ -59,9 +79,11 @@ public class ReviewVo extends Review {
     @Override
     public String toString() {
         return "ReviewVo{" +
-                ", reviewPictureCount=" + reviewPictureCount +
+                "reviewPictureCount=" + reviewPictureCount +
                 ", reviewPictures=" + reviewPictures +
                 ", delFiles=" + delFiles +
+                ", comments=" + comments +
+                ", comCount=" + comCount +
                 "} " + super.toString();
     }
 }

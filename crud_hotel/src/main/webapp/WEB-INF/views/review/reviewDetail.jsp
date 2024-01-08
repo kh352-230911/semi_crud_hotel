@@ -133,34 +133,29 @@
 <%--            </c:if>--%>
         </div>
     </div>
+    <!-- 댓글 테이블 -->
     <div class="w-full mt-16 bg-white">
         <h3 class="text-xl font-semibold text-gray-900 ml-4 my-4">댓글</h3>
-        <table class="w-full mx-auto text-gray-600">
-            <tr class="border-b">
-                <td class="pl-4 text-left w-12">사용자명</td>
-                <td class="w-10/12 pt-2 pb-2 pl-2 font-medium text-gray-800">3344</td>
-            </tr>
-            <tr class="border-b">
-                <td class="pl-4 text-left w-12">사용자홍길동</td>
-                <td class="w-10/12 pt-2 pb-2 pl-2 font-medium text-gray-800">가나다라마바사</td>
-            </tr>
-            <tr class="border-b">
-                <td class="pl-4 text-left w-12">사용자홍길동동생홍글동</td>
-                <td class="w-10/12 pt-2 pb-2 pl-2 font-medium text-gray-800">가나다라마바사아자차카타파하 그리고 너도
-                ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ<br>점심에 만나요
-                </td>
-            </tr>
-            <tr class="border-b">
-                <td class="pl-4 text-left w-12">사용자테스트</td>
-                <td class="w-10/12 pt-2 pb-2 pl-2 font-medium text-gray-800">점심에 만나요</td>
-            </tr>
+        <table class="w-full mx-auto text-gray-800">
+            <tbody>
+            <c:forEach items="${review.comments}" var="comment" varStatus="vs">
+                <tr class="border-b">
+                    <th class="text-left px-4 py-4 w-2/12 border-b">${comment.comId}</th>
+                    <td class="text-left w-4/6 px-4 py-4">
+                        <p class="text-gray-600 pl-4">${comment.comContent}</p>
+                    </td>
+                    <td class="text-gray-400 px-4 py-4">
+                        <fmt:parseDate value="${comment.comDate}" pattern="yyyy-mm-dd'T'HH:mm" var="comDate"/>
+                        <fmt:formatDate value="${comDate}" pattern="yy/MM/dd"/>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
         </table>
     </div>
 </div>
 
-<!-- 댓글영역 -->
-
-
+<!-- 댓글작성 폼 -->
 <div class="w-9/12 mx-auto mb-16 bg-white">
     <form name="reviewCommentCreateFrm">
         <label for="content"></label>
@@ -176,7 +171,6 @@
                 댓글 작성완료
             </button>
         </div>
-
     </form>
 </div>
 <script src="${pageContext.request.contextPath}/js/review/reviewDetail.js"></script>

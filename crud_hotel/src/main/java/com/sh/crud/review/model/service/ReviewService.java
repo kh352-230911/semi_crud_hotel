@@ -1,6 +1,7 @@
 package com.sh.crud.review.model.service;
 
 import com.sh.crud.review.model.dao.ReviewDao;
+import com.sh.crud.review.model.entity.ReviewComment;
 import com.sh.crud.review.model.entity.ReviewPicture;
 import com.sh.crud.review.model.entity.Review;
 import com.sh.crud.review.model.vo.ReviewVo;
@@ -127,6 +128,8 @@ public class ReviewService {
         SqlSession session = getSqlSession();
         ReviewVo review = null;
         review = reviewDao.findByNum(session, revNum);
+        List<ReviewComment> comments = reviewDao.findCommentByRevNum(session, revNum);
+        review.setComments(comments);
         session.close();
         return review;
     }
