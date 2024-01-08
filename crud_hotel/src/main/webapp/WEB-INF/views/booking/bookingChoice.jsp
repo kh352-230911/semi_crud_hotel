@@ -89,9 +89,9 @@
         <p class="absolute left-[489px] top-[435px] text-[15px] text-left text-black">
             객실마다 조식 / 수영장 / 발렛주차 옵션을 미리 확인하실 수 있습니다.
         </p>
-
+        <form id="SelectBooking" action="${pageContext.request.contextPath}/booking/bookingRoom" method="get" name="bookingRoomFrm">
         <div class="w-[126px] h-6 absolute left-[488px] top-[240px] ">
-            <form id="SelectBooking" action="${pageContext.request.contextPath}/booking/bookingRoom" method="get" name="bookingRoomFrm">
+
                 <button id="dropdownRadioButton" data-dropdown-toggle="dropdownDefaultRadio" class="text-black bg-white hover:bg-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-black-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center" type="button">
                     스탠다드
                     <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" fill="none" viewBox="0 0 10 6">
