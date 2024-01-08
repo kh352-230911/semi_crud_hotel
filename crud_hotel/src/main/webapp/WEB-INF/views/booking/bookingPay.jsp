@@ -82,7 +82,7 @@
 
         <p class="absolute left-[556px] top-[352px] text-4xl text-left text-black">결제 form</p>
         <p class="absolute left-[572px] top-[528px] text-4xl text-left text-black"></p>
-            <a onclick="request_pay();"></a>
+        <a onclick="request_pay();"></a>
     </div>
 </div>
 
@@ -101,7 +101,7 @@
     IMP.request_pay({ // param
         pg: "html5_inicis",
         pay_method: "card",
-        merchant_uid: "4",
+        merchant_uid: "8",
         // 주문번호는 결제 할때 마다 유일해야함 . 이미 결제된 주문번호는 결제가 되지 않아 실패됌.
         name: "호텔 결제",
         amount: 100,
