@@ -3,6 +3,7 @@ package com.sh.crud.booking.model.service;
 import com.sh.crud.ask.model.vo.AskVo;
 import com.sh.crud.booking.model.dao.BookingDao;
 import com.sh.crud.booking.model.entity.Booking;
+import com.sh.crud.booking.model.vo.BookingVo;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.List;
@@ -67,11 +68,10 @@ public class BookingService {
     }
 
 
-
     public int checkBookingOverlap(Map<String, Object> bookingParams) {
-
         SqlSession session = getSqlSession();
-        try  {
+
+        try {
 
             int count = bookingDao.checkBookingOverlap(session, bookingParams);
             System.out.println(count);
@@ -102,6 +102,12 @@ public class BookingService {
         return result;
     }
 
+    public List<BookingVo> findBookingAll(Map<String, Object> param) {
+        SqlSession session = getSqlSession();
+        List<BookingVo> booking = bookingDao.findBookingAll(session, param);
+        session.close();
+        return booking;
+    }
 }
 
 
