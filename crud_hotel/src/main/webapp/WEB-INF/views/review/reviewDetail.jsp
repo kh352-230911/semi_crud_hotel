@@ -103,7 +103,7 @@
         </div>
 
         <div class="w-full flex justify-end">
-            <c:if test="${loginMember.memberId == review.revId || loginManager != null}">
+            <c:if test="${(loginMember.memberId == review.revId) || loginManager != null}">
                 <button type="button"
                         onclick="location.href = '${pageContext.request.contextPath}/review/reviewUpdate?revNum=${review.revNum}';"
                         class="mr-4 text-white bg-amber-900 hover:bg-orange-200 focus:outline-none focus:bg-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
