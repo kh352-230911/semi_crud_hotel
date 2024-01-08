@@ -78,12 +78,17 @@
         <div class="w-[431px] h-[225px] absolute left-[426px] top-[261px] bg-[#d9d9d9]"></div>
         <div class="w-[426px] h-[68px] absolute left-[431px] top-[511px] bg-[#d9d9d9]"></div>
         <p class="absolute left-[556px] top-[352px] text-4xl text-left text-black">결제 진행중입니다.</p>
-        <p class="absolute left-[572px] top-[528px] text-4xl text-left text-black">
-            <a onclick="request_pay();"></a></p>
+        <p class="absolute left-[572px] top-[528px] text-4xl text-left text-black"></p>
+
+        <p class="absolute left-[556px] top-[352px] text-4xl text-left text-black">결제 form</p>
+        <p class="absolute left-[572px] top-[528px] text-4xl text-left text-black"></p>
+            <a onclick="request_pay();"></a>
     </div>
 </div>
 
+<!-- 아임포트 결제 api 호출-->
 <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
+
 <script>
     var IMP = window.IMP; // 생략 가능
     IMP.init("imp32105587"); // 가맹점 식별 코드
