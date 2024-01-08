@@ -30,12 +30,11 @@ public class ManagerBookingUpdateServlet extends HttpServlet {
         Map<String, Object> bookingParams = new HashMap<>();
         String bookingNum = req.getParameter("num");
         String roomNum = req.getParameter("roomNum");
-//        LocalDateTime checkInDate = LocalDateTime.parse(req.getParameter("checkin"));
         LocalDate checkInDate = LocalDate.parse(req.getParameter("checkin"));
         LocalDateTime checkInDateTime = checkInDate.atStartOfDay();
         LocalDate checkOutDate = LocalDate.parse(req.getParameter("checkout"));
         LocalDateTime checkOutDateTime = checkOutDate.atStartOfDay();
-//        LocalDateTime checkOutDate = LocalDateTime.parse(req.getParameter("checkout"));
+
 
 
 
