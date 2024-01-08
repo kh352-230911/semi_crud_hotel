@@ -285,6 +285,10 @@ where
 select * from tb_member; -- 증가/감소 정상 작동
 
 
+
+select * from tb_order;
+    
+
 commit;
 
 select * from tb_review;
@@ -315,4 +319,5 @@ SELECT S.SID
      , V$PROCESS P
  WHERE S.TADDR = T.ADDR
    AND S.PADDR = P.ADDR;
+
 

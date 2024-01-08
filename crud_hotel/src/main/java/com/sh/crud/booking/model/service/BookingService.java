@@ -69,8 +69,10 @@ public class BookingService {
 
 
     public int checkBookingOverlap(Map<String, Object> bookingParams) {
+
         SqlSession session = getSqlSession();
         try  {
+
             int count = bookingDao.checkBookingOverlap(session, bookingParams);
             System.out.println(count);
             return count ;
