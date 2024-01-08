@@ -1,17 +1,17 @@
 package com.sh.crud.pride.model.entity;
 
-public class Pride {
+public class TbPride {
     private String pride;
     private int discount;
     private int resCount;
 
-    public Pride(String pride, int discount, int resCount) {
+    public TbPride(String pride, int discount, int resCount) {
         this.pride = pride;
         this.discount = discount;
         this.resCount = resCount;
     }
 
-    public Pride() {
+    public TbPride() {
     }
 
     public String getPride() {

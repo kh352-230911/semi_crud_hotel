@@ -19,6 +19,7 @@
       - Member -> member
       - MemberAddress -> memberAddress
     -->
+
     <package name="com.sh.crud"/>
   </typeAliases>
 
@@ -63,7 +64,7 @@
 
     <mapper resource="mapper/ask/askAnswer-mapper.xml"/>
 
-    <mapper resource="mapper/pride/pride-mapper.xml"/>
+<!--    <mapper resource="mapper/pride/pride-mapper.xml"/>-->
 
 
   </mappers>
