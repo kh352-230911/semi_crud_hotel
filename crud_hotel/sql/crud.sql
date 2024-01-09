@@ -345,7 +345,7 @@ SELECT
 FROM
     tb_room r
 WHERE   
-    r.room_type = '프리미어'
+    r.room_type = '스탠다드'
     and
     r.room_people >= 3
     AND NOT EXISTS (
@@ -353,9 +353,6 @@ WHERE
         FROM tb_booking b
         WHERE b.booking_room_num = r.room_num
             AND (
-                (b.checkin_date <= '2024/01/14' AND b.checkout_date >= '2024/01/13')
+                (b.checkin_date < '2024/01/14' AND b.checkout_date > '2024/01/13')
             )
 );
-=======
-
->>>>>>> 352e2a4e43535e6a0f2b27fd887b7d7234733690

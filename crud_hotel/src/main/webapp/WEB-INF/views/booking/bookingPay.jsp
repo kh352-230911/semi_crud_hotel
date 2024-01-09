@@ -123,7 +123,6 @@
             setTimeout(function() {
                 window.location.href = successUrl;
             }, 10);
-
         } else {
             // 결제 실패 시 로직
             console.error('Payment Failed:', rsp);
