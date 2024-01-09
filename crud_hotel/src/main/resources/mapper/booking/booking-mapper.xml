@@ -76,12 +76,13 @@
         SELECT *
         FROM tb_room r
         WHERE r.room_type = #{roomType}
-        AND r.room_people &gt;= #{roomPeople}
-        AND NOT EXISTS (
-        SELECT 1
-        FROM tb_booking b
-        WHERE (b.checkin_date &lt;= #{checkOutDate} AND b.checkout_date &gt;= #{checkInDate})
-        AND b.booking_room_num = r.room_num
+          AND r.room_people &gt;= #{roomPeople}
+          AND NOT EXISTS (
+            SELECT 1
+            FROM tb_booking b
+            WHERE (b.checkin_date &lt;= #{checkOutDate} AND b.checkout_date &gt;= #{checkInDate})
+              AND b.booking_room_num = r.room_num
+
         )
     </select>
     <resultMap id="bookingVoMap" type="bookingVo">
@@ -100,5 +101,7 @@
             <result column="room_people" property="roomPeople"/>
         </collection>
     </resultMap>
+
+
 </mapper>
 

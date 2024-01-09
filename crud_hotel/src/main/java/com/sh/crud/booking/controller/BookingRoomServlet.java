@@ -20,8 +20,8 @@ public class BookingRoomServlet extends HttpServlet {
     private BookingService bookingService = new BookingService();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // 1. 인코딩처리
-        req.setCharacterEncoding("utf-8");
+//        // 1. 인코딩처리
+//        req.setCharacterEncoding("utf-8");
 
         // 2. 사용자 입력값 가져오기
         String roomType = req.getParameter("roomType");
@@ -44,7 +44,6 @@ public class BookingRoomServlet extends HttpServlet {
         List<BookingVo> booking = bookingService.findBookingAll(param);
         System.out.println(booking);
         req.setAttribute("booking", booking);
-
 
         req.getRequestDispatcher("/WEB-INF/views/booking/bookingRoom.jsp").forward(req, resp);
     }

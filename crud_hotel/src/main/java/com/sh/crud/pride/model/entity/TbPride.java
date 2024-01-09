@@ -1,18 +1,24 @@
 package com.sh.crud.pride.model.entity;
 
 public class TbPride {
-    private String pride;
-    private int discount;
-    private int resCount;
 
-    public TbPride(String pride, int discount, int resCount) {
-        this.pride = pride;
-        this.discount = discount;
-        this.resCount = resCount;
-    }
+
+    private String pride;
+    private double discount;
+
+    private int res_count;
+
 
     public TbPride() {
     }
+
+
+    public TbPride(String pride, double discount, int res_count) {
+        this.pride = pride;
+        this.discount = discount;
+        this.res_count = res_count;
+    }
+
 
     public String getPride() {
         return pride;
@@ -22,28 +28,33 @@ public class TbPride {
         this.pride = pride;
     }
 
-    public int getDiscount() {
+
+
+    public double getDiscount() {
         return discount;
     }
 
-    public void setDiscount(int discount) {
+    public void setDiscount(double discount) {
         this.discount = discount;
     }
 
-    public int getResCount() {
-        return resCount;
+    public int getRes_count() {
+        return res_count;
     }
 
-    public void setResCount(int resCount) {
-        this.resCount = resCount;
+    public void setRes_count(int res_count) {
+        this.res_count = res_count;
+
     }
 
     @Override
     public String toString() {
-        return "Pride{" +
+
+        return "TbPride{" +
                 "pride='" + pride + '\'' +
                 ", discount=" + discount +
-                ", resCount=" + resCount +
+                ", res_count=" + res_count +
+
                 '}';
     }
 }
