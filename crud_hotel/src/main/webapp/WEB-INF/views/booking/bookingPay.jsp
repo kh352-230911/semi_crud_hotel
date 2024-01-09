@@ -84,10 +84,12 @@
     </div>
 </div>
 
+
 <script>
     function redirectToCompletePage() {
         window.location.href = '${pageContext.request.contextPath}/booking/bookingComplete';
     }
     setTimeout(redirectToCompletePage, 3000);
 </script>
+
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
