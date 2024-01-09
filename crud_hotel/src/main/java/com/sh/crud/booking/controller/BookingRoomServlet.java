@@ -1,14 +1,18 @@
 package com.sh.crud.booking.controller;
 
+import com.google.gson.Gson;
 import com.sh.crud.booking.model.service.BookingService;
 import com.sh.crud.booking.model.vo.BookingVo;
+import com.sh.crud.room.model.entity.Room;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,8 +23,8 @@ public class BookingRoomServlet extends HttpServlet {
     private BookingService bookingService = new BookingService();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        // 1. 인코딩처리
-//        req.setCharacterEncoding("utf-8");
+        // 1. 인코딩처리
+        req.setCharacterEncoding("utf-8");
 
         // 2. 사용자 입력값 가져오기
         String roomType = req.getParameter("roomType");
@@ -31,6 +35,9 @@ public class BookingRoomServlet extends HttpServlet {
         System.out.println(checkInDate);
         System.out.println(checkOutDate);
         System.out.println(roomPeople);
+        HttpSession session = req.getSession();
+        session.setAttribute("checkInDate", checkInDate);
+        session.setAttribute("checkOutDate", checkOutDate);
 
         Map<String, Object> param = new HashMap<>();
         param.put("roomType", roomType);
@@ -40,13 +47,29 @@ public class BookingRoomServlet extends HttpServlet {
         System.out.println(param);
 
         // 3. 업무로직
-        List<BookingVo> booking = bookingService.findBookingAll(param);
-        System.out.println(booking);
-        req.setAttribute("booking", booking);
+        List<BookingVo> bookingList = bookingService.findBookingAll(param);
+        System.out.println(bookingList);
+        req.setAttribute("booking", bookingList);
+
+        // 예를 들어, 특정 roomType에 해당하는 모든 방의 번호를 출력하고자 할 때
+        for (BookingVo bookingVo : bookingList) {
+            // BookingVo 객체에서 Room 목록을 가져옴
+            List<Room> rooms = bookingVo.getRooms();
+
+            // 해당 Room 목록에서 각 Room 객체를 순회
+            for (Room room : rooms) {
+            // 특정 roomType에 해당하는 방만 처리
+                if (roomType.equals(room.getRoomType())) {
+                    // roomType이 일치하는 Room 객체의 roomNum을 출력
+                    req.setAttribute("filtered", Arrays.asList(room.getRoomNum()));
+                }
+            }
+        }
+
+
+//        resp.setContentType("application/json; charset=utf-8");
+//        new Gson().toJson(booking, resp.getWriter());
 
         req.getRequestDispatcher("/WEB-INF/views/booking/bookingRoom.jsp").forward(req, resp);
     }
-
-
-
 }

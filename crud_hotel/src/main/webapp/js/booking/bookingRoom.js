@@ -1,10 +1,11 @@
+
 function updateButton(radio) {
     document.getElementById('dropdownRadioButton').innerText = radio.value;
 }
 
 // 스크롤 요소 전부 다 보이게 설정
-var scrollableDiv = document.querySelector('.overflow-auto');
-scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
+// var scrollableDiv = document.querySelector('.overflow-auto');
+// scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
 
 // 객실 데이터를 나타내는 배열 (실제 데이터로 교체해야 합니다)
 var rooms = [
@@ -23,29 +24,27 @@ function checkRoomAvailability() {
         "Q601", "Q602", "Q603", "Q604", "Q605", "Q606"
     ];
     roomsToCheck.forEach(bookingRoomNum => {
-        // jQuery의 $.ajax를 사용하여 POST 요청을 보냄
         $.ajax({
-            url: `${contextPath}/room/roomStandard/roomStandardCheck`,
+            url: `${contextPath}/booking/bookingRoom/check`,
             type: 'POST',
             data: { bookingRoomNum: bookingRoomNum },
             success: function(response) {
                 console.log(response);
+                // 서버에서 받은 데이터에서 객실 번호들만 추출
+                const bookedRooms = response.map(booking => booking.rooms.map(room => room.roomNum)).flat();
+                console.log(bookedRooms);
 
-                const statusSpan = document.querySelector(`.room-card`);
-                const statusRoom = document.querySelector(`.room-card[data-room-id="${bookingRoomNum}"]`);
+                // 예약된 객실과 roomsToCheck 비교
+                const statusRoom = $(`.room-card[data-room-id="${bookingRoomNum}"]`);
+                console.log(statusRoom);
 
-                if((statusSpan && statusRoom )!== null) {
-                    if (response === bookingRoomNum) {
-                        // 예약된 경우, 해당 객실 카드에 hidden 클래스 추가
-                        statusSpan.addClass('hidden');
-                    }
+                if (bookedRooms.includes(bookingRoomNum)) {
+                    // 예약된 경우, 해당 객실 카드에 hidden 클래스 추가
+                    statusRoom.addClass('hidden');
                 }
-            },
-            error: function(xhr, status, error) {
-                console.error('Error:', error);
             }
         });
-    })
+    });
 }
 
 
