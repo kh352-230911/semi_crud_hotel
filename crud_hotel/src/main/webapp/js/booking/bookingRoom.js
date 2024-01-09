@@ -30,12 +30,14 @@ function checkRoomAvailability() {
             data: { bookingRoomNum: bookingRoomNum },
             success: function(response) {
                 console.log(response);
-                const statusSpan = document.querySelector(`.room-card[data-room-id="${bookingRoomNum}"]`);
 
-                if(statusSpan !== null) {
+                const statusSpan = document.querySelector(`.room-card`);
+                const statusRoom = document.querySelector(`.room-card[data-room-id="${bookingRoomNum}"]`);
+
+                if((statusSpan && statusRoom )!== null) {
                     if (response === bookingRoomNum) {
-                        // 예약된 경우, 해당 객실 카드에 reserved 클래스 추가
-                        statusSpan.addClass('reserved');
+                        // 예약된 경우, 해당 객실 카드에 hidden 클래스 추가
+                        statusSpan.addClass('hidden');
                     }
                 }
             },

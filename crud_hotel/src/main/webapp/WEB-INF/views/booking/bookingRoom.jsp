@@ -134,9 +134,9 @@
         <!-- 여러개 위한 스크롤 가능한 컨테이너 -->
         <div class="relative left-[162px] top-[280px] w-[924px] h-[440px] overflow-auto">
             <!-- Repeat this part for each room -->
-            <c:if test="${booking.roomType
-                 &&  >= param.roomPeople
-                 && room.availability overlaps with param.checkInDate and param.checkOutDate}">
+<%--            <c:if test="${booking.roomType--%>
+<%--                 &&  >= param.roomPeople--%>
+<%--                 && room.availability overlaps with param.checkInDate and param.checkOutDate}">--%>
             <div class="room-card" type="standard" data-room-id="A201">
                 <img src="${pageContext.request.contextPath}/images/hotelRoom1_up_last.jpg" alt="Room Image"
                      class="room-image">
@@ -158,7 +158,7 @@
                     </div>
                 </div>
             </div>
-            </c:if>
+<%--            </c:if>--%>
             <!-- ... other rooms ... -->
             <div class="room-card" type="standard" data-room-id="A202">
                 <img src="${pageContext.request.contextPath}/images/hotelRoom2_up_last.jpg" alt="Room Image"
