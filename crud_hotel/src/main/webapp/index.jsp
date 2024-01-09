@@ -101,15 +101,15 @@
 <section class="top-banner">
     <div class="top-banner-overlay">
         <h1 class="text-white">예약하기</h1>
-        <form id="bookingSearchFrm" name="bookingSearchFrm" action="${pageContext.request.contextPath}/booking/bookingRoom" method="get" name="bookingSearchFrm">
+        <form id="SelectBooking" action="${pageContext.request.contextPath}/booking/bookingRoom" method="get" name="bookingRoomFrm">
             <div class="elem-group inlined">
 
-                <label class="text-white" for="checkin-date">Check-in Date</label>
-                <input type="date" id="checkin-date" name="checkInOut" placeholder="Select date" required>
+                <label class="text-white" for="checkInDate">Check-in Date</label>
+                <input type="date" id="checkInDate" name="checkInDate" placeholder="Select date" required>
             </div>
             <div class="elem-group inlined">
-                <label class="text-white" for="checkout-date">Check-out Date</label>
-                <input type="date" id="checkout-date" name="checkOutDate" placeholder="Select date" required>
+                <label class="text-white" for="checkOutDate">Check-out Date</label>
+                <input type="date" id="checkOutDate" name="checkOutDate" placeholder="Select date" required>
             </div>
             <hr>
             <div class="elem-group inlined">
@@ -130,20 +130,20 @@
                     <ul class="p-3 space-y-3 text-sm text-gray-700" aria-labelledby="dropdownRadioButton">
                         <li>
                             <div class="flex items-center">
-                                <input onclick="updateButton(this);" id="default-radio-1" type="radio" value="스탠다드" name="roomType" class="w-4 h-4 text-black-600 bg-gray-100 border-gray-300 focus:ring-black-500">
-                                <label for="default-radio-1" class="ms-2 text-sm font-medium text-gray-900">스탠다드</label>
+                                <input onclick="updateButton(this);" id="standard" type="radio" value="스탠다드" name="roomType" class="w-4 h-4 text-black-600 bg-gray-100 border-gray-300 focus:ring-black-500">
+                                <label for="standard" class="ms-2 text-sm font-medium text-gray-900">스탠다드</label>
                             </div>
                         </li>
                         <li>
                             <div class="flex items-center">
-                                <input onclick="updateButton(this);" id="default-radio-2" type="radio" value="프리미어" name="roomType" class="w-4 h-4 text-black-600 bg-gray-100 border-gray-300 focus:ring-black-500">
-                                <label for="default-radio-2" class="ms-2 text-sm font-medium text-gray-900">프리미어</label>
+                                <input onclick="updateButton(this);" id="premier" type="radio" value="프리미어" name="roomType" class="w-4 h-4 text-black-600 bg-gray-100 border-gray-300 focus:ring-black-500">
+                                <label for="premier" class="ms-2 text-sm font-medium text-gray-900">프리미어</label>
                             </div>
                         </li>
                         <li>
                             <div class="flex items-center">
-                                <input onclick="updateButton(this);" id="default-radio-3" type="radio" value="스위트룸" name="roomType" class="w-4 h-4 text-black-600 bg-gray-100 border-gray-300 focus:ring-black-500">
-                                <label for="default-radio-3" class="ms-2 text-sm font-medium text-gray-900">스위트룸</label>
+                                <input onclick="updateButton(this);" id="suite" type="radio" value="스위트룸" name="roomType" class="w-4 h-4 text-black-600 bg-gray-100 border-gray-300 focus:ring-black-500">
+                                <label for="suite" class="ms-2 text-sm font-medium text-gray-900">스위트룸</label>
                             </div>
                         </li>
                     </ul>
@@ -155,7 +155,7 @@
 
 <%--        </div>--%>
         <div class="elem-group inlined">
-            <button form="bookingSearchFrm" type="submit" onclick="document.bookingSearchFrm.submit()" class="text-white">
+            <button form="SelectBooking" type="submit" onclick="document.bookingRoomFrm.submit()">
                 <a>검색</a>
             </button>
         </div>
