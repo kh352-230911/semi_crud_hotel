@@ -17,7 +17,7 @@
             b.ans_content
         from
             tb_ask a left join tb_ask_answer b
-                               on a.ask_num = b.ans_ask_num
+                            on a.ask_num = b.ans_ask_num
         where
             ask_id = #{askId}
     </select>

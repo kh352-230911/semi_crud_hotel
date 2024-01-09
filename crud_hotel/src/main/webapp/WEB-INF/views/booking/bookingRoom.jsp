@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: user1
-  Date: 12/12/2023
-  Time: 10:23 AM
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -42,11 +36,11 @@
         text-align: right;
     }
 
-     .reserved {
-         filter: grayscale(100%); /* 회색조로 만들기 */
-         opacity: 0.5; /* 흐릿하게 만듭니다 */
-         pointer-events: none; /* 클릭할 수 없게 만듭니다 */
-     }
+    .reserved {
+        filter: grayscale(100%); /* 회색조로 만들기 */
+        opacity: 0.5; /* 흐릿하게 만듭니다 */
+        pointer-events: none; /* 클릭할 수 없게 만듭니다 */
+    }
 </style>
 
 </style>
@@ -151,11 +145,12 @@
                     </div>
                     <div class="room-price">
                         <span>180,000 원 ~</span>
-                        <button type="button"
-                                class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                            <a href="${pageContext.request.contextPath}/booking/bookingCheck">
-                            예약하기</a>
-                        </button>
+                        <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                            <input type="hidden" name="roomId" value="A201">
+                            <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                예약하기
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -175,11 +170,12 @@
                     </div>
                     <div class="room-price">
                         <span>200,000 원 ~</span>
-                        <button type="button"
-                                class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                            <a href="${pageContext.request.contextPath}/booking/bookingCheck">
-                                예약하기</a>
-                        </button>
+                        <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                            <input type="hidden" name="roomId" value="A202">
+                            <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                예약하기
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -197,11 +193,12 @@
                     </div>
                     <div class="room-price">
                         <span>230,000 원 ~</span>
-                        <button type="button"
-                                class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                            <a href="${pageContext.request.contextPath}/booking/bookingCheck">
-                                예약하기</a>
-                        </button>
+                        <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                            <input type="hidden" name="roomId" value="A203">
+                            <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                예약하기
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -219,11 +216,12 @@
                     </div>
                     <div class="room-price">
                         <span>170,000 원 ~</span>
-                        <button type="button"
-                                class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                            <a href="${pageContext.request.contextPath}/booking/bookingCheck">
-                                예약하기</a>
-                        </button>
+                        <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                            <input type="hidden" name="roomId" value="A204">
+                            <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                예약하기
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -241,11 +239,12 @@
                     </div>
                     <div class="room-price">
                         <span>220,000 원 ~</span>
-                        <button type="button"
-                                class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                            <a href="${pageContext.request.contextPath}/booking/bookingCheck">
-                                예약하기</a>
-                        </button>
+                        <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                            <input type="hidden" name="roomId" value="A205">
+                            <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                예약하기
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -263,11 +262,12 @@
                     </div>
                     <div class="room-price">
                         <span>250,000 원 ~</span>
-                        <button type="button"
-                                class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                            <a href="${pageContext.request.contextPath}/booking/bookingCheck">
-                                예약하기</a>
-                        </button>
+                        <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                            <input type="hidden" name="roomId" value="A206">
+                            <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                예약하기
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -285,11 +285,12 @@
                     </div>
                     <div class="room-price">
                         <span>230,000 원 ~</span>
-                        <button type="button"
-                                class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                            <a href="${pageContext.request.contextPath}/booking/bookingCheck">
-                                예약하기</a>
-                        </button>
+                        <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                            <input type="hidden" name="roomId" value="T301">
+                            <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                예약하기
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -307,11 +308,12 @@
                     </div>
                     <div class="room-price">
                         <span>250,000 원 ~</span>
-                        <button type="button"
-                                class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                            <a href="${pageContext.request.contextPath}/booking/bookingCheck">
-                                예약하기</a>
-                        </button>
+                        <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                            <input type="hidden" name="roomId" value="T302">
+                            <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                예약하기
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -329,11 +331,12 @@
                     </div>
                     <div class="room-price">
                         <span>200,000 원 ~</span>
-                        <button type="button"
-                                class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                            <a href="${pageContext.request.contextPath}/booking/bookingCheck">
-                                예약하기</a>
-                        </button>
+                        <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                            <input type="hidden" name="roomId" value="A303">
+                            <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                예약하기
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -351,11 +354,12 @@
                     </div>
                     <div class="room-price">
                         <span>220,000 원 ~</span>
-                        <button type="button"
-                                class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                            <a href="${pageContext.request.contextPath}/booking/bookingCheck">
-                                예약하기</a>
-                        </button>
+                        <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                            <input type="hidden" name="roomId" value="A304">
+                            <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                예약하기
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -373,11 +377,12 @@
                     </div>
                     <div class="room-price">
                         <span>230,000 원 ~</span>
-                        <button type="button"
-                                class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                            <a href="${pageContext.request.contextPath}/booking/bookingCheck">
-                                예약하기</a>
-                        </button>
+                        <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                            <input type="hidden" name="roomId" value="T305">
+                            <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                예약하기
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -395,11 +400,12 @@
                     </div>
                     <div class="room-price">
                         <span>300,000 원 ~</span>
-                        <button type="button"
-                                class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                            <a href="${pageContext.request.contextPath}/booking/bookingCheck">
-                                예약하기</a>
-                        </button>
+                        <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                            <input type="hidden" name="roomId" value="T306">
+                            <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                예약하기
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -417,11 +423,12 @@
                     </div>
                     <div class="room-price">
                         <span>380,000 원 ~</span>
-                        <button type="button"
-                                class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                            <a href="${pageContext.request.contextPath}/booking/bookingCheck">
-                                예약하기</a>
-                        </button>
+                        <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                            <input type="hidden" name="roomId" value="T401">
+                            <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                예약하기
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -439,11 +446,12 @@
                     </div>
                     <div class="room-price">
                         <span>400,000 원 ~</span>
-                        <button type="button"
-                                class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                            <a href="${pageContext.request.contextPath}/booking/bookingCheck">
-                                예약하기</a>
-                        </button>
+                        <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                            <input type="hidden" name="roomId" value="T402">
+                            <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                예약하기
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -461,11 +469,12 @@
                     </div>
                     <div class="room-price">
                         <span>480,000 원 ~</span>
-                        <button type="button"
-                                class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                            <a href="${pageContext.request.contextPath}/booking/bookingCheck">
-                                예약하기</a>
-                        </button>
+                        <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                            <input type="hidden" name="roomId" value="Q403">
+                            <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                예약하기
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -483,11 +492,12 @@
                     </div>
                     <div class="room-price">
                         <span>450,000 원 ~</span>
-                        <button type="button"
-                                class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                            <a href="${pageContext.request.contextPath}/booking/bookingCheck">
-                                예약하기</a>
-                        </button>
+                        <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                            <input type="hidden" name="roomId" value="Q404">
+                            <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                예약하기
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -505,11 +515,12 @@
                     </div>
                     <div class="room-price">
                         <span>470,000 원 ~</span>
-                        <button type="button"
-                                class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                            <a href="${pageContext.request.contextPath}/booking/bookingCheck">
-                                예약하기</a>
-                        </button>
+                        <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                            <input type="hidden" name="roomId" value="Q405">
+                            <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                예약하기
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -527,11 +538,12 @@
                     </div>
                     <div class="room-price">
                         <span>500,000 원 ~</span>
-                        <button type="button"
-                                class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                            <a href="${pageContext.request.contextPath}/booking/bookingCheck">
-                                예약하기</a>
-                        </button>
+                        <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                            <input type="hidden" name="roomId" value="Q406">
+                            <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                예약하기
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -549,11 +561,12 @@
                     </div>
                     <div class="room-price">
                         <span>380,000 원 ~</span>
-                        <button type="button"
-                                class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                            <a href="${pageContext.request.contextPath}/booking/bookingCheck">
-                                예약하기</a>
-                        </button>
+                        <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                            <input type="hidden" name="roomId" value="T501">
+                            <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                예약하기
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -571,11 +584,12 @@
                     </div>
                     <div class="room-price">
                         <span>400,000 원 ~</span>
-                        <button type="button"
-                                class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                            <a href="${pageContext.request.contextPath}/booking/bookingCheck">
-                                예약하기</a>
-                        </button>
+                        <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                            <input type="hidden" name="roomId" value="T502">
+                            <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                예약하기
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -593,11 +607,12 @@
                     </div>
                     <div class="room-price">
                         <span>500,000 원 ~</span>
-                        <button type="button"
-                                class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                            <a href="${pageContext.request.contextPath}/booking/bookingCheck">
-                                예약하기</a>
-                        </button>
+                        <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                            <input type="hidden" name="roomId" value="Q503">
+                            <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                예약하기
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -615,11 +630,12 @@
                     </div>
                     <div class="room-price">
                         <span>430,000 원 ~</span>
-                        <button type="button"
-                                class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                            <a href="${pageContext.request.contextPath}/booking/bookingCheck">
-                                예약하기</a>
-                        </button>
+                        <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                            <input type="hidden" name="roomId" value="Q504">
+                            <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                예약하기
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -637,11 +653,12 @@
                     </div>
                     <div class="room-price">
                         <span>430,000 원 ~</span>
-                        <button type="button"
-                                class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                            <a href="${pageContext.request.contextPath}/booking/bookingCheck">
-                                예약하기</a>
-                        </button>
+                        <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                            <input type="hidden" name="roomId" value="Q505">
+                            <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                예약하기
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -659,11 +676,12 @@
                     </div>
                     <div class="room-price">
                         <span>500,000 원 ~</span>
-                        <button type="button"
-                                class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                            <a href="${pageContext.request.contextPath}/booking/bookingCheck">
-                                예약하기</a>
-                        </button>
+                        <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                            <input type="hidden" name="roomId" value="Q506">
+                            <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                예약하기
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -681,11 +699,12 @@
                     </div>
                     <div class="room-price">
                         <span>600,000 원 ~</span>
-                        <button type="button"
-                                class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                            <a href="${pageContext.request.contextPath}/booking/bookingCheck">
-                                예약하기</a>
-                        </button>
+                        <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                            <input type="hidden" name="roomId" value="Q601">
+                            <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                예약하기
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -703,11 +722,12 @@
                     </div>
                     <div class="room-price">
                         <span>600,000 원 ~</span>
-                        <button type="button"
-                                class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                            <a href="${pageContext.request.contextPath}/booking/bookingCheck">
-                                예약하기</a>
-                        </button>
+                        <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                            <input type="hidden" name="roomId" value="Q602">
+                            <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                예약하기
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -725,11 +745,12 @@
                     </div>
                     <div class="room-price">
                         <span>600,000 원 ~</span>
-                        <button type="button"
-                                class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                            <a href="${pageContext.request.contextPath}/booking/bookingCheck">
-                                예약하기</a>
-                        </button>
+                        <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                            <input type="hidden" name="roomId" value="Q603">
+                            <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                예약하기
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -747,11 +768,12 @@
                     </div>
                     <div class="room-price">
                         <span>600,000 원 ~</span>
-                        <button type="button"
-                                class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                            <a href="${pageContext.request.contextPath}/booking/bookingCheck">
-                                예약하기</a>
-                        </button>
+                        <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                            <input type="hidden" name="roomId" value="Q604">
+                            <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                예약하기
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -769,11 +791,12 @@
                     </div>
                     <div class="room-price">
                         <span>600,000 원 ~</span>
-                        <button type="button"
-                                class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                            <a href="${pageContext.request.contextPath}/booking/bookingCheck">
-                                예약하기</a>
-                        </button>
+                        <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                            <input type="hidden" name="roomId" value="Q605">
+                            <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                예약하기
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -791,11 +814,12 @@
                     </div>
                     <div class="room-price">
                         <span>600,000 원 ~</span>
-                        <button type="button"
-                                class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                            <a href="${pageContext.request.contextPath}/booking/bookingCheck">
-                                예약하기</a>
-                        </button>
+                        <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                            <input type="hidden" name="roomId" value="Q606">
+                            <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                예약하기
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -805,6 +829,6 @@
 </div>
 
 <script src="${pageContext.request.contextPath}/js/index/index.js"></script>
-<%--<script src="${pageContext.request.contextPath}/js/booking/bookingRoom.js"></script>--%>
+<script src="${pageContext.request.contextPath}/js/booking/bookingRoom.js"></script>
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>

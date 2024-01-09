@@ -19,6 +19,7 @@
       - Member -> member
       - MemberAddress -> memberAddress
     -->
+
     <package name="com.sh.crud"/>
   </typeAliases>
 
@@ -62,6 +63,8 @@
     <mapper resource="mapper/ask/ask-mapper.xml"/>
 
     <mapper resource="mapper/ask/askAnswer-mapper.xml"/>
+
+    <mapper resource="mapper/tbPride/tbPride-mapper.xml"/>
 
 
   </mappers>

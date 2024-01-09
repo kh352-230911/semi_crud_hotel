@@ -52,13 +52,13 @@
             booking_num = #{bookingNum}
     </select>
     <select id="checkBookingOverlap" resultType="_int" >
-        <![CDATA[
+
         SELECT COUNT(*)
         FROM tb_booking
         WHERE booking_room_num = #{bookingRoomNum}
-          and (checkin_date<![CDATA[ <= ]]>#{checkOutDate} and checkout_date<![CDATA[ >= ]]>#{checkInDate})>
+          and (checkin_date &lt;= #{checkOutDate} and checkout_date &gt;= #{checkInDate})
           AND booking_num != #{bookingNum}
-        ]]
+
     </select>
 
     <update id="updateBooking">
@@ -82,6 +82,7 @@
             FROM tb_booking b
             WHERE (b.checkin_date &lt;= #{checkOutDate} AND b.checkout_date &gt;= #{checkInDate})
               AND b.booking_room_num = r.room_num
+
         )
     </select>
     <resultMap id="bookingVoMap" type="bookingVo">
@@ -99,6 +100,7 @@
             <result column="room_people" property="roomPeople"/>
         </collection>
     </resultMap>
+
 
 </mapper>
 

@@ -53,9 +53,13 @@ public class BookingVo extends Booking {
 
     public TbPride getPride() {
         return pride;
+
     }
 
     public void setPride(TbPride pride) {
         this.pride = pride;
+
     }
+
+
 }
