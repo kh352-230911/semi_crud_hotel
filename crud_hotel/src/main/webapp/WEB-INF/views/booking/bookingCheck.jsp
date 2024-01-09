@@ -46,6 +46,7 @@
             <div class="flex flex-col justify-center items-center gap-2">
                 <h4 class="font-semibold">Member ID</h4>
                 <p class="text-xs">${loginMember.memberId}</p>
+                <p class="text-xs">${loginMember.memberPride}</p>
             </div>
 
             <div class="flex flex-col gap-3 border-b py-6 text-xs">

@@ -11,6 +11,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
+
 <div class="w-full h-screen flex-col justify-center items-start bg-white">
     <div class="w-[1280px] h-[300px] mx-auto relative overflow-hidden bg-white">
         <p class="absolute left-[553px] top-[180px] text-base text-left text-[#715b3f]">
@@ -85,6 +86,9 @@
 
 
 
+
+
+
 <!-- 아임포트 결제 api 호출-->
 <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
 <script>
@@ -99,7 +103,7 @@
     IMP.request_pay({ // param
         pg: "html5_inicis",
         pay_method: "card",
-        merchant_uid: "101",
+        merchant_uid: "12",
         // 주문번호는 결제 할때 마다 유일해야함 . 이미 결제된 주문번호는 결제가 되지 않아 실패됌.
         name: "CRUD 호텔 결제",
         amount: 100,

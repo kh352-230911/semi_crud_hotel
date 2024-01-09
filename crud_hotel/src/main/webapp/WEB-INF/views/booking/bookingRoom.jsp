@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: user1
-  Date: 12/12/2023
-  Time: 10:23 AM
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -238,12 +232,12 @@
                         </div>
                         <div class="room-price">
                             <span>220,000 원 ~</span>
-                                <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
-                                    <input type="hidden" name="roomId" value="A205">
-                                    <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                                        예약하기
-                                    </button>
-                                </form>
+                            <form action="${pageContext.request.contextPath}/booking/bookingCheck" method="get">
+                                <input type="hidden" name="roomId" value="A205">
+                                <button type="submit" class="text-white bg-amber-900 border border-gray-300 focus:outline-none hover:bg-orange-200 focus:ring-4 focus:ring-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                    예약하기
+                                </button>
+                            </form>
 
                         </div>
                     </div>

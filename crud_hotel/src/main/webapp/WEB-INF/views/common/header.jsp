@@ -50,19 +50,6 @@
     <nav class="bg-orange-50 border-gray-200 px-4 lg:px-6 py-2.5 ">
         <div class="flex justify-between items-center mx-auto max-w-screen-xl">
             <div class="flex-1 lg:flex-none">
-
-<%--                <svg--%>
-<%--                        width="1600"--%>
-<%--                        height="2"--%>
-<%--                        viewBox="0 0 924 2"--%>
-<%--                        fill="none"--%>
-<%--                        xmlns="http://www.w3.org/2000/svg"--%>
-<%--                        class="absolute left-[161.58px] top-[209px]"--%>
-<%--                        preserveAspectRatio="none"--%>
-<%--                >--%>
-<%--                    <path d="M0.582031 1H922.888" stroke="#715B3F" stroke-linecap="round"></path>--%>
-<%--                </svg>--%>
-
             </div>
 
 
@@ -84,10 +71,6 @@
                 <c:if test="${loginMember ne null && loginManager eq null}">
 
 
-                <!-- 종아이콘 -->
-                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 21">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9.046 3.59-.435-2.324m.435 2.324a5.338 5.338 0 0 1 6.033 4.333l.331 1.77c.439 2.344 2.383 2.587 2.599 3.76.11.586.22 1.171-.309 1.271L5 17.101c-.529.1-.639-.488-.749-1.074-.219-1.172 1.506-2.102 1.067-4.447l-.331-1.769a5.338 5.338 0 0 1 4.059-6.22Zm-7.13 4.602a8.472 8.472 0 0 1 2.17-5.048m2.646 13.633A3.472 3.472 0 0 0 13.46 16l.089-.5-6.817 1.277Z"/>
-                    </svg>
 
                     <div class="flex justify-center">
                         <div class="relative inline-block mb-20">
