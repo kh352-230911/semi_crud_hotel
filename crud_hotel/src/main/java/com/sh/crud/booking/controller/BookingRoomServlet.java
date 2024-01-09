@@ -34,10 +34,10 @@ public class BookingRoomServlet extends HttpServlet {
         System.out.println(checkOutDate);
         System.out.println(roomPeople);
         HttpSession session = req.getSession();
-
-        // Store the dates in the session
         session.setAttribute("checkInDate", checkInDate);
         session.setAttribute("checkOutDate", checkOutDate);
+
+        // Store the dates in the session
         Map<String, Object> param = new HashMap<>();
         param.put("roomType", roomType);
         param.put("checkInDate", checkInDate);

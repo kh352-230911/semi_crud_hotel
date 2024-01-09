@@ -15,6 +15,10 @@ public class BookingDao {
         return session.update("booking.updateBooking",booking);
     }
 
+    public static int insertBooking(SqlSession session, Booking booking) {
+        return session.insert("booking.insertBooking",booking);
+    }
+
     public Booking findByBookingMemberId(SqlSession session, String bookingMemberId) {
         return session.selectOne("booking.findByBookingMemberId", bookingMemberId);
 
