@@ -99,12 +99,7 @@
     IMP.request_pay({ // param
         pg: "html5_inicis",
         pay_method: "card",
-<<<<<<< HEAD
-        merchant_uid: "5",
-=======
-
-        merchant_uid: "12",
->>>>>>> 352e2a4e43535e6a0f2b27fd887b7d7234733690
+        merchant_uid: "101",
         // 주문번호는 결제 할때 마다 유일해야함 . 이미 결제된 주문번호는 결제가 되지 않아 실패됌.
         name: "CRUD 호텔 결제",
         amount: 100,
@@ -112,12 +107,7 @@
         buyer_name: "홍길동",
         buyer_tel: "01042424242",
         // KG이니시스 결제는 전화번호 필수, 없으면 에러발생.
-<<<<<<< HEAD
-        buyer_addr: "서울특별시 강남구 신사동",
-
-=======
         buyer_addr: "서울특별시 강남구 신사동"
->>>>>>> 352e2a4e43535e6a0f2b27fd887b7d7234733690
     }, function (rsp) { // callback
         if (rsp.success) {
             // 결제 성공 시 로직
@@ -129,7 +119,6 @@
             setTimeout(function() {
                 window.location.href = successUrl;
             }, 10);
-
         } else {
             // 결제 실패 시 로직
             console.error('Payment Failed:', rsp);

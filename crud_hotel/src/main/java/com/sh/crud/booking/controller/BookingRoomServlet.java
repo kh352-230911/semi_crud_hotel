@@ -44,7 +44,6 @@ public class BookingRoomServlet extends HttpServlet {
         System.out.println(booking);
         req.setAttribute("booking", booking);
 
-
         req.getRequestDispatcher("/WEB-INF/views/booking/bookingRoom.jsp").forward(req, resp);
     }
 
