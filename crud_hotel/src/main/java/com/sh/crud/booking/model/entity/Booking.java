@@ -17,7 +17,7 @@ public class Booking {
     public Booking() {
     }
 
-    public Booking(int bookingNum, String bookingMemberId, String bookingRoomNum, String bookingName, LocalDateTime checkInDate, LocalDateTime checkOutDate, int bookingTourNum, String availability) {
+    public Booking(int bookingNum, String bookingMemberId, String bookingRoomNum, String bookingName, LocalDateTime checkInDate, LocalDateTime checkOutDate, int bookingTourNum) {
         this.bookingNum = bookingNum;
         this.bookingMemberId = bookingMemberId;
         this.bookingRoomNum = bookingRoomNum;
