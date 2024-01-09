@@ -8,7 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,14 +26,18 @@ public class BookingRoomServlet extends HttpServlet {
 
         // 2. 사용자 입력값 가져오기
         String roomType = req.getParameter("roomType");
-        String checkInDate = req.getParameter("checkInDate");
-        String checkOutDate = req.getParameter("checkOutDate");
-        String roomPeople = req.getParameter("roomPeople");
+        LocalDate checkInDate = LocalDate.parse(req.getParameter("checkInDate"));
+        LocalDate checkOutDate = LocalDate.parse(req.getParameter("checkOutDate"));
+        int roomPeople = Integer.parseInt(req.getParameter("roomPeople"));
         System.out.println(roomType);
         System.out.println(checkInDate);
         System.out.println(checkOutDate);
         System.out.println(roomPeople);
+        HttpSession session = req.getSession();
 
+        // Store the dates in the session
+        session.setAttribute("checkInDate", checkInDate);
+        session.setAttribute("checkOutDate", checkOutDate);
         Map<String, Object> param = new HashMap<>();
         param.put("roomType", roomType);
         param.put("checkInDate", checkInDate);

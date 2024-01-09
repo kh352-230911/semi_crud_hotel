@@ -2,6 +2,7 @@ package com.sh.crud.member.model.service;
 
 import com.sh.crud.member.model.dao.MemberDao;
 import com.sh.crud.member.model.entity.Member;
+import com.sh.crud.member.model.entity.Pride;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.List;
