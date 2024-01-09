@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookingVo extends Booking {
-    private List<Room> rooms=new ArrayList<>();
+    private List<Room> rooms = new ArrayList<>();
     private Member member;
     private Room room;
     private TbPride pride;

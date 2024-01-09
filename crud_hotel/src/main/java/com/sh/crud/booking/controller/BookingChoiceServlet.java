@@ -17,10 +17,8 @@ import java.util.Map;
 @WebServlet("/booking/bookingChoice")
 public class BookingChoiceServlet extends HttpServlet {
 
-    private BookingService bookingService = new BookingService();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher("/WEB-INF/views/booking/bookingChoice.jsp").forward(req, resp);
     }
-
 }
