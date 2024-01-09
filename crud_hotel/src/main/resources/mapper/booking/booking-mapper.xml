@@ -73,7 +73,6 @@
     </update>
 
     <select id="findBookingAll" resultType="booking">
-
         SELECT
             *
         FROM
@@ -89,7 +88,7 @@
                 AND (
                     (b.checkin_date <![CDATA[ <= ]]>#{checkOutDate} AND b.checkout_date <![CDATA[ >= ]]> #{checkInDate})
                 )
-            );]]
+            )
     </select>
 </mapper>
 
