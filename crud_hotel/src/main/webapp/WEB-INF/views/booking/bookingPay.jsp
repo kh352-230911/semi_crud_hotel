@@ -85,12 +85,9 @@
 </div>
 
 
-
-
-
-
 <!-- 아임포트 결제 api 호출-->
 <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
+
 <script>
     var IMP = window.IMP; // 생략 가능
     IMP.init("imp32105587"); // 가맹점 식별 코드
@@ -103,26 +100,27 @@
     IMP.request_pay({ // param
         pg: "html5_inicis",
         pay_method: "card",
-        merchant_uid: "12",
+        merchant_uid: "22",
         // 주문번호는 결제 할때 마다 유일해야함 . 이미 결제된 주문번호는 결제가 되지 않아 실패됌.
-        name: "CRUD 호텔 결제",
+        name: "호텔 결제",
         amount: 100,
         buyer_email: "gildong@gmail.com",
         buyer_name: "홍길동",
         buyer_tel: "01042424242",
         // KG이니시스 결제는 전화번호 필수, 없으면 에러발생.
-        buyer_addr: "서울특별시 강남구 신사동"
+        buyer_addr: "서울특별시 강남구 신사동",
+        buyer_postcode: "01181"
     }, function (rsp) { // callback
         if (rsp.success) {
             // 결제 성공 시 로직
             console.log('Payment Success:', rsp);
             alert('결제에 성공하셨습니다.');
-            merchant_uid
             // 경고창이 표시되는 동안 JavaScript 실행이 일시 중지되고 이후에 제대로 재개되지 않을 수 있기 때문.
             // 이 문제를 해결하기 위해 setTimeout() 함수를 사용하여 경고가 해제된 후에 리디렉션.
             setTimeout(function() {
                 window.location.href = successUrl;
             }, 10);
+
         } else {
             // 결제 실패 시 로직
             console.error('Payment Failed:', rsp);
