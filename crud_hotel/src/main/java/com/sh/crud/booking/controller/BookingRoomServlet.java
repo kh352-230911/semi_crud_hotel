@@ -12,11 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.Arrays;
+import java.util.*;
 import java.time.LocalDate;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 @WebServlet("/booking/bookingRoom")
 public class BookingRoomServlet extends HttpServlet {
@@ -37,9 +34,12 @@ public class BookingRoomServlet extends HttpServlet {
         System.out.println(checkOutDate);
         System.out.println(roomPeople);
         HttpSession session = req.getSession();
-        // Store the dates in the session
+
         session.setAttribute("checkInDate", checkInDate);
         session.setAttribute("checkOutDate", checkOutDate);
+        session.setAttribute("roomPeople", roomPeople);
+
+        // Store the dates in the session
         Map<String, Object> param = new HashMap<>();
         param.put("roomType", roomType);
         param.put("checkInDate", checkInDate);
@@ -49,6 +49,8 @@ public class BookingRoomServlet extends HttpServlet {
 
         // 3. 업무로직
         List<BookingVo> bookingList = bookingService.findBookingAll(param);
+        List<String> filteredRoomNumbers = new ArrayList<>();
+
         System.out.println(bookingList);
         req.setAttribute("booking", bookingList);
 
@@ -59,13 +61,19 @@ public class BookingRoomServlet extends HttpServlet {
             // 해당 Room 목록에서 각 Room 객체를 순회
             for (Room room : rooms) {
             // 특정 roomType에 해당하는 방만 처리
-                // roomType이 일치하는 Room 객체의 roomNum을 출력
-                System.out.println(room);
-                req.setAttribute("filtered", Arrays.asList(room.getRoomNum()));
+                if (roomType.equals(room.getRoomType())) {
+                    // roomType이 일치하는 Room 객체의 roomNum을 출력
+                    System.out.println(room);
+                    filteredRoomNumbers.add(room.getRoomNum());
+                }
             }
         }
+
+        req.setAttribute("filtered",filteredRoomNumbers);
+
 //        resp.setContentType("application/json; charset=utf-8");
 //        new Gson().toJson(booking, resp.getWriter());
+
         req.getRequestDispatcher("/WEB-INF/views/booking/bookingRoom.jsp").forward(req, resp);
     }
 }

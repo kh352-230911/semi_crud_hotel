@@ -101,6 +101,12 @@
         </collection>
     </resultMap>
 
-
+    <insert id="insertBooking">
+        insert into
+            tb_booking
+        values (
+                   seq_booking_num.NEXTVAL,#{bookingMemberId},#{bookingRoomNum},#{bookingName},#{checkInDate},#{checkOutDate},#{bookingTourNum}
+               )
+    </insert>
 </mapper>
 

@@ -31,7 +31,6 @@ public class BookingCheckServlet extends HttpServlet {
         String id = loginMember.getMemberId();
         Pride pride= loginMember.getMemberPride();
         System.out.println(pride);
-
         TbPride tbPride=prideService.findByPride(pride);
         req.setAttribute("tbPride",tbPride);
 
@@ -44,6 +43,7 @@ public class BookingCheckServlet extends HttpServlet {
         System.out.println(checkOutDate);
         Room room = roomService.findByRoomNum(roomNum);
         req.setAttribute("room",room);
+        session.setAttribute("room", room);
 
 //        req.setAttribute("booking",booking);
         req.getRequestDispatcher("/WEB-INF/views/booking/bookingCheck.jsp").forward(req, resp);

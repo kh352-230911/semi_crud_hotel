@@ -128,10 +128,10 @@
         <!-- 여러개 위한 스크롤 가능한 컨테이너 -->
         <div class="relative left-[162px] top-[280px] w-[924px] h-[440px] overflow-auto">
             <!-- Repeat this part for each room -->
-<%--            <c:if test="${booking.roomType--%>
-<%--                 &&  >= param.roomPeople--%>
-<%--                 && room.availability overlaps with param.checkInDate and param.checkOutDate}">--%>
-<%--            <c:if test="${rooms.roomType == '스탠다드' && rooms.roomNum == 'A201' }">--%>
+            <%--            <c:if test="${booking.roomType--%>
+            <%--                 &&  >= param.roomPeople--%>
+            <%--                 && room.availability overlaps with param.checkInDate and param.checkOutDate}">--%>
+            <%--            <c:if test="${rooms.roomType == '스탠다드' && rooms.roomNum == 'A201' }">--%>
             <div class="room-card ${filtered.contains('A201') ? '' : 'hidden'}" type="standard" data-room-id="A201">
                 <img src="${pageContext.request.contextPath}/images/hotelRoom1_up_last.jpg" alt="Room Image"
                      class="room-image">
@@ -154,8 +154,8 @@
                     </div>
                 </div>
             </div>
-<%--            </c:if>--%>
-<%--            </c:if>--%>
+            <%--            </c:if>--%>
+            <%--            </c:if>--%>
             <!-- ... other rooms ... -->
             <div class="room-card ${filtered.contains('A202') ? '' : 'hidden'}" type="standard" data-room-id="A202">
                 <img src="${pageContext.request.contextPath}/images/hotelRoom2_up_last.jpg" alt="Room Image"
@@ -828,7 +828,7 @@
     </div>
 </div>
 
-<script src="${pageContext.request.contextPath}/js/index/index.js"></script>
-<script src="${pageContext.request.contextPath}/js/booking/bookingRoom.js"></script>
+
+<%--<script src="${pageContext.request.contextPath}/js/booking/bookingRoom.js"></script>--%>
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
