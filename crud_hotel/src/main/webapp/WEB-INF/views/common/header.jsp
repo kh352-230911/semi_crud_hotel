@@ -70,7 +70,7 @@
                 </c:if>
                 <c:if test="${loginMember ne null && loginManager eq null}">
 
-                    
+
 
                     <div class="flex justify-center">
                         <div class="relative inline-block mb-20">
