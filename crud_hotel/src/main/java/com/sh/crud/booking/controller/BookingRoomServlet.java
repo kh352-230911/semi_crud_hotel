@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.HashMap;
@@ -32,7 +33,11 @@ public class BookingRoomServlet extends HttpServlet {
         System.out.println(checkInDate);
         System.out.println(checkOutDate);
         System.out.println(roomPeople);
+        HttpSession session = req.getSession();
 
+        // Store the dates in the session
+        session.setAttribute("checkInDate", checkInDate);
+        session.setAttribute("checkOutDate", checkOutDate);
         Map<String, Object> param = new HashMap<>();
         param.put("roomType", roomType);
         param.put("checkInDate", checkInDate);
