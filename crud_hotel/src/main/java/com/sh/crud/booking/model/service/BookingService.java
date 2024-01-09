@@ -105,6 +105,7 @@ public class BookingService {
     public List<BookingVo> findBookingAll(Map<String, Object> param) {
         SqlSession session = getSqlSession();
         List<BookingVo> booking = bookingDao.findBookingAll(session, param);
+        System.out.println(booking);
         session.close();
         return booking;
     }

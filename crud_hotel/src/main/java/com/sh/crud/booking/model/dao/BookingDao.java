@@ -57,6 +57,7 @@ public class BookingDao {
     }
 
     public List<BookingVo> findBookingAll(SqlSession session, Map<String, Object> param) {
+        System.out.println(session.selectList("booking.findBookingAll", param));
         return session.selectList("booking.findBookingAll", param);
     }
 }

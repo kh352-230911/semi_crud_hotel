@@ -4,6 +4,7 @@ import com.sh.crud.common.CRUD_Utils;
 import com.sh.crud.manager.model.entity.Manager;
 import com.sh.crud.manager.model.service.ManagerService;
 import com.sh.crud.member.model.entity.Member;
+import com.sh.crud.member.model.entity.Pride;
 import com.sh.crud.member.model.service.MemberService;
 
 import javax.servlet.ServletException;

@@ -92,8 +92,10 @@
         <form id="SelectBooking" action="${pageContext.request.contextPath}/booking/bookingRoom" method="get" name="bookingRoomFrm">
         <div class="w-[126px] h-6 absolute left-[488px] top-[240px] ">
 
+
                 <button id="dropdownRadioButton" data-dropdown-toggle="dropdownDefaultRadio" class="text-black bg-white hover:bg-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-black-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center" type="button">
                     스탠다드
+
                     <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" fill="none" viewBox="0 0 10 6">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                     </svg>
@@ -121,6 +123,7 @@
                         </li>
                     </ul>
                 </div>
+
             </div>
             <div class="w-[126px] h-6 absolute left-[487px] top-[310px]  ">
                 <!-- 날짜 검색 체크인 -->
@@ -134,6 +137,7 @@
             <div class="w-[30px] h-6 absolute left-[488px] top-[385px] ">
                 <input type="number" id="roomPeople" name="roomPeople" placeholder="2" min="1" max="4" required>
             </div>
+
         </form>
         <div class="w-[150px] h-6 absolute left-[488px] top-[460px]  ">
             <button type="button" data-modal-target="crypto-modal" data-modal-toggle="crypto-modal" class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700">
