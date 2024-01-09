@@ -162,24 +162,29 @@
     </div>
 </div>
 
-<!-- 댓글작성 폼 -->
-<div class="w-9/12 mx-auto mb-16 bg-white">
-    <form name="reviewCommentCreateFrm" action="${pageContext.request.contextPath}/review/reviewCommentCreate" method="post">
-        <input type="hidden" name="comId" id="comId" value="${loginMember.memberId}">
-        <input type="hidden" name="comNum" id="comNum" value="${review.revNum}">
-        <label for="comContent"></label>
-        <h3 class="block mb-2 text-xl text-gray-900 dark:text-white">댓글 내용</h3>
-        <textarea id="comContent" name="comContent" rows="4"
-                  class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300
+<!-- 댓글작성 조건 검사 -->
+<c:if test="${(loginMember.memberId == review.revId) || loginManager != null}">
+    <div class="w-9/12 mx-auto mb-16 bg-white">
+        <!-- 댓글작성 폼 -->
+        <form name="reviewCommentCreateFrm" action="${pageContext.request.contextPath}/review/reviewCommentCreate" method="post">
+            <input type="hidden" name="comId" id="comId" value="${loginMember.memberId}">
+            <input type="hidden" name="comNum" id="comNum" value="${review.revNum}">
+            <label for="comContent"></label>
+            <h3 class="block mb-2 text-xl text-gray-900 dark:text-white">댓글 내용</h3>
+            <textarea id="comContent" name="comContent" rows="4"
+                      class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300
                    focus:ring-blue-500 focus:border-blue-500"
-                  placeholder="댓글내용을 작성해주세요."></textarea>
-        <div class="mt-4 flax w-full justify-end text-right">
-            <button type="submit"
-                    class="text-white bg-amber-900 hover:bg-orange-200 focus:outline-none focus:bg-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                댓글 작성완료
-            </button>
-        </div>
-    </form>
-</div>
+                      placeholder="댓글내용을 작성해주세요."></textarea>
+            <div class="mt-4 flax w-full justify-end text-right">
+                <button type="submit"
+                        class="text-white bg-amber-900 hover:bg-orange-200 focus:outline-none focus:bg-orange-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                    댓글 작성완료
+                </button>
+            </div>
+        </form>
+    </div>
+</c:if>
+
+
 <script src="${pageContext.request.contextPath}/js/review/reviewDetail.js"></script>
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
