@@ -51,6 +51,7 @@
 
 </style>
 
+
 <div class="w-full h-screen flex justify-center items-start bg-white">
     <div class="w-[1280px] h-[720px] relative overflow-hidden bg-white">
         <p class="absolute left-[552px] top-[179px] text-base text-left text-[#715b3f]"></p>
@@ -879,7 +880,9 @@
         <!-- ... (다른 요소들) ... -->
     </div>
 </div>
-
+<script>
+    const bookingData = ${booking};
+</script>
 <script src="${pageContext.request.contextPath}/js/booking/bookingRoom.js"></script>
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>

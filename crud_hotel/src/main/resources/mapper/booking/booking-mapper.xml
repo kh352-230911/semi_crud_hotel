@@ -52,13 +52,13 @@
             booking_num = #{bookingNum}
     </select>
     <select id="checkBookingOverlap" resultType="_int" >
-        <![CDATA[
+
         SELECT COUNT(*)
         FROM tb_booking
         WHERE booking_room_num = #{bookingRoomNum}
-          and (checkin_date<![CDATA[ <= ]]>#{checkOutDate} and checkout_date<![CDATA[ >= ]]>#{checkInDate})>
+          and (checkin_date &lt;= #{checkOutDate} and checkout_date &gt;= #{checkInDate})
           AND booking_num != #{bookingNum}
-        ]]
+
     </select>
 
     <update id="updateBooking">
@@ -72,24 +72,33 @@
             booking_num=#{bookingNum}
     </update>
 
-    <select id="findBookingAll" resultType="booking">
-
-        SELECT
-            *
-        FROM
-            tb_room r
-        WHERE
-            r.room_type = #{roomType}
-            and
-            r.room_people >= #{roomPeople}
-            AND NOT EXISTS (
-                SELECT 1
-                FROM tb_booking b
-                WHERE b.booking_room_num = r.room_num
-                AND (
-                    (b.checkin_date <![CDATA[ <= ]]>#{checkOutDate} AND b.checkout_date <![CDATA[ >= ]]> #{checkInDate})
-                )
-            );]]
+    <select id="findBookingAll" resultMap="bookingVoMap">
+        SELECT *
+        FROM tb_room r
+        WHERE r.room_type = #{roomType}
+        AND r.room_people &gt;= #{roomPeople}
+        AND NOT EXISTS (
+        SELECT 1
+        FROM tb_booking b
+        WHERE (b.checkin_date &lt;= #{checkOutDate} AND b.checkout_date &gt;= #{checkInDate})
+        AND b.booking_room_num = r.room_num
+        )
     </select>
+    <resultMap id="bookingVoMap" type="bookingVo">
+        <id column="booking_num" property="bookingNum"/>
+        <result column="booking_member_id" property="bookingMemberId"/>
+        <result column="booking_room_num" property="bookingRoomNum"/>
+        <result column="booking_name" property="bookingName"/>
+        <result column="checkin_date" property="checkInDate" />
+        <result column="checkout_date" property="checkOutDate" />
+        <result column="booking_tour_num" property="bookingTourNum"/>
+        <collection property="rooms" ofType="room">
+            <id column="room_id" property="roomId" />
+            <result column="room_num" property="roomNum" />
+            <result column="room_type" property="roomType" />
+            <result column="room_price" property="roomPrice"/>
+            <result column="room_people" property="roomPeople"/>
+        </collection>
+    </resultMap>
 </mapper>
 

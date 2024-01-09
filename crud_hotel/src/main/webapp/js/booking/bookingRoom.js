@@ -7,11 +7,6 @@ var scrollableDiv = document.querySelector('.overflow-auto');
 scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
 
 // 객실 데이터를 나타내는 배열 (실제 데이터로 교체해야 합니다)
-var rooms = [
-    { type: 'standard'},
-    { type: 'premier'},
-    { type: 'suite'}
-];
 
 // 페이지 로드 시 예약 가능 여부 확인
 $(document).ready(checkRoomAvailability);
@@ -25,7 +20,7 @@ function checkRoomAvailability() {
     roomsToCheck.forEach(bookingRoomNum => {
         // jQuery의 $.ajax를 사용하여 POST 요청을 보냄
         $.ajax({
-            url: `${contextPath}/room/roomStandard/roomStandardCheck`,
+            url: `${contextPath}/room/roomStandard/`,
             type: 'POST',
             data: { bookingRoomNum: bookingRoomNum },
             success: function(response) {
@@ -35,7 +30,7 @@ function checkRoomAvailability() {
                 if(statusSpan !== null) {
                     if (response === bookingRoomNum) {
                         // 예약된 경우, 해당 객실 카드에 reserved 클래스 추가
-                        statusSpan.addClass('reserved');
+                        statusSpan.addClass('hidden');
                     }
                 }
             },
@@ -45,6 +40,9 @@ function checkRoomAvailability() {
         });
     })
 }
+
+
+
 
 
 

@@ -5,8 +5,11 @@ import com.sh.crud.member.model.entity.Member;
 import com.sh.crud.pride.model.entity.TbPride;
 import com.sh.crud.room.model.entity.Room;
 
-public class BookingVo extends Booking {
+import java.util.ArrayList;
+import java.util.List;
 
+public class BookingVo extends Booking {
+    private List<Room> rooms=new ArrayList<>();
     private Member member;
     private Room room;
     private TbPride pride;
@@ -14,12 +17,22 @@ public class BookingVo extends Booking {
     public BookingVo() {
     }
 
-    public Room getRoom() {
-        return room;
+    @Override
+    public String toString() {
+        return "BookingVo{" +
+                "rooms=" + rooms +
+                ", member=" + member +
+                ", room=" + room +
+                ", pride=" + pride +
+                '}';
     }
 
-    public void setRoom(Room room) {
-        this.room = room;
+    public List<Room> getRooms() {
+        return rooms;
+    }
+
+    public void setRooms(List<Room> rooms) {
+        this.rooms = rooms;
     }
 
     public Member getMember() {
@@ -30,20 +43,19 @@ public class BookingVo extends Booking {
         this.member = member;
     }
 
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
+
     public TbPride getPride() {
         return pride;
     }
 
     public void setPride(TbPride pride) {
         this.pride = pride;
-    }
-
-    @Override
-    public String toString() {
-        return "BookingVo{" +
-                "member=" + member +
-                ", room=" + room +
-                ", pride=" + pride +
-                '}';
     }
 }
