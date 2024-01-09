@@ -109,6 +109,21 @@ public class BookingService {
         session.close();
         return booking;
     }
+
+    public int insertBooking(Booking booking) {
+        int result=0;
+        SqlSession session=getSqlSession();
+        try {
+            result = BookingDao.insertBooking(session, booking);
+            session.commit();
+        } catch (Exception e) {
+            session.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
+        return result;
+    }
 }
 
 
