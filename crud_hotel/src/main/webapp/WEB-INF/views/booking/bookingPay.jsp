@@ -84,7 +84,6 @@
     </div>
 </div>
 
-
 <!-- 아임포트 결제 api 호출-->
 <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
 
@@ -131,4 +130,5 @@
         }
     });
 </script>
+
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
