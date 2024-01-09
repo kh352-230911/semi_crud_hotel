@@ -94,8 +94,7 @@
         <result column="checkout_date" property="checkOutDate" />
         <result column="booking_tour_num" property="bookingTourNum"/>
         <collection property="rooms" ofType="room">
-            <id column="room_id" property="roomId" />
-            <result column="room_num" property="roomNum" />
+            <id column="room_num" property="roomNum" />
             <result column="room_type" property="roomType" />
             <result column="room_price" property="roomPrice"/>
             <result column="room_people" property="roomPeople"/>

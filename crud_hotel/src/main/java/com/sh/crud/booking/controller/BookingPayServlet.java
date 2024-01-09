@@ -40,9 +40,9 @@ public class BookingPayServlet extends HttpServlet {
         System.out.println(checkOutDate);
 
         Booking booking=new Booking(0,id,roomNum,name,checkInDateTime,checkOutDateTime,1);
-
+        session.setAttribute("booking",booking);
         int result=bookingService.insertBooking(booking);
-        req.getSession().setAttribute("msg", "😊예약해 주셔서 감사합니다😊");
-        resp.sendRedirect(req.getContextPath() + "/");
+
+        req.getRequestDispatcher("/WEB-INF/views/booking/bookingPay.jsp").forward(req,resp);
     }
 }

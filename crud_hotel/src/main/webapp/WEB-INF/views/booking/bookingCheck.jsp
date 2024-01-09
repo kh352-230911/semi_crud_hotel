@@ -72,7 +72,7 @@
                 </p>
                 <p class="flex justify-between">
                     <span class="text-gray-400">the number of people:</span>
-                    <span>${room.roomPeople}</span>
+                    <span>${roomPeople}</span>
                 </p>
                 <p class="flex justify-between">
                     <span class="text-gray-400">Reservation Name:</span>

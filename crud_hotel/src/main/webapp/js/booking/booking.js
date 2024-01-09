@@ -24,7 +24,6 @@ checkinElem.onchange = function () {
 // radio 버튼 내용 변경 적용
 function updateButton(radio) {
     document.getElementById('dropdownRadioButton').innerText = radio.value;
-    document.getElementById('dropdownRadioButton1').innerText = radio.value;
 }
 
 
