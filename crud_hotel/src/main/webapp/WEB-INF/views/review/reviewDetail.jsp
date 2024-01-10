@@ -163,7 +163,7 @@
 </div>
 
 <!-- 댓글작성 조건 검사 -->
-<c:if test="${(loginMember.memberId == review.revId) || loginManager != null}">
+<c:if test="${(loginMember.memberId != null) || loginManager != null}">
     <div class="w-9/12 mx-auto mb-16 bg-white">
         <!-- 댓글작성 폼 -->
         <form name="reviewCommentCreateFrm" action="${pageContext.request.contextPath}/review/reviewCommentCreate" method="post">

@@ -53,14 +53,14 @@
                                    var="parsedCheckOutDate"/>
                     <fmt:formatDate value="${parsedCheckOutDate}" pattern="yyyy-MM-dd" var="formattedCheckOutDate"/>
                     <div>
-                        <label for="checkin-date" class="block mb-2 text-sm font-medium text-gray-900">체크인</label>
-                        <input type="date" id="checkin-date" name="checkin" value="${formattedCheckInDate}"
+                        <label for="checkInDate" class="block mb-2 text-sm font-medium text-gray-900">체크인</label>
+                        <input type="date" id="checkInDate" name="checkin" value="${formattedCheckInDate}"
                                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
                                required>
                     </div>
                     <div>
-                        <label for="checkout-date" class="block mb-2 text-sm font-medium text-gray-900">체크아웃</label>
-                        <input type="date" id="checkout-date" name="checkout" value="${formattedCheckOutDate}"
+                        <label for="checkOutDate" class="block mb-2 text-sm font-medium text-gray-900">체크아웃</label>
+                        <input type="date" id="checkOutDate" name="checkout" value="${formattedCheckOutDate}"
                                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
                                required>
                     </div>
@@ -74,4 +74,29 @@
         </div>
     </div>
 </section>
+
+<script>
+    // 날짜 달력 적용
+    var currentDateTime = new Date();
+    var year = currentDateTime.getFullYear();
+    var month = (currentDateTime.getMonth() + 1);
+    var date = (currentDateTime.getDate() + 1);
+
+    if (date < 10) {
+        date = '0' + date;
+    }
+    if (month < 10) {
+        month = '0' + month;
+    }
+
+    var dateTomorrow = year + "-" + month + "-" + date;
+    var checkinElem = document.querySelector("#checkInDate");
+    var checkoutElem = document.querySelector("#checkOutDate");
+
+    checkinElem.setAttribute("min", dateTomorrow);
+
+    checkinElem.onchange = function () {
+        checkoutElem.setAttribute("min", this.value);
+    }
+</script>
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
