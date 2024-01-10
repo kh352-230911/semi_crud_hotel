@@ -26,7 +26,6 @@ public class BookingRoomServlet extends HttpServlet {
         // 1. 인코딩처리
         req.setCharacterEncoding("utf-8");
 
-
         try {
             String roomType = req.getParameter("roomType");
             String checkInDateParam = req.getParameter("checkInDate");
