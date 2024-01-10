@@ -20,6 +20,9 @@
                             on a.ask_num = b.ans_ask_num
         where
             ask_id = #{askId}
+        ORDER BY
+            CASE WHEN b.ans_content IS NOT NULL THEN 0 ELSE 1 END ASC,
+            a.ask_date DESC       
     </select>
     <resultMap id="askVoMap" type="askVo">
         <id column="ask_num" property="askNum"/>
@@ -73,6 +76,7 @@
         from
             tb_ask a left join tb_ask_answer b
                                on a.ask_num = b.ans_ask_num
+        order by a.ask_title desc
     </select>
 
 </mapper>

@@ -150,10 +150,7 @@
                 </div>
             </div>
         </form>
-<%--        <div class="elem-group inlined">--%>
-<%--            <button id="search" class="text-white" type="submit">검색</button>--%>
 
-<%--        </div>--%>
         <div class="elem-group inlined">
             <button id="button" form="SelectBooking" type="submit" onclick="document.bookingRoomFrm.submit()" class="text-white">
                 검색
