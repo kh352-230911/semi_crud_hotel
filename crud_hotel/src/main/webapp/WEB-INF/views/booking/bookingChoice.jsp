@@ -484,8 +484,34 @@
     </div>
 </div>
 
-<script src="${pageContext.request.contextPath}/js/booking/booking.js"></script>
+<script>
+        // 날짜 달력 적용
+        var currentDateTime = new Date();
+        var year = currentDateTime.getFullYear();
+        var month = (currentDateTime.getMonth() + 1);
+        var date = (currentDateTime.getDate() + 1);
 
+        if (date < 10) {
+        date = '0' + date;
+    }
+        if (month < 10) {
+        month = '0' + month;
+    }
 
+        var dateTomorrow = year + "-" + month + "-" + date;
+        var checkinElem = document.querySelector("#checkInDate");
+        var checkoutElem = document.querySelector("#checkOutDate");
+
+        checkinElem.setAttribute("min", dateTomorrow);
+
+        checkinElem.onchange = function () {
+        checkoutElem.setAttribute("min", this.value);
+    }
+
+    // radio 버튼 내용 변경 적용
+    function updateButton(radio) {
+        document.getElementById('dropdownRadioButton').innerText = radio.value;
+    }
+</script>
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
