@@ -151,10 +151,7 @@
             </div>
 
         </form>
-<%--        <div class="elem-group inlined">--%>
-<%--            <button id="search" class="text-white" type="submit">검색</button>--%>
 
-<%--        </div>--%>
         <div class="elem-group inlined">
             <button id="search" onclick="document.bookingSerchFrm.submit()" class="text-white" type="submit">검색</button>
 
@@ -215,5 +212,3 @@
 <script src="${pageContext.request.contextPath}/js/index/index.js"></script>
 <script src="${pageContext.request.contextPath}/js/booking/booking.js"></script>
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
-
-

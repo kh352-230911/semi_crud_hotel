@@ -33,7 +33,6 @@ public class BookingDelete extends HttpServlet {
 
         HttpSession session = req.getSession();
 
-        session.invalidate();
 
         session = req.getSession();
         session.setAttribute("msg", "성공적으로 예약취소를 완료했습니다. \n 이용해 주셔서 감사합니다☺");

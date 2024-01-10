@@ -25,7 +25,6 @@ public class MemberLoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String referer = req.getHeader("Referer");
-//        System.out.println("referer = " + referer);
 
         if (!referer.contains("/member/memberLogin"))
             req.getSession().setAttribute("next", referer);
