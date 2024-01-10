@@ -142,8 +142,8 @@
                         </li>
                         <li>
                             <div class="flex items-center">
-                                <input onclick="updateButton(this);" id="suite" type="radio" value="스위트룸" name="roomType" class="w-4 h-4 text-black-600 bg-gray-100 border-gray-300 focus:ring-black-500">
-                                <label for="suite" class="ms-2 text-sm font-medium text-gray-900">스위트룸</label>
+                                <input onclick="updateButton(this);" id="suite" type="radio" value="스위트" name="roomType" class="w-4 h-4 text-black-600 bg-gray-100 border-gray-300 focus:ring-black-500">
+                                <label for="suite" class="ms-2 text-sm font-medium text-gray-900">스위트</label>
                             </div>
                         </li>
                     </ul>
