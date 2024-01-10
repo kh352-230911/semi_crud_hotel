@@ -76,13 +76,8 @@
         >
             <path d="M0.582031 1H922.888" stroke="#715B3F" stroke-linecap="round"></path>
         </svg>
-<<<<<<< HEAD
-<%--        <a onclick="request_pay();"></a>--%>
-        <a onclick="request_pay(); redirectToCompletePage();"></a>
 
-=======
         <a onclick="request_pay(); redirectToCompletePage();"></a>
->>>>>>> 48a9a3ae00ecbd5ed0b359cc29e3e5537c9d9d3a
 
     </div>
     <div class="w-[640] h-1/2 m-auto flex items-center justify-center border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700">

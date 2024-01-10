@@ -20,7 +20,7 @@
 <div class="flex justify-center items-start bg-white">
     <div class="w-[1280px] h-[220px] relative overflow-hidden bg-white">
         <p class="absolute left-[475px] top-[140px] text-[32px] text-left text-[#715b3f]">
-            예약이 완료되었습니다.
+            결제가 완료되었습니다.
         </p>
         <svg
                 width="924"
@@ -83,29 +83,6 @@
                 </p>
             </div>
 
-            <div class="flex flex-col gap-3 pb-6 pt-2 text-xs">
-                    <%--                    <table class="w-full text-left">--%>
-                    <%--                        <thead>--%>
-                    <%--                        <tr class="flex">--%>
-                    <%--                            <th class="w-full py-2">Option</th>--%>
-                    <%--                            <th class="min-w-[44px] py-2 pr-20">Additional amount</th>--%>
-                    <%--                            <th class="min-w-[44px] py-2">Total</th>--%>
-                    <%--                        </tr>--%>
-                    <%--                        </thead>--%>
-                    <%--                        <tbody>--%>
-                    <%--                        <tr class="flex">--%>
-                    <%--                            <td class="flex-1 py-1">Breakfast</td>--%>
-                    <%--                            <td class="min-w-[44px] pr-20">+20000</td>--%>
-                    <%--                            <td class="min-w-[44px]">170,000</td>--%>
-                    <%--                        </tr>--%>
-                    <%--                        <tr class="flex py-1">--%>
-                    <%--                            <td class="flex-1">pool</td>--%>
-                    <%--                            <td class="min-w-[44px] pr-20">+40000</td>--%>
-                    <%--                            <td class="min-w-[44px]">340,000</td>--%>
-                    <%--                        </tr>--%>
-                    <%--                        </tbody>--%>
-                    <%--                    </table>--%>
-
                 <div class=" border-b border border-dashed"></div>
                 <div class="py-4 justify-center items-center flex flex-col gap-2">
                     <p class="flex gap-2">
@@ -125,7 +102,6 @@
                         +234XXXXXXX
                     </p>
                 </div>
-            </div>
         </div>
     </div>
 </div>

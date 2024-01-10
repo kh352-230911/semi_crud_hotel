@@ -38,6 +38,8 @@
             *
         from
             tb_booking
+        order by
+            booking_num desc
     </select>
     <select id="getTotalCount" resultType="_int">
         select
