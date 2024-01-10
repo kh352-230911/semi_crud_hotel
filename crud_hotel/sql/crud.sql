@@ -297,7 +297,7 @@ select * from tb_room;
 
 select * from tb_tour;
 
-<<<<<<< HEAD
+
 select * from tb_booking;
 
 CREATE TABLE tb_order (
