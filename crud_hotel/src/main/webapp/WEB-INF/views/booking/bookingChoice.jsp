@@ -12,7 +12,7 @@
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 <div class="w-full h-screen flex justify-center items-start bg-white">
     <div class="w-[1280px] h-[720px] relative overflow-hidden bg-white">
-        <p class="absolute left-[570px] top-[180px] text-base text-left text-[#715b3f]">
+        <p class="pb-2 absolute left-[570px] top-[180px] text-base text-left text-[#715b3f]">
             객실, 날짜, 인원 선택
         </p>
         <svg
@@ -72,7 +72,7 @@
                 viewBox="0 0 924 2"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                class="absolute left-[161.58px] top-[209px]"
+                class="mb-2 absolute left-[161.58px] top-[209px]"
                 preserveAspectRatio="none"
         >
             <path d="M0.582031 1H922.888" stroke="#715B3F" stroke-linecap="round"></path>

@@ -76,6 +76,7 @@
         >
             <path d="M0.582031 1H922.888" stroke="#715B3F" stroke-linecap="round"></path>
         </svg>
+
         <a onclick="request_pay(); redirectToCompletePage();"></a>
 
     </div>
